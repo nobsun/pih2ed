@@ -1,0 +1,3 @@
+:set prompt ">>> "
+:set -interactive-print=Text.Show.Unicode.uprint
+:set +t
