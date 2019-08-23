@@ -1,5 +1,4 @@
 .stack-work/
-haddock/
 pih2ed.cabal
 stack.yaml.lock
 error.log
