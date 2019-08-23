@@ -127,6 +127,28 @@ module Ch01Ex04
 --   </pre>
 qsort :: Ord a => [a] -> [a]
 
+
+-- | <tt>qsort</tt>の定義で，<tt>&lt;=</tt> を <tt>&lt;</tt>
+--   に置き換えるとどのような影響があるでしょうか？
+module Ch01Ex05
+
+-- | <pre>
+--   qsort []     = []                                    -- (1)
+--   qsort (x:xs) = qsort smaller ++ [x] ++ qsort larger  -- (2)
+--     where
+--       smaller = [a | a &lt;- xs, a &lt; x] -- <tt>&lt;=</tt> を <tt>&lt;</tt> に置き換える
+--       larger  = [b | b <a>xs, b</a> x]
+--   </pre>
+--   
+--   <tt>qsort</tt>の定義で，<tt>&lt;=</tt> を <tt>&lt;</tt>
+--   に置き換えると，ピボットとと同値のピボット以外の要素を落してしまうことになる．
+--   
+--   <pre>
+--   &gt;&gt;&gt; qsort [2,2,3,1,1]
+--   [1,2,3]
+--   </pre>
+qsort :: Ord a => [a] -> [a]
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数
