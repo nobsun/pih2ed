@@ -8,6 +8,7 @@
 @version 0.1.0.0
 
 
+-- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
 module Ch01Ex01
 
 -- | 式
@@ -42,7 +43,7 @@ step :: Term -> [Term]
 instance GHC.Show.Show Ch01Ex01.Term
 
 
--- | <tt>x</tt>の値によらず<tt>sum [x] = x</tt>であることを示してください．
+-- | <tt>x</tt> の値によらず <tt>sum [x] = x</tt> であることを示してください．
 module Ch01Ex02
 
 -- | リストの要素の和
