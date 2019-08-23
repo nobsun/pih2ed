@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch02Ex01
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 2.1
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12371;&#12398;&#31456;&#12398;&#20363;&#38988;&#12434;GHCi&#12434;&#29992;&#12356;&#12390;&#23455;&#34892;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch02Ex01</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-comment">{- $setup
+&gt;&gt;&gt; 2+3*4
+14
+
+&gt;&gt;&gt; (2+3)*4
+20
+
+&gt;&gt;&gt; sqrt (3^2+4^2)
+5.0
+
+&gt;&gt;&gt; head [1,2,3,4,5]
+1
+
+&gt;&gt;&gt; tail [1,2,3,4,5]
+[2,3,4,5]
+
+&gt;&gt;&gt; [1,2,3,4,5] !! 2
+3
+
+&gt;&gt;&gt; take 3 [1,2,3,4,5]
+[1,2,3]
+
+&gt;&gt;&gt; drop 3 [1,2,3,4,5]
+[4,5]
+
+&gt;&gt;&gt; length [1,2,3,4,5]
+5
+
+&gt;&gt;&gt; sum [1,2,3,4,5]
+15
+
+&gt;&gt;&gt; product [1,2,3,4,5]
+120
+
+&gt;&gt;&gt; [1,2,3] ++ [4,5]
+[1,2,3,4,5]
+
+&gt;&gt;&gt; reverse [1,2,3,4,5]
+[5,4,3,2,1]
+
+&gt;&gt;&gt; :load src/test.hs
+
+&gt;&gt;&gt; quadruple 10
+40
+
+&gt;&gt;&gt; take (double 2) [1,2,3,4,5]
+[1,2,3,4]
+
+&gt;&gt;&gt; :set editor emacs
+
+&gt;&gt;&gt; :edit
+
+&gt;&gt;&gt; factorial 10
+3628800
+
+&gt;&gt;&gt; average [1,2,3,4,5]
+3
+
+-}</span><span>
+</span><a name="line-71"></a></pre></body></html>

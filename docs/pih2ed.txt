@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.1.0.0
+@version 0.1.5.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -148,6 +148,10 @@ module Ch01Ex05
 --   [1,2,3]
 --   </pre>
 qsort :: Ord a => [a] -> [a]
+
+
+-- | この章の例題をGHCiを用いて実行してください
+module Ch02Ex01
 
 module Lib
 
