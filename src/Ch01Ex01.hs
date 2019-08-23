@@ -4,6 +4,8 @@ Description : 『プログラミングHaskell第2版』練習問題 1.1
 Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
+
+@double (double)@ の結果を算出する別の計算方法を考えましょう．
 -}
 module Ch01Ex01 where
 
