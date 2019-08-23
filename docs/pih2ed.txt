@@ -107,6 +107,26 @@ module Ch01Ex03
 --   </pre>
 product :: Num p => [p] -> p
 
+
+-- | リストを降順に整列するように関数<tt>qsort</tt>の定義を変えるにはどうすればよいでしょうか？
+module Ch01Ex04
+
+-- | 降順に整列
+--   
+--   <pre>
+--   qsort' []     = []                                      -- (1)
+--   qsort' (x:xs) = qsort' larger ++ [x] ++ qsort' smaller  -- (2)
+--     where
+--       smaller = [a | a &lt;- xs, a &lt;= x]
+--       larger  = [b | b <a>xs, b</a> x]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; qsort' [3,5,1,4,2]
+--   [5,4,3,2,1]
+--   </pre>
+qsort' :: Ord a => [a] -> [a]
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数
