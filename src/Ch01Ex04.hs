@@ -13,18 +13,18 @@ module Ch01Ex04 where
 降順に整列
 
 @
-  qsort' []     = []                                      -- (1)
-  qsort' (x:xs) = qsort' larger ++ [x] ++ qsort' smaller  -- (2)
+  qsort []     = []                                    -- (1)
+  qsort (x:xs) = qsort larger ++ [x] ++ qsort smaller  -- (2) qsort smaller と qsort larger を交換
     where
       smaller = [a | a <- xs, a <= x]
       larger  = [b | b <- xs, b > x]
 @
 
->>> qsort' [3,5,1,4,2]
+>>> qsort [3,5,1,4,2]
 [5,4,3,2,1]
 -}
-qsort' []     = []
-qsort' (x:xs) = qsort' larger ++ [x] ++ qsort' smaller
+qsort []     = []
+qsort (x:xs) = qsort larger ++ [x] ++ qsort smaller
   where
     smaller = [a | a <- xs, a <= x]
     larger  = [b | b <- xs, b > x]
