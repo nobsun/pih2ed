@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.2.2.0
+@version 0.2.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -156,6 +156,25 @@ module Ch02Ex01
 
 -- | 次の式に結合順位を示す括弧を付けてください．
 module Ch02Ex02
+
+
+-- | 以下のプログラムにはエラーが三つあります．エラーを修正してGHCiで正しく動くか確かめてください．
+module Ch02Ex03
+
+-- | プログラムの修正
+--   
+--   <pre>
+--   N =  a <a>div</a> length xs     -- (1)変数名は小文字アルファベット．(2)関数<tt>div</tt>を中置演算子に変更するには<tt>`</tt>で囲む．
+--        where
+--            a = 10
+--           xs = [1,2,3,4,5]   -- (3)同一レベルのバインディングでは左辺のインデント位置を同じにする．
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; n
+--   2
+--   </pre>
+n :: Int
 
 module Lib
 
