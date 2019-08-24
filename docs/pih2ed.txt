@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.2.3.0
+@version 0.2.5.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -206,6 +206,37 @@ last' :: () => [p] -> p
 --   5
 --   </pre>
 last'' :: () => [c] -> c
+
+
+-- | プレリュード関数 <tt>last</tt> は，空でないリストの最後の要素を取り出します． たとえば，<tt>last
+--   [1,2,3,4,5]</tt> = <tt>5</tt> です． この章で紹介したプレリュード関数を使って，関数
+--   <tt>last</tt> を定義してください． さらに別の定義も考えてみてください．
+module Ch02Ex05
+
+-- | <tt>init</tt> の一つめの定義
+--   
+--   <pre>
+--   init' (x:[]) = []
+--   init' (x:xs) = x : init' xs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; init' [1,2,3,4,5]
+--   [1,2,3,4]
+--   </pre>
+init' :: () => [a] -> [a]
+
+-- | <tt>init</tt> のもう一つの定義
+--   
+--   <pre>
+--   init'' = reverse . tail . reverse
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; init'' [1,2,3,4,5]
+--   [1,2,3,4]
+--   </pre>
+init'' :: () => [a] -> [a]
 
 module Lib
 
