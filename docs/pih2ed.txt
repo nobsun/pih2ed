@@ -176,6 +176,37 @@ module Ch02Ex03
 --   </pre>
 n :: Int
 
+
+-- | プレリュード関数 <tt>last</tt> は，空でないリストの最後の要素を取り出します． たとえば，<tt>last
+--   [1,2,3,4,5]</tt> = <tt>5</tt> です． この章で紹介したプレリュード関数を使って，関数
+--   <tt>last</tt> を定義してください． さらに別の定義も考えてみてください．
+module Ch02Ex04
+
+-- | <tt>last</tt> の定義
+--   
+--   <pre>
+--   last' (x:[]) = x
+--   last' (_:xs) = last' xs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; last' [1,2,3,4,5]
+--   5
+--   </pre>
+last' :: () => [p] -> p
+
+-- | もう一つの <tt>last</tt> の定義
+--   
+--   <pre>
+--   last'' = head . reverse
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; last'' [1,2,3,4,5]
+--   5
+--   </pre>
+last'' :: () => [c] -> c
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数
