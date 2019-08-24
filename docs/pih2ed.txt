@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.1.5.0
+@version 0.2.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -152,6 +152,10 @@ qsort :: Ord a => [a] -> [a]
 
 -- | この章の例題をGHCiを用いて実行してください
 module Ch02Ex01
+
+
+-- | 次の式に結合順位を示す括弧を付けてください．
+module Ch02Ex02
 
 module Lib
 
