@@ -8,7 +8,7 @@ Maintainer  : nobsun@gmail.com
 以下の値の型は何でしょう?
 
 @
-['a','b','c']
+['a','b','c' ]
 ('a','b','c')
 [(False,'0'),(True,'1')]
 ([False,True],['0','1'])

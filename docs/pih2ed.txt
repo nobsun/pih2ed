@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.3.1.0
+@version 0.3.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -248,6 +248,45 @@ init'' :: () => [a] -> [a]
 --   [tail, init, reverse]
 --   </pre>
 module Ch03Ex01
+
+
+-- | 以下の関数の定義を書き下してください．型が正しい限り，どのように実装してもかまいません．
+--   
+--   <pre>
+--   bools :: [Bool]
+--   nums :: [[Int]]
+--   add :: Int -&gt; Int -&gt; Int -&gt; Int
+--   copy :: a -&gt; (a, a)
+--   apply :: (a -&gt; b) -&gt; a -&gt; b
+--   </pre>
+module Ch03Ex02
+
+-- | <pre>
+--   &gt;&gt;&gt; :type bools
+--   bools :: [Bool]
+--   </pre>
+bools :: [Bool]
+
+-- | <pre>
+--   &gt;&gt;&gt; :type nums
+--   nums :: [[Int]]
+--   </pre>
+nums :: [[Int]]
+
+-- | <pre>
+--   &gt;&gt;&gt; :type add
+--   add :: Int -&gt; Int -&gt; Int -&gt; Int
+--   </pre>
+add :: Int -> Int -> Int -> Int
+
+-- | <pre>
+--   &gt;&gt;&gt; :type copy
+--   copy :: a -&gt; (a, a)
+--   </pre>
+copy :: a -> (a, a)
+
+-- | apply :: (a -&gt; b) -&gt; a -&gt; b
+apply :: (a -> b) -> a -> b
 
 module Lib
 
