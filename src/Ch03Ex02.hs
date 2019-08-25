@@ -47,6 +47,7 @@ copy :: a -> (a, a)
 copy x = (x, x)
 
 {- |
+>>> :type apply
 apply :: (a -> b) -> a -> b
 -}
 apply :: (a -> b) -> a -> b

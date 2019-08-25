@@ -285,7 +285,10 @@ add :: Int -> Int -> Int -> Int
 --   </pre>
 copy :: a -> (a, a)
 
--- | apply :: (a -&gt; b) -&gt; a -&gt; b
+-- | <pre>
+--   &gt;&gt;&gt; :type apply
+--   apply :: (a -&gt; b) -&gt; a -&gt; b
+--   </pre>
 apply :: (a -> b) -> a -> b
 
 module Lib
