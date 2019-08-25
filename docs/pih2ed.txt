@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.3.2.0
+@version 0.3.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -290,6 +290,55 @@ copy :: a -> (a, a)
 --   apply :: (a -&gt; b) -&gt; a -&gt; b
 --   </pre>
 apply :: (a -> b) -> a -> b
+
+
+-- | 以下の関数の型は何でしょう?
+--   
+--   <pre>
+--   second xs = head (tail xs)
+--   swap (x,y) = (y,x)
+--   pair x y = (x,y)
+--   double x = x*2
+--   palindrome xs = reverse xs == xs
+--   twice f x = f (f x)
+--   </pre>
+module Ch03Ex03
+
+-- | <pre>
+--   &gt;&gt;&gt; :type second
+--   second :: [a] -&gt; a
+--   </pre>
+second :: [a] -> a
+
+-- | <pre>
+--   &gt;&gt;&gt; :type swap
+--   swap :: (a, b) -&gt; (b, a)
+--   </pre>
+swap :: (a, b) -> (b, a)
+
+-- | <pre>
+--   &gt;&gt;&gt; :type pair
+--   pair :: a -&gt; b -&gt; (a, b)
+--   </pre>
+pair :: a -> b -> (a, b)
+
+-- | <pre>
+--   &gt;&gt;&gt; :type double
+--   double :: Num a =&gt; a -&gt; a
+--   </pre>
+double :: Num a => a -> a
+
+-- | <pre>
+--   &gt;&gt;&gt; :type palindrome
+--   palindrome :: Eq a =&gt; [a] -&gt; Bool
+--   </pre>
+palindrome :: Eq a => [a] -> Bool
+
+-- | <pre>
+--   &gt;&gt;&gt; :type twice
+--   twice :: (a -&gt; a) -&gt; a -&gt; a
+--   </pre>
+twice :: (a -> a) -> a -> a
 
 module Lib
 
