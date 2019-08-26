@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.4.2.0
+@version 0.4.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -373,6 +373,12 @@ halve :: [a] -> ([a], [a])
 
 -- | リストの三つめの要素を返す関数 <tt>third :: [a] -&gt; a</tt> を以下を使ってそれぞれ定義してください．
 --   ただし，リストには三つ以上の要素が格納されているとします．
+--   
+--   <ul>
+--   <li>a. head と tail</li>
+--   <li>b. リストのインデックス演算子 !!</li>
+--   <li>c. パターンマッチ</li>
+--   </ul>
 module Ch04Ex02
 
 -- | リストの三つめの要素 その1
@@ -413,6 +419,69 @@ third2 :: [a] -> a
 --   3
 --   </pre>
 third3 :: [a] -> a
+
+
+-- | プレリュード関数 tail のように振る舞う safetail :: [a] -&gt; [a] 関数を考えてください．
+--   ただし，<tt>tail</tt> は空リストを与えるとエラーになりますが， <tt>safetail</tt>
+--   は空リストをエラーとせず，空リストを返すものとします．
+--   
+--   <ul>
+--   <li>a. 条件式</li>
+--   <li>b. ガード付きの等式</li>
+--   <li>c. パターンマッチ</li>
+--   </ul>
+module Ch04Ex03
+
+-- | 安全な <tt>tail</tt> その1
+--   
+--   <pre>
+--   safetail1 :: [a] -&gt; [a]
+--   safetail1 xs = if null xs then xs else tail xs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; safetail1 [1,2,3]
+--   [2,3]
+--   
+--   &gt;&gt;&gt; safetail1 []
+--   []
+--   </pre>
+safetail1 :: [a] -> [a]
+
+-- | 安全な <tt>tail</tt> その2
+--   
+--   <pre>
+--   safetail2 :: [a] -&gt; [a]
+--   safetail2 xs
+--     | null xs   = xs
+--     | otherwise = tail xs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; safetail2 [1,2,3]
+--   [2,3]
+--   
+--   &gt;&gt;&gt; safetail2 []
+--   []
+--   </pre>
+safetail2 :: [a] -> [a]
+
+-- | 安全な <tt>tail</tt> その3
+--   
+--   <pre>
+--   safetail3 :: [a] -&gt; [a]
+--   safetail3 []     = []
+--   safetail3 (_:xs) = xs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; safetail3 [1,2,3]
+--   [2,3]
+--   
+--   &gt;&gt;&gt; safetail3 []
+--   []
+--   </pre>
+safetail3 :: [a] -> [a]
 
 module Lib
 

@@ -8,6 +8,10 @@ Maintainer  : nobsun@gmail.com
 リストの三つめの要素を返す関数 @third :: [a] -> a@ を以下を使ってそれぞれ定義してください．
 ただし，リストには三つ以上の要素が格納されているとします．
 
+- a. head と tail
+- b. リストのインデックス演算子 !!
+- c. パターンマッチ
+
 -}
 module Ch04Ex02 where
 
