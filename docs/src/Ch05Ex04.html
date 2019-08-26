@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch05Ex04
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 5.4
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12354;&#12427;&#35201;&#32032;&#12398;&#12415;&#12363;&#12425;&#12394;&#12427;&#12522;&#12473;&#12488;&#12434;&#29983;&#25104;&#12377;&#12427;&#12503;&#12524;&#12522;&#12517;&#12540;&#12489;&#38306;&#25968;
+@replicate :: Int -&gt; a -&gt; [a]@
+&#12434;&#38306;&#25968; @length@ &#12392;&#21516;&#12376;&#35201;&#38936;&#12391;&#12522;&#12473;&#12488;&#20869;&#21253;&#34920;&#35352;&#12434;&#29992;&#12356;&#12390;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;.
+-}</span><span>
+</span><a name="line-12"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch05Ex04</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">replicate</span><span class="hs-special">)</span><span>
+</span><a name="line-15"></a><span>
+</span><a name="line-16"></a><span class="hs-comment">{- |
+  &#21516;&#19968;&#35201;&#32032;&#12434;&#25351;&#23450;&#12375;&#12383;&#20491;&#25968;&#21547;&#12416;&#12522;&#12473;&#12488;&#12398;&#29983;&#25104;
+
+&gt;&gt;&gt; replicate 3 True
+[True,True,True]
+-}</span><span>
+</span><a name="line-22"></a><span class="hs-identifier">replicate</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679060332"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679060332"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-23"></a><a name="replicate"><a href="Ch05Ex04.html#replicate"><span class="hs-identifier">replicate</span></a></a><span> </span><a name="local-6989586621679060333"><a href="#local-6989586621679060333"><span class="hs-identifier">n</span></a></a><span> </span><a name="local-6989586621679060334"><a href="#local-6989586621679060334"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><a href="#local-6989586621679060334"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="hs-number">1</span><span> </span><span class="hs-glyph">..</span><span> </span><a href="#local-6989586621679060333"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">]</span><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-24"></a><span>
+</span><a name="line-25"></a></pre></body></html>

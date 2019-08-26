@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.3.0
+@version 0.5.4.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -659,6 +659,19 @@ module Ch05Ex03
 --   </pre>
 square :: Int -> [(Int, Int)]
 grid :: Int -> Int -> [(Int, Int)]
+
+
+-- | ある要素のみからなるリストを生成するプレリュード関数 <tt>replicate :: Int -&gt; a -&gt; [a]</tt>
+--   を関数 <tt>length</tt> と同じ要領でリスト内包表記を用いて定義してください.
+module Ch05Ex04
+
+-- | 同一要素を指定した個数含むリストの生成
+--   
+--   <pre>
+--   &gt;&gt;&gt; replicate 3 True
+--   [True,True,True]
+--   </pre>
+replicate :: Int -> a -> [a]
 
 module Lib
 
