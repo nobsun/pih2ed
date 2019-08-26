@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.4.4.0
+@version 0.4.6.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -548,6 +548,24 @@ module Ch04Ex05
 --   <pre>
 --   (&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool
 --   p &amp;&amp; q = if p then if q then True else false else false
+--   </pre>
+(&&) :: Bool -> Bool -> Bool
+
+
+-- | 他のプレリュード関数や演算子を使わずに，論理積 <tt>&amp;&amp;</tt>
+--   に対する以下の定義を条件式を用いて形式化してください．
+--   
+--   <pre>
+--   True  &amp;&amp; b = b
+--   False &amp;&amp; _ = False
+--   </pre>
+module Ch04Ex06
+
+-- | 連言の条件式を使った定式化
+--   
+--   <pre>
+--   (&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool
+--   p &amp;&amp; q = if p then q else False
 --   </pre>
 (&&) :: Bool -> Bool -> Bool
 
