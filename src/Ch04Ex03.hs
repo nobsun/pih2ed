@@ -1,6 +1,6 @@
 {- |
 Module      : Ch04Ex03
-Description : 『プログラミングHaskell第2版』練習問題 4.2
+Description : 『プログラミングHaskell第2版』練習問題 4.3
 Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
