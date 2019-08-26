@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.2.0
+@version 0.5.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -644,6 +644,20 @@ module Ch05Ex02
 --   &gt;&gt;&gt; grid 1 2
 --   [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
 --   </pre>
+grid :: Int -> Int -> [(Int, Int)]
+
+
+-- | リスト内容表記一つと上記の関数 grid を用いて，大きさ n の正方形座標を 返す関数 square :: Int -&gt;
+--   [(Int,Int)] を定義してください． ただし，(0, 0) から (n, n) の対角の格子は含みません．
+module Ch05Ex03
+
+-- | 対角格子を抜いた正方格子
+--   
+--   <pre>
+--   &gt;&gt;&gt; square 2
+--   [(0,1),(0,2),(1,0),(1,2),(2,0),(2,1)]
+--   </pre>
+square :: Int -> [(Int, Int)]
 grid :: Int -> Int -> [(Int, Int)]
 
 module Lib
