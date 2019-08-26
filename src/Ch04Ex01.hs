@@ -20,3 +20,12 @@ module Ch04Ex01 where
 -}
 halve :: [a] -> ([a], [a])
 halve = flip splitAt <*> (`div` 2) . length
+
+{- --
+-- 反復
+halve' :: [a] -> ([a], [a])
+halve' xs = iter id xs xs
+  where
+    iter f ys []     = (f [], ys)
+    iter f (y:ys) zs = iter (f . (y :)) ys (drop 2 zs)
+-- -}

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch04Ex02
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 4.2
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12522;&#12473;&#12488;&#12398;&#19977;&#12388;&#12417;&#12398;&#35201;&#32032;&#12434;&#36820;&#12377;&#38306;&#25968; @third :: [a] -&gt; a@ &#12434;&#20197;&#19979;&#12434;&#20351;&#12387;&#12390;&#12381;&#12428;&#12382;&#12428;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+&#12383;&#12384;&#12375;&#65292;&#12522;&#12473;&#12488;&#12395;&#12399;&#19977;&#12388;&#20197;&#19978;&#12398;&#35201;&#32032;&#12364;&#26684;&#32013;&#12373;&#12428;&#12390;&#12356;&#12427;&#12392;&#12375;&#12414;&#12377;&#65294;
+
+-}</span><span>
+</span><a name="line-12"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch04Ex02</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#19977;&#12388;&#12417;&#12398;&#35201;&#32032; &#12381;&#12398;1
+
+@
+third1 :: [a] -&gt; a
+third1 = head . tail . tail
+@
+
+&gt;&gt;&gt; third1 [1,2,3,4,5,6]
+3
+-}</span><span>
+</span><a name="line-25"></a><span class="hs-identifier">third1</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059211"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679059211"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-26"></a><a name="third1"><a href="Ch04Ex02.html#third1"><span class="hs-identifier">third1</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">head</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-identifier hs-var">tail</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-identifier hs-var">tail</span><span>
+</span><a name="line-27"></a><span>
+</span><a name="line-28"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#19977;&#12388;&#12417;&#12398;&#35201;&#32032; &#12381;&#12398;2
+
+@
+third2 :: [a] -&gt; a
+third2 = (!! 2)
+@
+
+&gt;&gt;&gt; third2 [1,2,3,4,5,6]
+3
+-}</span><span>
+</span><a name="line-39"></a><span class="hs-identifier">third2</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059210"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679059210"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-40"></a><a name="third2"><a href="Ch04Ex02.html#third2"><span class="hs-identifier">third2</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="hs-operator hs-var">!!</span><span> </span><span class="hs-number">2</span><span class="hs-special">)</span><span>
+</span><a name="line-41"></a><span>
+</span><a name="line-42"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#19977;&#12388;&#12417;&#12398;&#35201;&#32032; &#12381;&#12398;3
+
+@
+third3 :: [a] -&gt; a
+third3 (_:_:x:_) = x
+@
+
+&gt;&gt;&gt; third3 [1,2,3,4,5,6]
+3
+-}</span><span>
+</span><a name="line-53"></a><span class="hs-identifier">third3</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059209"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679059209"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-54"></a><a name="third3"><a href="Ch04Ex02.html#third3"><span class="hs-identifier">third3</span></a></a><span> </span><span class="hs-special">(</span><span class="hs-identifier">_</span><span class="hs-glyph">:</span><span class="hs-identifier">_</span><span class="hs-glyph">:</span><a name="local-6989586621679059212"><a href="#local-6989586621679059212"><span class="hs-identifier">x</span></a></a><span class="hs-glyph">:</span><span class="hs-identifier">_</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679059212"><span class="hs-identifier hs-var">x</span></a><span>
+</span><a name="line-55"></a></pre></body></html>

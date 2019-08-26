@@ -20,4 +20,13 @@ Maintainer  : nobsun@gmail.com
 -}</span><span>
 </span><a name="line-21"></a><span class="hs-identifier">halve</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059130"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><a href="#local-6989586621679059130"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059130"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span class="hs-special">)</span><span>
 </span><a name="line-22"></a><a name="halve"><a href="Ch04Ex01.html#halve"><span class="hs-identifier">halve</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">flip</span><span> </span><span class="hs-identifier hs-var">splitAt</span><span> </span><span class="hs-operator hs-var">&lt;*&gt;</span><span> </span><span class="hs-special">(</span><span class="hs-special">`</span><span class="hs-identifier hs-var">div</span><span class="hs-special">`</span><span> </span><span class="hs-number">2</span><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-identifier hs-var">length</span><span>
-</span><a name="line-23"></a></pre></body></html>
+</span><a name="line-23"></a><span>
+</span><a name="line-24"></a><span class="hs-comment">{- --
+-- &#21453;&#24489;
+halve' :: [a] -&gt; ([a], [a])
+halve' xs = iter id xs xs
+  where
+    iter f ys []     = (f [], ys)
+    iter f (y:ys) zs = iter (f . (y :)) ys (drop 2 zs)
+-- -}</span><span>
+</span><a name="line-32"></a></pre></body></html>

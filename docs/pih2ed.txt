@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.4.1.0
+@version 0.4.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -369,6 +369,50 @@ module Ch04Ex01
 --   ([1,2,3],[4,5,6])
 --   </pre>
 halve :: [a] -> ([a], [a])
+
+
+-- | リストの三つめの要素を返す関数 <tt>third :: [a] -&gt; a</tt> を以下を使ってそれぞれ定義してください．
+--   ただし，リストには三つ以上の要素が格納されているとします．
+module Ch04Ex02
+
+-- | リストの三つめの要素 その1
+--   
+--   <pre>
+--   third1 :: [a] -&gt; a
+--   third1 = head . tail . tail
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; third1 [1,2,3,4,5,6]
+--   3
+--   </pre>
+third1 :: [a] -> a
+
+-- | リストの三つめの要素 その2
+--   
+--   <pre>
+--   third2 :: [a] -&gt; a
+--   third2 = (!! 2)
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; third2 [1,2,3,4,5,6]
+--   3
+--   </pre>
+third2 :: [a] -> a
+
+-- | リストの三つめの要素 その3
+--   
+--   <pre>
+--   third3 :: [a] -&gt; a
+--   third3 (_:_:x:_) = x
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; third3 [1,2,3,4,5,6]
+--   3
+--   </pre>
+third3 :: [a] -> a
 
 module Lib
 
