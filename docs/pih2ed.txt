@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.1.0
+@version 0.5.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -631,6 +631,20 @@ module Ch05Ex01
 
 -- | 2乗の和
 sumSquare :: [Int] -> Int
+
+
+-- | m × n の座標格子が， 0 ≦ x ≦ m ， 0 ≦ y ≦ n に対し， すべての整数の組 (x, y) で表現されているとします．
+--   リスト内包表記を一つ用いて，与えられた大きさの座標格子を返す関数 <tt>grid :: Int -&gt; Int -&gt;
+--   [(Int,Int)]</tt> を定義してください．
+module Ch05Ex02
+
+-- | 格子点
+--   
+--   <pre>
+--   &gt;&gt;&gt; grid 1 2
+--   [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
+--   </pre>
+grid :: Int -> Int -> [(Int, Int)]
 
 module Lib
 
