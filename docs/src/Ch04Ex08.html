@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch04Ex08
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 4.8
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+Luhn &#12450;&#12523;&#12468;&#12522;&#12474;&#12512;
+
+- &#12381;&#12428;&#12382;&#12428;&#12398;&#26689;&#12434;&#29420;&#31435;&#12375;&#12383;&#25968;&#12384;&#12392;&#12415;&#12394;&#12377;
+- &#21491;&#12363;&#12425;&#25968;&#12360;&#12390;&#20598;&#25968;&#30058;&#12417;&#12398;&#25968;&#12377;&#12409;&#12390;&#12434;&#20108;&#20493;&#12395;&#12377;&#12427;
+- &#12381;&#12428;&#12382;&#12428;&#12398;&#25968;&#12364; 9 &#12424;&#12426;&#22823;&#12365;&#12356;&#12394;&#12425; 9 &#12434;&#24341;&#12367;
+- &#12377;&#12409;&#12390;&#12398;&#25968;&#12434;&#36275;&#12375;&#21512;&#12431;&#12379;&#12427;
+- &#21512;&#35336;&#12364; 10 &#12391;&#21106;&#12426;&#20999;&#12428;&#12427;&#12394;&#12425;&#12289;&#12459;&#12540;&#12489;&#12398;&#30058;&#21495;&#12399;&#27491;&#12375;&#12356;
+
+-}</span><span>
+</span><a name="line-17"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch04Ex08</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-18"></a><span>
+</span><a name="line-19"></a><span class="hs-comment">{- |
+  &#25968;&#12434; 2 &#20493;&#12395;&#12375;&#12390;&#12289;&#12418;&#12375;&#12381;&#12398;&#32080;&#26524;&#12364; 9 &#12424;&#12426;&#22823;&#12365;&#12356;&#12394;&#12425; 9 &#12434;&#24341;&#12367;&#38306;&#25968;
+
+&gt;&gt;&gt; luhnDouble 3
+6
+&gt;&gt;&gt; luhnDouble 6
+3
+
+-}</span><span>
+</span><a name="line-28"></a><span class="hs-identifier">luhnDouble</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-29"></a><a name="luhnDouble"><a href="Ch04Ex08.html#luhnDouble"><span class="hs-identifier">luhnDouble</span></a></a><span> </span><a name="local-6989586621679059549"><a href="#local-6989586621679059549"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><a href="#local-6989586621679059550"><span class="hs-identifier hs-var">n'</span></a><span> </span><span class="hs-operator hs-var">&gt;</span><span> </span><span class="hs-number">9</span><span> </span><span class="hs-keyword">then</span><span> </span><a href="#local-6989586621679059550"><span class="hs-identifier hs-var">n'</span></a><span> </span><span class="hs-glyph">-</span><span> </span><span class="hs-number">9</span><span> </span><span class="hs-keyword">else</span><span> </span><a href="#local-6989586621679059550"><span class="hs-identifier hs-var">n'</span></a><span>
+</span><a name="line-30"></a><span>  </span><span class="hs-keyword">where</span><span>
+</span><a name="line-31"></a><span>    </span><a name="local-6989586621679059550"><a href="#local-6989586621679059550"><span class="hs-identifier">n'</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">2</span><span> </span><span class="hs-operator hs-var">*</span><span> </span><a href="#local-6989586621679059549"><span class="hs-identifier hs-var">n</span></a><span>
+</span><a name="line-32"></a><span>
+</span><a name="line-33"></a><span class="hs-comment">{- |
+  4&#26689;&#12398;&#37504;&#34892;&#12459;&#12540;&#12489;&#30058;&#21495;&#12364;&#27491;&#12375;&#12356;&#12363;&#12393;&#12358;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#38306;&#25968;
+
+&gt;&gt;&gt; luhn 1 7 8 4
+True
+&gt;&gt;&gt; luhn 4 7 8 3
+False
+-}</span><span>
+</span><a name="line-41"></a><span class="hs-identifier">luhn</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span>
+</span><a name="line-42"></a><a name="luhn"><a href="Ch04Ex08.html#luhn"><span class="hs-identifier">luhn</span></a></a><span> </span><a name="local-6989586621679059551"><a href="#local-6989586621679059551"><span class="hs-identifier">a</span></a></a><span> </span><a name="local-6989586621679059552"><a href="#local-6989586621679059552"><span class="hs-identifier">b</span></a></a><span> </span><a name="local-6989586621679059553"><a href="#local-6989586621679059553"><span class="hs-identifier">c</span></a></a><span> </span><a name="local-6989586621679059554"><a href="#local-6989586621679059554"><span class="hs-identifier">d</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><a href="Ch04Ex08.html#luhnDouble"><span class="hs-identifier hs-var">luhnDouble</span></a><span> </span><a href="#local-6989586621679059551"><span class="hs-identifier hs-var">a</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679059552"><span class="hs-identifier hs-var">b</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="Ch04Ex08.html#luhnDouble"><span class="hs-identifier hs-var">luhnDouble</span></a><span> </span><a href="#local-6989586621679059553"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679059554"><span class="hs-identifier hs-var">d</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">`</span><span class="hs-identifier hs-var">mod</span><span class="hs-special">`</span><span> </span><span class="hs-number">10</span><span> </span><span class="hs-operator hs-var">==</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-43"></a></pre></body></html>

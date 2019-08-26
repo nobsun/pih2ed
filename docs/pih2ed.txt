@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.4.7.0
+@version 0.4.8.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -590,6 +590,40 @@ module Ch04Ex07
 --   24
 --   </pre>
 mult :: Int -> Int -> Int -> Int
+
+
+-- | Luhn アルゴリズム
+--   
+--   <ul>
+--   <li>それぞれの桁を独立した数だとみなす</li>
+--   <li>右から数えて偶数番めの数すべてを二倍にする</li>
+--   <li>それぞれの数が 9 より大きいなら 9 を引く</li>
+--   <li>すべての数を足し合わせる</li>
+--   <li>合計が 10 で割り切れるなら、カードの番号は正しい</li>
+--   </ul>
+module Ch04Ex08
+
+-- | 数を 2 倍にして、もしその結果が 9 より大きいなら 9 を引く関数
+--   
+--   <pre>
+--   &gt;&gt;&gt; luhnDouble 3
+--   6
+--   
+--   &gt;&gt;&gt; luhnDouble 6
+--   3
+--   </pre>
+luhnDouble :: Int -> Int
+
+-- | 4桁の銀行カード番号が正しいかどうかを判定する関数
+--   
+--   <pre>
+--   &gt;&gt;&gt; luhn 1 7 8 4
+--   True
+--   
+--   &gt;&gt;&gt; luhn 4 7 8 3
+--   False
+--   </pre>
+luhn :: Int -> Int -> Int -> Int -> Bool
 
 module Lib
 
