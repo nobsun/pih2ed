@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.6.0
+@version 0.5.7.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -703,6 +703,11 @@ perfects :: Int -> [Int]
 
 -- | 素因数
 factors :: Int -> [Int]
+
+
+-- | 二つの生成器を持つリスト内包表記 <tt>[(x, y) | x &lt;- [1, 2, 3], y &lt;- [4, 5,
+--   6]]</tt> は， 一つの生成器を持つリスト内包表記二つでも表現できることを示してください．
+module Ch05Ex07
 
 module Lib
 
