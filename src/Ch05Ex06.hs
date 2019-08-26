@@ -5,6 +5,9 @@ Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
 
+自分自身を除く約数の和が自分自身と等しいとき，その整数を完全数と呼びます．
+与えられた上限までに含まれる完全数すべてを算出する関数 @perfects :: Int -> [Int]@ を
+リスト内包表記と関数 factors を使って定義してください．
 -}
 module Ch05Ex06 where
 
