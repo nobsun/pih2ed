@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.3.3.0
+@version 0.3.5.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -339,6 +339,23 @@ palindrome :: Eq a => [a] -> Bool
 --   twice :: (a -&gt; a) -&gt; a -&gt; a
 --   </pre>
 twice :: (a -> a) -> a -> a
+
+
+-- | 上記三つの問題の答えを GHCi を使って確かめてください．
+--   
+--   <pre>
+--   Ch03ex01.hs
+--   Ch03ex02.hs
+--   Ch03ex03.hs
+--   </pre>
+module Ch03Ex04
+
+
+-- | 一般的に，関数の型を Eq クラスのインスタンスにするのが実現不可能な理由は何でしょうか? 実現可能なのはどういった場合でしょうか?
+--   
+--   関数の等値性は，外延的等値性を確認することになるが， 関数の域(domain)を網羅列挙して確認することは一般にはできない．
+--   ただし，域が現実的に網羅列挙可能であれば Eq クラスのインスタンスにできる．
+module Ch03Ex05
 
 module Lib
 
