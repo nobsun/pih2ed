@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch04Ex05
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 4.5
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#20182;&#12398;&#12503;&#12524;&#12522;&#12517;&#12540;&#12489;&#38306;&#25968;&#12420;&#28436;&#31639;&#23376;&#12434;&#20351;&#12431;&#12378;&#12395;&#65292;&#35542;&#29702;&#31309; @&amp;&amp;@ &#12395;&#23550;&#12377;&#12427;&#20197;&#19979;&#12398;&#23450;&#32681;&#12434;&#26465;&#20214;&#24335;&#12434;&#29992;&#12356;&#12390;&#24418;&#24335;&#21270;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+
+@
+True &amp;&amp; True = True
+_    &amp;&amp; _    = False
+@
+
+-}</span><span>
+</span><a name="line-16"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch04Ex05</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-17"></a><span>
+</span><a name="line-18"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="hs-operator hs-var">&amp;&amp;</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-19"></a><span>
+</span><a name="line-20"></a><span class="hs-comment">{- |
+  &#36899;&#35328;&#12398;&#26465;&#20214;&#24335;&#12434;&#20351;&#12387;&#12383;&#23450;&#24335;&#21270;
+
+@
+(&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool
+p &amp;&amp; q = if p then if q then True else false else false
+@
+
+-}</span><span>
+</span><a name="line-29"></a><span class="hs-special">(</span><span class="hs-operator">&amp;&amp;</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Bool</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span>
+</span><a name="line-30"></a><a name="local-6989586621679059490"><a href="#local-6989586621679059490"><span class="hs-identifier">p</span></a></a><span> </span><a name="%26%26"><a href="Ch04Ex05.html#%26%26"><span class="hs-operator">&amp;&amp;</span></a></a><span> </span><a name="local-6989586621679059491"><a href="#local-6989586621679059491"><span class="hs-identifier">q</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><a href="#local-6989586621679059490"><span class="hs-identifier hs-var">p</span></a><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">if</span><span> </span><a href="#local-6989586621679059491"><span class="hs-identifier hs-var">q</span></a><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-identifier hs-var">True</span><span> </span><span class="hs-keyword">else</span><span> </span><span class="hs-identifier hs-var">False</span><span> </span><span class="hs-keyword">else</span><span> </span><span class="hs-identifier hs-var">False</span><span>
+</span><a name="line-31"></a></pre></body></html>

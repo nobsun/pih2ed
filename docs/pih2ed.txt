@@ -533,6 +533,24 @@ def3 :: Bool -> Bool -> Bool
 --   </pre>
 def4 :: Bool -> Bool -> Bool
 
+
+-- | 他のプレリュード関数や演算子を使わずに，論理積 <tt>&amp;&amp;</tt>
+--   に対する以下の定義を条件式を用いて形式化してください．
+--   
+--   <pre>
+--   True &amp;&amp; True = True
+--   _    &amp;&amp; _    = False
+--   </pre>
+module Ch04Ex05
+
+-- | 連言の条件式を使った定式化
+--   
+--   <pre>
+--   (&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool
+--   p &amp;&amp; q = if p then if q then True else false else false
+--   </pre>
+(&&) :: Bool -> Bool -> Bool
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数
