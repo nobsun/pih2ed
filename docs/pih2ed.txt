@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.4.0
+@version 0.5.5.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -672,6 +672,20 @@ module Ch05Ex04
 --   [True,True,True]
 --   </pre>
 replicate :: Int -> a -> [a]
+
+
+-- | <tt> x^2 + y^2 = z^2 </tt> を満たす正の整数をピタゴラス数と呼び，三つ組 <tt>(x, y, z)</tt>
+--   で表します． ピタゴラス数のリストを生成する関数 <tt> pyths :: Int -&gt; [(Int, Int, Int)]
+--   </tt>をリスト内包表記を使って定義してください． ただし、ピタゴラス数の要素は与えられた上限以下であるとします．
+module Ch05Ex05
+
+-- | ピタゴラス数
+--   
+--   <pre>
+--   &gt;&gt;&gt; pyths 10
+--   [(3,4,5),(4,3,5),(6,8,10),(8,6,10)]
+--   </pre>
+pyths :: Int -> [(Int, Int, Int)]
 
 module Lib
 
