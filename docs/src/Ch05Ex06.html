@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch05Ex06
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 5.6
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+-}</span><span>
+</span><a name="line-9"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch05Ex06</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-10"></a><span>
+</span><a name="line-11"></a><span class="hs-comment">{- |
+  &#23436;&#20840;&#25968;
+
+&gt;&gt;&gt; perfects 500
+[6,28,496]
+-}</span><span>
+</span><a name="line-17"></a><span class="hs-identifier">perfects</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">]</span><span>
+</span><a name="line-18"></a><a name="perfects"><a href="Ch05Ex06.html#perfects"><span class="hs-identifier">perfects</span></a></a><span> </span><a name="local-6989586621679060451"><a href="#local-6989586621679060451"><span class="hs-identifier">m</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><a href="#local-6989586621679060452"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679060452"><a href="#local-6989586621679060452"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="hs-number">1</span><span> </span><span class="hs-glyph">..</span><span> </span><a href="#local-6989586621679060451"><span class="hs-identifier hs-var">m</span></a><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">sum</span><span> </span><span class="hs-special">(</span><a href="Ch05Ex06.html#factors"><span class="hs-identifier hs-var">factors</span></a><span> </span><a href="#local-6989586621679060452"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">==</span><span> </span><span class="hs-number">2</span><span> </span><span class="hs-operator hs-var">*</span><span> </span><a href="#local-6989586621679060452"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-19"></a><span>
+</span><a name="line-20"></a><span class="hs-comment">{- |
+  &#32032;&#22240;&#25968;
+-}</span><span>
+</span><a name="line-23"></a><span class="hs-identifier">factors</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">]</span><span>
+</span><a name="line-24"></a><a name="factors"><a href="Ch05Ex06.html#factors"><span class="hs-identifier">factors</span></a></a><span> </span><a name="local-6989586621679060453"><a href="#local-6989586621679060453"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><a href="#local-6989586621679060454"><span class="hs-identifier hs-var">y</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679060454"><a href="#local-6989586621679060454"><span class="hs-identifier">y</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="hs-number">1</span><span> </span><span class="hs-glyph">..</span><span> </span><a href="#local-6989586621679060453"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><a href="#local-6989586621679060453"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-special">`</span><span class="hs-identifier hs-var">mod</span><span class="hs-special">`</span><span> </span><a href="#local-6989586621679060454"><span class="hs-identifier hs-var">y</span></a><span> </span><span class="hs-operator hs-var">==</span><span> </span><span class="hs-number">0</span><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-25"></a></pre></body></html>
