@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.4.6.0
+@version 0.4.7.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -568,6 +568,28 @@ module Ch04Ex06
 --   p &amp;&amp; q = if p then q else False
 --   </pre>
 (&&) :: Bool -> Bool -> Bool
+
+
+-- | 以下のカリー化された関数の定義の意味をラムダ式を用いて形式化してください．
+--   
+--   <pre>
+--   mult :: Int -&gt; Int -&gt; Int -&gt; Int
+--   mult x y z = x * y * z
+--   </pre>
+module Ch04Ex07
+
+-- | 3つの整数の積
+--   
+--   <pre>
+--   mult :: Int -&gt; Int -&gt; Int -&gt; Int
+--   mult =  x -&gt;  y -&gt;  z -&gt; x * y * z
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; mult 2 3 4
+--   24
+--   </pre>
+mult :: Int -> Int -> Int -> Int
 
 module Lib
 
