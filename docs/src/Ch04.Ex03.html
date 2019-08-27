@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch04.Ex03
+Description : &#32244;&#32722;&#21839;&#38988; 4.3
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12503;&#12524;&#12522;&#12517;&#12540;&#12489;&#38306;&#25968; tail &#12398;&#12424;&#12358;&#12395;&#25391;&#12427;&#33310;&#12358; safetail :: [a] -&gt; [a] &#38306;&#25968;&#12434;&#32771;&#12360;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+&#12383;&#12384;&#12375;&#65292;@tail@ &#12399;&#31354;&#12522;&#12473;&#12488;&#12434;&#19982;&#12360;&#12427;&#12392;&#12456;&#12521;&#12540;&#12395;&#12394;&#12426;&#12414;&#12377;&#12364;&#65292;
+@safetail@ &#12399;&#31354;&#12522;&#12473;&#12488;&#12434;&#12456;&#12521;&#12540;&#12392;&#12379;&#12378;&#65292;&#31354;&#12522;&#12473;&#12488;&#12434;&#36820;&#12377;&#12418;&#12398;&#12392;&#12375;&#12414;&#12377;&#65294;
+
+- a. &#26465;&#20214;&#24335;
+- b. &#12460;&#12540;&#12489;&#20184;&#12365;&#12398;&#31561;&#24335;
+- c. &#12497;&#12479;&#12540;&#12531;&#12510;&#12483;&#12481;
+
+-}</span><span>
+</span><a name="line-17"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch04.Ex03</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-18"></a><span>
+</span><a name="line-19"></a><span class="hs-comment">{- |
+   &#23433;&#20840;&#12394; @tail@ &#12381;&#12398;1
+
+@
+safetail1 :: [a] -&gt; [a]
+safetail1 xs = if null xs then xs else tail xs
+@
+
+&gt;&gt;&gt; safetail1 [1,2,3]
+[2,3]
+&gt;&gt;&gt; safetail1 []
+[]
+-}</span><span>
+</span><a name="line-32"></a><span class="hs-identifier">safetail1</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059293"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059293"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-33"></a><a name="safetail1"><a href="Ch04.Ex03.html#safetail1"><span class="hs-identifier">safetail1</span></a></a><span> </span><a name="local-6989586621679059294"><a href="#local-6989586621679059294"><span class="hs-identifier">xs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="hs-identifier hs-var">null</span><span> </span><a href="#local-6989586621679059294"><span class="hs-identifier hs-var">xs</span></a><span> </span><span class="hs-keyword">then</span><span> </span><a href="#local-6989586621679059294"><span class="hs-identifier hs-var">xs</span></a><span> </span><span class="hs-keyword">else</span><span> </span><span class="hs-identifier hs-var">tail</span><span> </span><a href="#local-6989586621679059294"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-34"></a><span>
+</span><a name="line-35"></a><span class="hs-comment">{- |
+   &#23433;&#20840;&#12394; @tail@ &#12381;&#12398;2
+
+@
+safetail2 :: [a] -&gt; [a]
+safetail2 xs
+  | null xs   = xs
+  | otherwise = tail xs
+@
+
+&gt;&gt;&gt; safetail2 [1,2,3]
+[2,3]
+&gt;&gt;&gt; safetail2 []
+[]
+-}</span><span>
+</span><a name="line-50"></a><span class="hs-identifier">safetail2</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059292"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059292"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-51"></a><a name="safetail2"><a href="Ch04.Ex03.html#safetail2"><span class="hs-identifier">safetail2</span></a></a><span> </span><a name="local-6989586621679059295"><a href="#local-6989586621679059295"><span class="hs-identifier">xs</span></a></a><span>
+</span><a name="line-52"></a><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">null</span><span> </span><a href="#local-6989586621679059295"><span class="hs-identifier hs-var">xs</span></a><span>   </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679059295"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-53"></a><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">otherwise</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">tail</span><span> </span><a href="#local-6989586621679059295"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-54"></a><span>
+</span><a name="line-55"></a><span class="hs-comment">{- |
+   &#23433;&#20840;&#12394; @tail@ &#12381;&#12398;3
+
+@
+safetail3 :: [a] -&gt; [a]
+safetail3 []     = []
+safetail3 (_:xs) = xs
+@
+
+&gt;&gt;&gt; safetail3 [1,2,3]
+[2,3]
+&gt;&gt;&gt; safetail3 []
+[]
+-}</span><span>
+</span><a name="line-69"></a><span class="hs-identifier">safetail3</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059291"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679059291"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-70"></a><a name="safetail3"><a href="Ch04.Ex03.html#safetail3"><span class="hs-identifier">safetail3</span></a></a><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-71"></a><span class="hs-identifier">safetail3</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">_</span><span class="hs-glyph">:</span><a name="local-6989586621679059296"><a href="#local-6989586621679059296"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679059296"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-72"></a><span>
+</span><a name="line-73"></a></pre></body></html>

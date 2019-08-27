@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch01.Ex05
+Description : &#32244;&#32722;&#21839;&#38988; 1.5
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+@qsort@&#12398;&#23450;&#32681;&#12391;&#65292;@&lt;=@ &#12434; @&lt;@ &#12395;&#32622;&#12365;&#25563;&#12360;&#12427;&#12392;&#12393;&#12398;&#12424;&#12358;&#12394;&#24433;&#38911;&#12364;&#12354;&#12427;&#12391;&#12375;&#12423;&#12358;&#12363;&#65311;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch01.Ex05</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-comment">{- |
+
+@
+  qsort []     = []                                    -- (1)
+  qsort (x:xs) = qsort smaller ++ [x] ++ qsort larger  -- (2)
+    where
+      smaller = [a | a &lt;- xs, a &lt; x] -- @&lt;=@ &#12434; @&lt;@ &#12395;&#32622;&#12365;&#25563;&#12360;&#12427;
+      larger  = [b | b &lt;- xs, b &gt; x]
+@
+
+@qsort@&#12398;&#23450;&#32681;&#12391;&#65292;@&lt;=@ &#12434; @&lt;@ &#12395;&#32622;&#12365;&#25563;&#12360;&#12427;&#12392;&#65292;&#12500;&#12508;&#12483;&#12488;&#12392;&#12392;&#21516;&#20516;&#12398;&#12500;&#12508;&#12483;&#12488;&#20197;&#22806;&#12398;&#35201;&#32032;&#12434;&#33853;&#12375;&#12390;&#12375;&#12414;&#12358;&#12371;&#12392;&#12395;&#12394;&#12427;&#65294;
+
+&gt;&gt;&gt; qsort [2,2,3,1,1]
+[1,2,3]
+-}</span><span>
+</span><a name="line-27"></a><a name="qsort"><a href="Ch01.Ex05.html#qsort"><span class="hs-identifier">qsort</span></a></a><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-28"></a><span class="hs-identifier">qsort</span><span> </span><span class="hs-special">(</span><a name="local-6989586621679056999"><a href="#local-6989586621679056999"><span class="hs-identifier">x</span></a></a><span class="hs-glyph">:</span><a name="local-6989586621679057000"><a href="#local-6989586621679057000"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch01.Ex05.html#qsort"><span class="hs-identifier hs-var">qsort</span></a><span> </span><a href="#local-6989586621679057001"><span class="hs-identifier hs-var">smaller</span></a><span> </span><span class="hs-operator hs-var">++</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679056999"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">]</span><span> </span><span class="hs-operator hs-var">++</span><span> </span><a href="Ch01.Ex05.html#qsort"><span class="hs-identifier hs-var">qsort</span></a><span> </span><a href="#local-6989586621679057002"><span class="hs-identifier hs-var">larger</span></a><span>
+</span><a name="line-29"></a><span>  </span><span class="hs-keyword">where</span><span>
+</span><a name="line-30"></a><span>    </span><a name="local-6989586621679057001"><a href="#local-6989586621679057001"><span class="hs-identifier">smaller</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679057003"><span class="hs-identifier hs-var">a</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679057003"><a href="#local-6989586621679057003"><span class="hs-identifier">a</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="#local-6989586621679057000"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">,</span><span> </span><a href="#local-6989586621679057003"><span class="hs-identifier hs-var">a</span></a><span> </span><span class="hs-operator hs-var">&lt;</span><span> </span><a href="#local-6989586621679056999"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">]</span><span>
+</span><a name="line-31"></a><span>    </span><a name="local-6989586621679057002"><a href="#local-6989586621679057002"><span class="hs-identifier">larger</span></a></a><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679057004"><span class="hs-identifier hs-var">b</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679057004"><a href="#local-6989586621679057004"><span class="hs-identifier">b</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="#local-6989586621679057000"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">,</span><span> </span><a href="#local-6989586621679057004"><span class="hs-identifier hs-var">b</span></a><span> </span><span class="hs-operator hs-var">&gt;</span><span> </span><a href="#local-6989586621679056999"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">]</span><span>
+</span><a name="line-32"></a><span>
+</span><a name="line-33"></a></pre></body></html>

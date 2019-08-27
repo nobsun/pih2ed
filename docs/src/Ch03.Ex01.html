@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch03.Ex01
+Description : &#32244;&#32722;&#21839;&#38988; 3.1
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#20197;&#19979;&#12398;&#20516;&#12398;&#22411;&#12399;&#20309;&#12391;&#12375;&#12423;&#12358;?
+
+@
+['a','b','c' ]
+('a','b','c')
+[(False,'0'),(True,'1')]
+([False,True],['0','1'])
+[tail, init, reverse]
+@
+-}</span><span>
+</span><a name="line-18"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch03.Ex01</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-19"></a><span>
+</span><a name="line-20"></a><span class="hs-comment">{- $setup
+
+&gt;&gt;&gt; :type ['a','b','c']
+['a','b','c'] :: [Char]
+
+&gt;&gt;&gt; :type ('a','b','c')
+('a','b','c') :: (Char, Char, Char)
+
+&gt;&gt;&gt; :type [(False,'0'),(True,'1')]
+[(False,'0'),(True,'1')] :: [(Bool, Char)]
+
+&gt;&gt;&gt; :type ([False,True],['0','1'])
+([False,True],['0','1']) :: ([Bool], [Char])
+
+&gt;&gt;&gt; :type [tail, init, reverse]
+[tail, init, reverse] :: [[a] -&gt; [a]]
+-}</span><span>
+</span><a name="line-37"></a></pre></body></html>

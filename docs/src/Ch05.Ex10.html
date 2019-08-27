@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch05.Ex10
+Description : &#32244;&#32722;&#21839;&#38988; 5.10
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12471;&#12540;&#12470;&#12540;&#26263;&#21495;&#12398;&#12503;&#12525;&#12464;&#12521;&#12512;&#12434;&#22793;&#26356;&#12375;&#12390;&#22823;&#25991;&#23383;&#12418;&#25201;&#12360;&#12427;&#12424;&#12358;&#12395;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+
+-}</span><span>
+</span><a name="line-11"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch05.Ex10</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data.Char</span><span>
+</span><a name="line-14"></a><span>
+</span><a name="line-15"></a><span class="hs-comment">{- |
+  &#25991;&#23383;&#12434;&#25972;&#25968;&#12395;&#22793;&#25563; \'a\' -&gt; 0&#65292;\'b\' -&gt; 1&#65292;... &#65292;\'A\' -&gt; 26&#65292;\'B\' -&gt; 27
+
+&gt;&gt;&gt; let2int 'a'
+0
+&gt;&gt;&gt; let2int 'B'
+27
+-}</span><span>
+</span><a name="line-23"></a><span class="hs-identifier">let2int</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Char</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-24"></a><a name="let2int"><a href="Ch05.Ex10.html#let2int"><span class="hs-identifier">let2int</span></a></a><span> </span><a name="local-6989586621679060670"><a href="#local-6989586621679060670"><span class="hs-identifier">c</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">ord</span><span> </span><a href="#local-6989586621679060670"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-glyph">-</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="hs-identifier hs-var">isLower</span><span> </span><a href="#local-6989586621679060670"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-identifier hs-var">ord</span><span> </span><span class="hs-char">'a'</span><span> </span><span class="hs-keyword">else</span><span> </span><span class="hs-identifier hs-var">ord</span><span> </span><span class="hs-char">'A'</span><span> </span><span class="hs-glyph">-</span><span> </span><span class="hs-number">26</span><span>
+</span><a name="line-25"></a><span>
+</span><a name="line-26"></a><span class="hs-comment">{- |
+  &#25972;&#25968;&#12434;&#25991;&#23383;&#12395;&#22793;&#25563; 0 -&gt; \'a\'&#65292;1 -&gt; \'b\'&#65292;...&#65292;26 -&gt; \'A\'&#65292;27 -&gt; \'B\'
+
+&gt;&gt;&gt; int2let 1
+'b'
+&gt;&gt;&gt; int2let 26
+'A'
+-}</span><span>
+</span><a name="line-34"></a><span class="hs-identifier">int2let</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Char</span><span>
+</span><a name="line-35"></a><a name="int2let"><a href="Ch05.Ex10.html#int2let"><span class="hs-identifier">int2let</span></a></a><span> </span><a name="local-6989586621679061009"><a href="#local-6989586621679061009"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">chr</span><span> </span><span class="hs-special">(</span><span class="hs-keyword">if</span><span> </span><a href="#local-6989586621679061009"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-operator hs-var">&lt;</span><span> </span><span class="hs-number">26</span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-identifier hs-var">ord</span><span> </span><span class="hs-char">'a'</span><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679061009"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-keyword">else</span><span> </span><span class="hs-identifier hs-var">ord</span><span> </span><span class="hs-char">'A'</span><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679061009"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-glyph">-</span><span> </span><span class="hs-number">26</span><span class="hs-special">)</span><span>
+</span><a name="line-36"></a><span>
+</span><a name="line-37"></a><span class="hs-comment">{- |
+  &#12450;&#12523;&#12501;&#12449;&#12505;&#12483;&#12488;&#25991;&#23383;&#12471;&#12501;&#12488;
+
+&gt;&gt;&gt; shift 3 'a'
+'d'
+&gt;&gt;&gt; shift 3 'z'
+'c'
+&gt;&gt;&gt; shift (-3) 'c'
+'z'
+&gt;&gt;&gt; shift 3 ' '
+' '
+&gt;&gt;&gt; shift 3 'A'
+'D'
+&gt;&gt;&gt; shift 3 'Z'
+'C'
+&gt;&gt;&gt; shift (-3) 'C'
+'Z'
+-}</span><span>
+</span><a name="line-55"></a><span>
+</span><a name="line-56"></a><span class="hs-identifier">shift</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Char</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Char</span><span>
+</span><a name="line-57"></a><a name="shift"><a href="Ch05.Ex10.html#shift"><span class="hs-identifier">shift</span></a></a><span> </span><a name="local-6989586621679061024"><a href="#local-6989586621679061024"><span class="hs-identifier">n</span></a></a><span> </span><a name="local-6989586621679061025"><a href="#local-6989586621679061025"><span class="hs-identifier">c</span></a></a><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">isLower</span><span> </span><a href="#local-6989586621679061025"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch05.Ex10.html#int2let"><span class="hs-identifier hs-var">int2let</span></a><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><a href="Ch05.Ex10.html#let2int"><span class="hs-identifier hs-var">let2int</span></a><span> </span><a href="#local-6989586621679061025"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679061024"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">`</span><span class="hs-identifier hs-var">mod</span><span class="hs-special">`</span><span> </span><span class="hs-number">26</span><span class="hs-special">)</span><span>
+</span><a name="line-58"></a><span>          </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">isUpper</span><span> </span><a href="#local-6989586621679061025"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch05.Ex10.html#int2let"><span class="hs-identifier hs-var">int2let</span></a><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><a href="Ch05.Ex10.html#let2int"><span class="hs-identifier hs-var">let2int</span></a><span> </span><a href="#local-6989586621679061025"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679061024"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">`</span><span class="hs-identifier hs-var">mod</span><span class="hs-special">`</span><span> </span><span class="hs-number">26</span><span> </span><span class="hs-operator hs-var">+</span><span> </span><span class="hs-number">26</span><span class="hs-special">)</span><span>
+</span><a name="line-59"></a><span>          </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">otherwise</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061025"><span class="hs-identifier hs-var">c</span></a><span>
+</span><a name="line-60"></a><span>
+</span><a name="line-61"></a><span>
+</span><a name="line-62"></a><span class="hs-comment">{- |
+  &#26263;&#21495;
+
+&gt;&gt;&gt; encode 3 &quot;Haskell is fun&quot;
+&quot;Kdvnhoo lv ixq&quot;
+&gt;&gt;&gt; encode (-3) &quot;Kdvnhoo lv ixq&quot;
+&quot;Haskell is fun&quot;
+-}</span><span>
+</span><a name="line-70"></a><span class="hs-identifier">encode</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">String</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">String</span><span>
+</span><a name="line-71"></a><a name="encode"><a href="Ch05.Ex10.html#encode"><span class="hs-identifier">encode</span></a></a><span> </span><a name="local-6989586621679061026"><a href="#local-6989586621679061026"><span class="hs-identifier">n</span></a></a><span> </span><a name="local-6989586621679061027"><a href="#local-6989586621679061027"><span class="hs-identifier">xs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><a href="Ch05.Ex10.html#shift"><span class="hs-identifier hs-var">shift</span></a><span> </span><a href="#local-6989586621679061026"><span class="hs-identifier hs-var">n</span></a><span> </span><a href="#local-6989586621679061028"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679061028"><a href="#local-6989586621679061028"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="#local-6989586621679061027"><span class="hs-identifier hs-var">xs</span></a><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-72"></a></pre></body></html>

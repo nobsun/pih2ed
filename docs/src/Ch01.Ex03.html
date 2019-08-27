@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch01.Ex03
+Description : &#32244;&#32722;&#21839;&#38988; 1.3
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#25968;&#20516;&#12398;&#12522;&#12473;&#12488;&#12395;&#23550;&#12375;&#31309;&#12434;&#35336;&#31639;&#12377;&#12427;&#38306;&#25968; @product@ &#12434;&#23450;&#32681;&#12375;&#65292;@product [2,3,4]@ = @24@ &#12391;&#12354;&#12427;&#12371;&#12392;&#12434;&#31034;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch01.Ex03</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">product</span><span class="hs-special">)</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+   &#12522;&#12473;&#12488;&#12398;&#35201;&#32032;&#12398;&#21644;
+
+   @
+     product []     = 1           -- (1)
+     product (n:ns) = n * sum ns  -- (2)
+   @
+
+   @
+     product [2,3,4]
+     = { [2,3,4] = (2:[3,4]) }
+     product (2:[3,4])
+     = { product &#12398;&#23450;&#32681;(2) }
+     2 * product [3,4]
+     = { [3,4] = (3:[4]) }
+     2 * product (3:[4])
+     = { product &#12398;&#23450;&#32681;(2) }
+     2 * (3 * product [4])
+     = { [4] = (4:[]) }
+     2 * (3 * product (4:[]))
+     = { product &#12398;&#23450;&#32681;(2) }
+     2 * (3 * (4 * product []))
+     = { product &#12398;&#23450;&#32681;(1) }
+     2 * (3 * (4 * 1))
+     = { 4 * 1 = 4 }
+     2 * (3 * 4)
+     = { 3 * 4 = 12 }
+     2 * 12
+     = { 2 * 12 = 12 }
+     24
+   @
+-}</span><span>
+</span><a name="line-46"></a><a name="product"><a href="Ch01.Ex03.html#product"><span class="hs-identifier">product</span></a></a><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-47"></a><span class="hs-identifier">product</span><span> </span><span class="hs-special">(</span><a name="local-6989586621679052733"><a href="#local-6989586621679052733"><span class="hs-identifier">n</span></a></a><span class="hs-glyph">:</span><a name="local-6989586621679052734"><a href="#local-6989586621679052734"><span class="hs-identifier">ns</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679052733"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-operator hs-var">*</span><span> </span><a href="Ch01.Ex03.html#product"><span class="hs-identifier hs-var">product</span></a><span> </span><a href="#local-6989586621679052734"><span class="hs-identifier hs-var">ns</span></a><span>
+</span><a name="line-48"></a></pre></body></html>

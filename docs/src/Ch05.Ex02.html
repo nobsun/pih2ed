@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch05.Ex02
+Description : &#32244;&#32722;&#21839;&#38988; 5.2
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+m &#215; n &#12398;&#24231;&#27161;&#26684;&#23376;&#12364;&#65292; 0 &#8806; x &#8806; m &#65292; 0 &#8806; y &#8806; n &#12395;&#23550;&#12375;&#65292;
+&#12377;&#12409;&#12390;&#12398;&#25972;&#25968;&#12398;&#32068; (x, y) &#12391;&#34920;&#29694;&#12373;&#12428;&#12390;&#12356;&#12427;&#12392;&#12375;&#12414;&#12377;&#65294;
+&#12522;&#12473;&#12488;&#20869;&#21253;&#34920;&#35352;&#12434;&#19968;&#12388;&#29992;&#12356;&#12390;&#65292;&#19982;&#12360;&#12425;&#12428;&#12383;&#22823;&#12365;&#12373;&#12398;&#24231;&#27161;&#26684;&#23376;&#12434;&#36820;&#12377;&#38306;&#25968;
+@grid :: Int -&gt; Int -&gt; [(Int,Int)]@ &#12434;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-13"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch05.Ex02</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-14"></a><span>
+</span><a name="line-15"></a><span class="hs-comment">{- |
+  &#26684;&#23376;&#28857;
+
+&gt;&gt;&gt; grid 1 2
+[(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
+-}</span><span>
+</span><a name="line-21"></a><span class="hs-identifier">grid</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">,</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">)</span><span class="hs-special">]</span><span>
+</span><a name="line-22"></a><a name="grid"><a href="Ch05.Ex02.html#grid"><span class="hs-identifier">grid</span></a></a><span> </span><a name="local-6989586621679060234"><a href="#local-6989586621679060234"><span class="hs-identifier">m</span></a></a><span> </span><a name="local-6989586621679060235"><a href="#local-6989586621679060235"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679060236"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">,</span><span> </span><a href="#local-6989586621679060237"><span class="hs-identifier hs-var">y</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679060236"><a href="#local-6989586621679060236"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-number">0</span><span> </span><span class="hs-glyph">..</span><span> </span><a href="#local-6989586621679060234"><span class="hs-identifier hs-var">m</span></a><span> </span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><a name="local-6989586621679060237"><a href="#local-6989586621679060237"><span class="hs-identifier">y</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-number">0</span><span> </span><span class="hs-glyph">..</span><span> </span><a href="#local-6989586621679060235"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-special">]</span><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-23"></a></pre></body></html>

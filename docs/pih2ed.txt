@@ -9,7 +9,7 @@
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
-module Ch01Ex01
+module Ch01.Ex01
 
 -- | 式
 data Term
@@ -40,11 +40,11 @@ redSeqs :: Term -> [[Term]]
 --   [(double 2) + (double 2),double (2 + 2)]
 --   </pre>
 step :: Term -> [Term]
-instance GHC.Show.Show Ch01Ex01.Term
+instance GHC.Show.Show Ch01.Ex01.Term
 
 
 -- | <tt>x</tt> の値によらず <tt>sum [x] = x</tt> であることを示してください．
-module Ch01Ex02
+module Ch01.Ex02
 
 -- | リストの要素の和
 --   
@@ -71,7 +71,7 @@ sum :: Num p => [p] -> p
 
 -- | 数値のリストに対し積を計算する関数 <tt>product</tt> を定義し，<tt>product [2,3,4]</tt> =
 --   <tt>24</tt> であることを示してください．
-module Ch01Ex03
+module Ch01.Ex03
 
 -- | リストの要素の和
 --   
@@ -109,7 +109,7 @@ product :: Num p => [p] -> p
 
 
 -- | リストを降順に整列するように関数<tt>qsort</tt>の定義を変えるにはどうすればよいでしょうか？
-module Ch01Ex04
+module Ch01.Ex04
 
 -- | 降順に整列
 --   
@@ -130,7 +130,7 @@ qsort :: Ord a => [a] -> [a]
 
 -- | <tt>qsort</tt>の定義で，<tt>&lt;=</tt> を <tt>&lt;</tt>
 --   に置き換えるとどのような影響があるでしょうか？
-module Ch01Ex05
+module Ch01.Ex05
 
 -- | <pre>
 --   qsort []     = []                                    -- (1)
@@ -151,15 +151,15 @@ qsort :: Ord a => [a] -> [a]
 
 
 -- | この章の例題をGHCiを用いて実行してください
-module Ch02Ex01
+module Ch02.Ex01
 
 
 -- | 次の式に結合順位を示す括弧を付けてください．
-module Ch02Ex02
+module Ch02.Ex02
 
 
 -- | 以下のプログラムにはエラーが三つあります．エラーを修正してGHCiで正しく動くか確かめてください．
-module Ch02Ex03
+module Ch02.Ex03
 
 -- | プログラムの修正
 --   
@@ -180,7 +180,7 @@ n :: Int
 -- | プレリュード関数 <tt>last</tt> は，空でないリストの最後の要素を取り出します． たとえば，<tt>last
 --   [1,2,3,4,5]</tt> = <tt>5</tt> です． この章で紹介したプレリュード関数を使って，関数
 --   <tt>last</tt> を定義してください． さらに別の定義も考えてみてください．
-module Ch02Ex04
+module Ch02.Ex04
 
 -- | <tt>last</tt> の定義
 --   
@@ -211,7 +211,7 @@ last'' :: () => [c] -> c
 -- | プレリュード関数 <tt>init</tt> は，空でないリストから最後の要素を取り除きます． たとえば，<tt>init
 --   [1,2,3,4,5]</tt> = <tt>[1,2,3,4]</tt> です．関数 <tt>init</tt>
 --   の定義を二通り示してください．
-module Ch02Ex05
+module Ch02.Ex05
 
 -- | <tt>init</tt> の一つめの定義
 --   
@@ -247,7 +247,7 @@ init'' :: () => [a] -> [a]
 --   ([False,True],['0','1'])
 --   [tail, init, reverse]
 --   </pre>
-module Ch03Ex01
+module Ch03.Ex01
 
 
 -- | 以下の関数の定義を書き下してください．型が正しい限り，どのように実装してもかまいません．
@@ -259,7 +259,7 @@ module Ch03Ex01
 --   copy :: a -&gt; (a, a)
 --   apply :: (a -&gt; b) -&gt; a -&gt; b
 --   </pre>
-module Ch03Ex02
+module Ch03.Ex02
 
 -- | <pre>
 --   &gt;&gt;&gt; :type bools
@@ -302,7 +302,7 @@ apply :: (a -> b) -> a -> b
 --   palindrome xs = reverse xs == xs
 --   twice f x = f (f x)
 --   </pre>
-module Ch03Ex03
+module Ch03.Ex03
 
 -- | <pre>
 --   &gt;&gt;&gt; :type second
@@ -348,19 +348,19 @@ twice :: (a -> a) -> a -> a
 --   Ch03ex02.hs
 --   Ch03ex03.hs
 --   </pre>
-module Ch03Ex04
+module Ch03.Ex04
 
 
 -- | 一般的に，関数の型を Eq クラスのインスタンスにするのが実現不可能な理由は何でしょうか? 実現可能なのはどういった場合でしょうか?
 --   
 --   関数の等値性は，外延的等値性を確認することになるが， 関数の域(domain)を網羅列挙して確認することは一般にはできない．
 --   ただし，域が現実的に網羅列挙可能であれば Eq クラスのインスタンスにできる．
-module Ch03Ex05
+module Ch03.Ex05
 
 
 -- | プレリュード関数を使って，長さが偶数のリストを半分ずつに分割する関数 <tt>halve :: [a] -&gt; ([a],
 --   [a])</tt> を定義してください．
-module Ch04Ex01
+module Ch04.Ex01
 
 -- | 長さ偶数のリストを半分ずつに分割する．
 --   
@@ -379,7 +379,7 @@ halve :: [a] -> ([a], [a])
 --   <li>b. リストのインデックス演算子 !!</li>
 --   <li>c. パターンマッチ</li>
 --   </ul>
-module Ch04Ex02
+module Ch04.Ex02
 
 -- | リストの三つめの要素 その1
 --   
@@ -430,7 +430,7 @@ third3 :: [a] -> a
 --   <li>b. ガード付きの等式</li>
 --   <li>c. パターンマッチ</li>
 --   </ul>
-module Ch04Ex03
+module Ch04.Ex03
 
 -- | 安全な <tt>tail</tt> その1
 --   
@@ -485,7 +485,7 @@ safetail3 :: [a] -> [a]
 
 
 -- | 論理積演算子 &amp;&amp; と同様に，パターンマッチを使って論理和演算子 <tt>||</tt> を四通りの方法で定義してください．
-module Ch04Ex04
+module Ch04.Ex04
 
 -- | 1つめの定義
 --   
@@ -541,7 +541,7 @@ def4 :: Bool -> Bool -> Bool
 --   True &amp;&amp; True = True
 --   _    &amp;&amp; _    = False
 --   </pre>
-module Ch04Ex05
+module Ch04.Ex05
 
 -- | 連言の条件式を使った定式化
 --   
@@ -559,7 +559,7 @@ module Ch04Ex05
 --   True  &amp;&amp; b = b
 --   False &amp;&amp; _ = False
 --   </pre>
-module Ch04Ex06
+module Ch04.Ex06
 
 -- | 連言の条件式を使った定式化
 --   
@@ -576,7 +576,7 @@ module Ch04Ex06
 --   mult :: Int -&gt; Int -&gt; Int -&gt; Int
 --   mult x y z = x * y * z
 --   </pre>
-module Ch04Ex07
+module Ch04.Ex07
 
 -- | 3つの整数の積
 --   
@@ -601,7 +601,7 @@ mult :: Int -> Int -> Int -> Int
 --   <li>すべての数を足し合わせる</li>
 --   <li>合計が 10 で割り切れるなら、カードの番号は正しい</li>
 --   </ul>
-module Ch04Ex08
+module Ch04.Ex08
 
 -- | 数を 2 倍にして、もしその結果が 9 より大きいなら 9 を引く関数
 --   
@@ -627,7 +627,7 @@ luhn :: Int -> Int -> Int -> Int -> Bool
 
 
 -- | リスト内包表記を使って， 1 から 100 までの二乗の和 1^2 + 2^2 + ... + 100^2 を計算する式を考えてください．
-module Ch05Ex01
+module Ch05.Ex01
 
 -- | 2乗の和
 sumSquare :: [Int] -> Int
@@ -636,7 +636,7 @@ sumSquare :: [Int] -> Int
 -- | m × n の座標格子が， 0 ≦ x ≦ m ， 0 ≦ y ≦ n に対し， すべての整数の組 (x, y) で表現されているとします．
 --   リスト内包表記を一つ用いて，与えられた大きさの座標格子を返す関数 <tt>grid :: Int -&gt; Int -&gt;
 --   [(Int,Int)]</tt> を定義してください．
-module Ch05Ex02
+module Ch05.Ex02
 
 -- | 格子点
 --   
@@ -649,7 +649,7 @@ grid :: Int -> Int -> [(Int, Int)]
 
 -- | リスト内容表記一つと上記の関数 grid を用いて，大きさ n の正方形座標を 返す関数 square :: Int -&gt;
 --   [(Int,Int)] を定義してください． ただし，(0, 0) から (n, n) の対角の格子は含みません．
-module Ch05Ex03
+module Ch05.Ex03
 
 -- | 対角格子を抜いた正方格子
 --   
@@ -663,7 +663,7 @@ grid :: Int -> Int -> [(Int, Int)]
 
 -- | ある要素のみからなるリストを生成するプレリュード関数 <tt>replicate :: Int -&gt; a -&gt; [a]</tt>
 --   を関数 <tt>length</tt> と同じ要領でリスト内包表記を用いて定義してください.
-module Ch05Ex04
+module Ch05.Ex04
 
 -- | 同一要素を指定した個数含むリストの生成
 --   
@@ -677,7 +677,7 @@ replicate :: Int -> a -> [a]
 -- | <tt> x^2 + y^2 = z^2 </tt> を満たす正の整数をピタゴラス数と呼び，三つ組 <tt>(x, y, z)</tt>
 --   で表します． ピタゴラス数のリストを生成する関数 <tt> pyths :: Int -&gt; [(Int, Int, Int)]
 --   </tt>をリスト内包表記を使って定義してください． ただし、ピタゴラス数の要素は与えられた上限以下であるとします．
-module Ch05Ex05
+module Ch05.Ex05
 
 -- | ピタゴラス数
 --   
@@ -691,7 +691,7 @@ pyths :: Int -> [(Int, Int, Int)]
 -- | 自分自身を除く約数の和が自分自身と等しいとき，その整数を完全数と呼びます． 与えられた上限までに含まれる完全数すべてを算出する関数
 --   <tt>perfects :: Int -&gt; [Int]</tt> を リスト内包表記と関数 factors
 --   を使って定義してください．
-module Ch05Ex06
+module Ch05.Ex06
 
 -- | 完全数
 --   
@@ -707,11 +707,11 @@ factors :: Int -> [Int]
 
 -- | 二つの生成器を持つリスト内包表記 <tt>[(x, y) | x &lt;- [1, 2, 3], y &lt;- [4, 5,
 --   6]]</tt> は， 一つの生成器を持つリスト内包表記二つでも表現できることを示してください．
-module Ch05Ex07
+module Ch05.Ex07
 
 
 -- | 関数 <tt>positions</tt> を関数 <tt>find</tt> を使って再定義してください．
-module Ch05Ex08
+module Ch05.Ex08
 
 -- | <tt>find</tt> を用いた <tt>positions</tt> の定義
 --   
@@ -730,7 +730,7 @@ find :: Eq a => a -> [(a, b)] -> [b]
 
 -- | 二つのリストから内積を計算する関数 <tt>scalarproduct :: [Int] -&gt; [Int] -&gt;
 --   Int</tt> を 関数 <tt>chisqr</tt> と同じようにリスト内包表記を使って定義できることを示してください．
-module Ch05Ex09
+module Ch05.Ex09
 
 -- | 内積
 --   
@@ -747,7 +747,7 @@ scalarproduct :: [Int] -> [Int] -> Int
 
 
 -- | シーザー暗号のプログラムを変更して大文字も扱えるようにしてください．
-module Ch05Ex10
+module Ch05.Ex10
 
 -- | 文字を整数に変換 'a' -&gt; 0，'b' -&gt; 1，... ，'A' -&gt; 26，'B' -&gt; 27
 --   
