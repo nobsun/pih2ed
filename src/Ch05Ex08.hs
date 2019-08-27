@@ -5,6 +5,8 @@ Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
 
+関数 @positions@ を関数 @find@ を使って再定義してください．
+
 -}
 module Ch05Ex08 where
 
