@@ -1,6 +1,6 @@
 {- |
 Module      : Ch05.Ex03
-Description : 『プログラミングHaskell第2版』練習問題 5.3
+Description : 練習問題 5.3
 Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
