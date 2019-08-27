@@ -5,20 +5,46 @@ Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
 
-二つの非負の整数に対する最大公約数を計算するために，ユークリッドの互除法を実現する関数
-@ euclid :: Int -> Int -> Int @ を再帰的に定義してください．
+乗算演算子 @*@ の再帰を参考にして，負でない整数に対する冪乗演算子 @^@ を定義
+してください．また，その定義を使って @2 ^ 3@ を簡約してください．
 -}
 module Ch06.Ex03 where
 
-{- |
-  ユークリッド互除法
+import Prelude hiding ((^))
 
->>> euclid 6 27
-3
+{- |
+  べき乗演算子
+
+@
+  m ^ 0 = 1                  -- (1)
+  m ^ n = m * (m ^ (n - 1))  -- (2)
+@
+
+@
+    2 ^ 3
+  = { (2) }
+    2 * (2 ^ 2)
+  = { (2) }
+    2 * (2 * (2 ^ 1))
+  = { (2) }
+    2 * (2 * (2 * (2 ^ 0)))
+  = { (1) }
+    2 * (2 * (2 * 1))
+  = { (*) }
+    2 * (2 * 2)
+  = { (*) }
+    2 * 4
+  = { (*) }
+    8
+@
+
+>>> 2 ^ 3
+8
 -}
-euclid :: Int -> Int -> Int
-euclid x y
-  | x == y    = x
-  | x < y     = euclid (y - x) y
-  | otherwise = euclid x (x - y)
+
+(^) :: Int -> Int -> Int
+m ^ 0 = 1
+m ^ n = m * (m ^ (n - 1))
+
+infixr 8 ^
 
