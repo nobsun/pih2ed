@@ -710,6 +710,7 @@ factors :: Int -> [Int]
 module Ch05Ex07
 
 
+-- | 関数 <tt>positions</tt> を関数 <tt>find</tt> を使って再定義してください．
 module Ch05Ex08
 
 -- | <tt>find</tt> を用いた <tt>positions</tt> の定義
