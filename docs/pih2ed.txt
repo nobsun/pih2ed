@@ -808,6 +808,21 @@ shift :: Int -> Char -> Char
 --   </pre>
 encode :: Int -> String -> String
 
+
+-- | 再帰的に定義された階乗関数は， (-1) のように負の整数を与えられた場合，どのように振る舞うでしょうか?
+--   再帰部にガードを加えることで，負の整数を禁止するように定義を変更してください．
+module Ch06.Ex01
+
+-- | 階乗関数
+--   
+--   <pre>
+--   fac :: Int -&gt; Int
+--   fac 0 = 1
+--   fac n | n &lt; 0     = error "<a>fac</a> must be applied to non-negative number"
+--         | otherwise = n * fac (n - 1)
+--   </pre>
+fac :: Int -> Int
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数
