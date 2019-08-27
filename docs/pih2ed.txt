@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.6.2.0
+@version 0.6.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -836,6 +836,19 @@ module Ch06.Ex02
 --   6
 --   </pre>
 sumdown :: Int -> Int
+
+
+-- | 二つの非負の整数に対する最大公約数を計算するために，ユークリッドの互除法を実現する関数 <tt> euclid :: Int -&gt;
+--   Int -&gt; Int </tt> を再帰的に定義してください．
+module Ch06.Ex03
+
+-- | ユークリッド互除法
+--   
+--   <pre>
+--   &gt;&gt;&gt; euclid 6 27
+--   3
+--   </pre>
+euclid :: Int -> Int -> Int
 
 module Lib
 
