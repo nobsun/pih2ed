@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch05Ex09
+Description : &#12302;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;Haskell&#31532;2&#29256;&#12303;&#32244;&#32722;&#21839;&#38988; 5.9
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#20108;&#12388;&#12398;&#12522;&#12473;&#12488;&#12363;&#12425;&#20869;&#31309;&#12434;&#35336;&#31639;&#12377;&#12427;&#38306;&#25968; @scalarproduct :: [Int] -&gt; [Int] -&gt; Int@ &#12434;
+&#38306;&#25968; @chisqr@ &#12392;&#21516;&#12376;&#12424;&#12358;&#12395;&#12522;&#12473;&#12488;&#20869;&#21253;&#34920;&#35352;&#12434;&#20351;&#12387;&#12390;&#23450;&#32681;&#12391;&#12365;&#12427;&#12371;&#12392;&#12434;&#31034;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+
+-}</span><span>
+</span><a name="line-12"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch05Ex09</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+  &#20869;&#31309;
+
+@
+ scalarproduct :: [Int] -&gt; [Int] -&gt; Int
+ scalarproduct xs ys = sum [ x * y | (x, y) &lt;- zip xs ys ]
+@
+
+&gt;&gt;&gt; scalarproduct [1,2,3] [4,5,6]
+32
+-}</span><span>
+</span><a name="line-25"></a><span class="hs-identifier">scalarproduct</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-26"></a><a name="scalarproduct"><a href="Ch05Ex09.html#scalarproduct"><span class="hs-identifier">scalarproduct</span></a></a><span> </span><a name="local-6989586621679060608"><a href="#local-6989586621679060608"><span class="hs-identifier">xs</span></a></a><span> </span><a name="local-6989586621679060609"><a href="#local-6989586621679060609"><span class="hs-identifier">ys</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">sum</span><span> </span><span class="hs-special">[</span><span> </span><a href="#local-6989586621679060610"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-operator hs-var">*</span><span> </span><a href="#local-6989586621679060611"><span class="hs-identifier hs-var">y</span></a><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><a name="local-6989586621679060610"><a href="#local-6989586621679060610"><span class="hs-identifier">x</span></a></a><span class="hs-special">,</span><span> </span><a name="local-6989586621679060611"><a href="#local-6989586621679060611"><span class="hs-identifier">y</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">zip</span><span> </span><a href="#local-6989586621679060608"><span class="hs-identifier hs-var">xs</span></a><span> </span><a href="#local-6989586621679060609"><span class="hs-identifier hs-var">ys</span></a><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-27"></a><span>
+</span><a name="line-28"></a></pre></body></html>

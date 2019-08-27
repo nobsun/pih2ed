@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.8.0
+@version 0.5.9.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -726,6 +726,24 @@ module Ch05Ex08
 --   </pre>
 positions :: Eq a => a -> [a] -> [Int]
 find :: Eq a => a -> [(a, b)] -> [b]
+
+
+-- | 二つのリストから内積を計算する関数 <tt>scalarproduct :: [Int] -&gt; [Int] -&gt;
+--   Int</tt> を 関数 <tt>chisqr</tt> と同じようにリスト内包表記を使って定義できることを示してください．
+module Ch05Ex09
+
+-- | 内積
+--   
+--   <pre>
+--   scalarproduct :: [Int] -&gt; [Int] -&gt; Int
+--   scalarproduct xs ys = sum [ x * y | (x, y) &lt;- zip xs ys ]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; scalarproduct [1,2,3] [4,5,6]
+--   32
+--   </pre>
+scalarproduct :: [Int] -> [Int] -> Int
 
 module Lib
 
