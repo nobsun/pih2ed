@@ -23,5 +23,5 @@ fac n | n < 0     = error "'fac' must be applied to non-negative number"
 -}
 fac :: Int -> Int
 fac 0 = 1
-fac n | n < 0     = error "'fac' must be applied to non-negative number"
+fac n | n < 0     = error "fac: must be applied to non-negative number"
       | otherwise = n * fac (n - 1)

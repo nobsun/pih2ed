@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch06.Ex02
+Description : &#32244;&#32722;&#21839;&#38988; 6.2
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#19982;&#12360;&#12425;&#12428;&#12383;&#38750;&#36000;&#12398;&#25972;&#25968;&#12363;&#12425; @0@ &#12414;&#12391;&#12434;&#36275;&#12375;&#21512;&#12431;&#12379;&#12427;&#38306;&#25968; @sumdown :: Int -&gt; Int @ &#12434;&#20877;&#24112;&#30340;&#12395;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+&#12383;&#12392;&#12360;&#12400;&#65292;@sumdown 3@ &#12399; @3+2+1+0@ &#12398;&#32080;&#26524; @6@ &#12434;&#36820;&#12375;&#12414;&#12377;&#65294;
+-}</span><span>
+</span><a name="line-11"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch06.Ex02</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-comment">{- |
+  &#19982;&#12360;&#12425;&#12428;&#12383;&#38750;&#36000;&#12398;&#25972;&#25968;&#12363;&#12425; @0@ &#12414;&#12391;&#12434;&#36275;&#12375;&#21512;&#12431;&#12379;&#12427;&#65294;
+
+&gt;&gt;&gt; sumdown 3
+6
+-}</span><span>
+</span><a name="line-19"></a><span class="hs-identifier">sumdown</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-20"></a><a name="sumdown"><a href="Ch06.Ex02.html#sumdown"><span class="hs-identifier">sumdown</span></a></a><span> </span><span class="hs-number">0</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-21"></a><span class="hs-identifier">sumdown</span><span> </span><a name="local-6989586621679061269"><a href="#local-6989586621679061269"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">|</span><span> </span><a href="#local-6989586621679061269"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-operator hs-var">&gt;</span><span> </span><span class="hs-number">0</span><span>     </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061269"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="Ch06.Ex02.html#sumdown"><span class="hs-identifier hs-var">sumdown</span></a><span> </span><span class="hs-special">(</span><a href="#local-6989586621679061269"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-glyph">-</span><span> </span><span class="hs-number">1</span><span class="hs-special">)</span><span>
+</span><a name="line-22"></a><span>          </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">otherwise</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">error</span><span> </span><span class="hs-string">&quot;sumdown: must not be applied to negative number&quot;</span><span>
+</span><a name="line-23"></a></pre></body></html>

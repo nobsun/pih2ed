@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.6.1.0
+@version 0.6.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -822,6 +822,20 @@ module Ch06.Ex01
 --         | otherwise = n * fac (n - 1)
 --   </pre>
 fac :: Int -> Int
+
+
+-- | 与えられた非負の整数から <tt>0</tt> までを足し合わせる関数 <tt>sumdown :: Int -&gt; Int </tt>
+--   を再帰的に定義してください． たとえば，<tt>sumdown 3</tt> は <tt>3+2+1+0</tt> の結果
+--   <tt>6</tt> を返します．
+module Ch06.Ex02
+
+-- | 与えられた非負の整数から <tt>0</tt> までを足し合わせる．
+--   
+--   <pre>
+--   &gt;&gt;&gt; sumdown 3
+--   6
+--   </pre>
+sumdown :: Int -> Int
 
 module Lib
 
