@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch06.Ex05
+Description : &#32244;&#32722;&#21839;&#38988; 6.5
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12371;&#12398;&#31456;&#12391;&#19982;&#12360;&#12425;&#12428;&#12383;&#20877;&#24112;&#30340;&#23450;&#32681;&#12434;&#20351;&#12387;&#12390;&#65292;@length [1,2,3]@&#65292;@drop 3 [1,2,3,4,5]@&#65292;@init [1,2,3]@ &#12434;&#31777;&#32004;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch06.Ex05</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">length</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">drop</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">init</span><span class="hs-special">)</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#38263;&#12373;
+@
+  length :: [a] -&gt; Int
+  length []     = 0              -- (1)
+  length (_:xs) = 1 + length xs  -- (2)
+@
+
+@
+    length [1,2,3]
+  = { (2) }
+    1 + (length [2,3])
+  = { (2) }
+    1 + (1 + (length [3]))
+  = { (2) }
+    1 + (1 + (1 + lenght []))
+  = { (1) }
+    1 + (1 + (1 + 0))
+  = { (+) }
+    1 + (1 + 1)
+  = { (+) }
+    1 + 2
+  = { (+) }
+    3
+@
+
+&gt;&gt;&gt; length [1,2,3]
+3
+-}</span><span>
+</span><a name="line-43"></a><span class="hs-identifier">length</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061372"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-44"></a><a name="length"><a href="Ch06.Ex05.html#length"><span class="hs-identifier">length</span></a></a><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-45"></a><span class="hs-identifier">length</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">_</span><span class="hs-glyph">:</span><a name="local-6989586621679061373"><a href="#local-6989586621679061373"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">1</span><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="Ch06.Ex05.html#length"><span class="hs-identifier hs-var">length</span></a><span> </span><a href="#local-6989586621679061373"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-46"></a><span>
+</span><a name="line-47"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#20808;&#38957;&#12363;&#12425;&#25351;&#23450;&#12375;&#12383;&#25968;&#12398;&#35201;&#32032;&#12434;&#33853;&#12377;
+
+@
+  drop :: Int -&gt; [a] -&gt; [a]
+  drop 0 xs     = xs            -- (1)
+  drop _ []     = []            -- (2)
+  drop n (_:xs) = drop (n-1) xs -- (3)
+@
+
+@
+    drop 3 [1,2,3,4,5]
+  = { (3) }
+    drop 2 [2,3,4,5]
+  = { (3) }
+    drop 1 [3,4,5]
+  = { (3) }
+    drop 0 [4,5]
+  = { (1) }
+    [4,5]
+@
+
+&gt;&gt;&gt; drop 3 [1,2,3,4,5]
+[4,5]
+-}</span><span>
+</span><a name="line-72"></a><span class="hs-identifier">drop</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061371"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061371"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-73"></a><a name="drop"><a href="Ch06.Ex05.html#drop"><span class="hs-identifier">drop</span></a></a><span> </span><span class="hs-number">0</span><span> </span><a name="local-6989586621679061374"><a href="#local-6989586621679061374"><span class="hs-identifier">xs</span></a></a><span>     </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061374"><span class="hs-identifier hs-var">xs</span></a><span>            </span><span class="hs-comment">-- (1)</span><span>
+</span><a name="line-74"></a><span class="hs-identifier">drop</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>            </span><span class="hs-comment">-- (2)</span><span>
+</span><a name="line-75"></a><span class="hs-identifier">drop</span><span> </span><a name="local-6989586621679061375"><a href="#local-6989586621679061375"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-special">(</span><span class="hs-identifier">_</span><span class="hs-glyph">:</span><a name="local-6989586621679061376"><a href="#local-6989586621679061376"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch06.Ex05.html#drop"><span class="hs-identifier hs-var">drop</span></a><span> </span><span class="hs-special">(</span><a href="#local-6989586621679061375"><span class="hs-identifier hs-var">n</span></a><span class="hs-glyph">-</span><span class="hs-number">1</span><span class="hs-special">)</span><span> </span><a href="#local-6989586621679061376"><span class="hs-identifier hs-var">xs</span></a><span> </span><span class="hs-comment">-- (3)</span><span>
+</span><a name="line-76"></a><span>
+</span><a name="line-77"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#20808;&#38957;&#37096;&#20998;
+
+@
+  init :: [a] -&gt; [a]
+  init [_]    = []          -- (1)
+  init (x:xs) = x : init xs -- (2)
+@
+
+@
+    init [1,2,3]
+  = { (2) }
+    1 : init [2,3]
+  = { (2) }
+    1 : (2 : init [3])
+  = { (1) }
+    1 : (2 : [])
+@
+
+&gt;&gt;&gt; init [1,2,3]
+[1,2]
+-}</span><span>
+</span><a name="line-99"></a><span class="hs-identifier">init</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061370"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061370"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-100"></a><a name="init"><a href="Ch06.Ex05.html#init"><span class="hs-identifier">init</span></a></a><span> </span><span class="hs-special">[</span><span class="hs-identifier">_</span><span class="hs-special">]</span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-101"></a><span class="hs-identifier">init</span><span> </span><span class="hs-special">(</span><a name="local-6989586621679061377"><a href="#local-6989586621679061377"><span class="hs-identifier">x</span></a></a><span class="hs-glyph">:</span><a name="local-6989586621679061378"><a href="#local-6989586621679061378"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061377"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-glyph">:</span><span> </span><a href="Ch06.Ex05.html#init"><span class="hs-identifier hs-var">init</span></a><span> </span><a href="#local-6989586621679061378"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-102"></a><span>
+</span><a name="line-103"></a></pre></body></html>

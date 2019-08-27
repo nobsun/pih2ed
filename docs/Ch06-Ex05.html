@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Ch06.Ex05</title><link href="ocean.css" rel="stylesheet" type="text/css" title="Ocean" /><link rel="stylesheet" type="text/css" href="quick-jump.css" /><script src="haddock-bundle.min.js" async="async" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script></head><body><div id="package-header"><ul class="links" id="page-menu"><li><a href="src/Ch06.Ex05.html">Source</a></li><li><a href="index.html">Contents</a></li><li><a href="doc-index.html">Index</a></li></ul><p class="caption">pih2ed-0.6.5.0</p></div><div id="content"><div id="module-header"><table class="info"><tr><th valign="top">Copyright</th><td>(c) Nobuo Yamashita 2019</td></tr><tr><th>License</th><td>BSD-3</td></tr><tr><th>Maintainer</th><td>nobsun@gmail.com</td></tr><tr><th>Safe Haskell</th><td>Safe</td></tr><tr><th>Language</th><td>Haskell2010</td></tr></table><p class="caption">Ch06.Ex05</p></div><div id="description"><p class="caption">Description</p><div class="doc"><p>&#12371;&#12398;&#31456;&#12391;&#19982;&#12360;&#12425;&#12428;&#12383;&#20877;&#24112;&#30340;&#23450;&#32681;&#12434;&#20351;&#12387;&#12390;&#65292;<code>length [1,2,3]</code>&#65292;<code>drop 3 [1,2,3,4,5]</code>&#65292;<code>init [1,2,3]</code> &#12434;&#31777;&#32004;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;</p></div></div><div id="synopsis"><details id="syn"><summary>Synopsis</summary><ul class="details-toggle" data-details-id="syn"><li class="src short"><a href="#v:length">length</a> :: [a] -&gt; <a href="../base-4.12.0.0/Data-Int.html#t:Int" title="Data.Int">Int</a></li><li class="src short"><a href="#v:drop">drop</a> :: <a href="../base-4.12.0.0/Data-Int.html#t:Int" title="Data.Int">Int</a> -&gt; [a] -&gt; [a]</li><li class="src short"><a href="#v:init">init</a> :: [a] -&gt; [a]</li></ul></details></div><div id="interface"><h1>Documentation</h1><div class="top"><p class="src"><a id="v:length" class="def">length</a> :: [a] -&gt; <a href="../base-4.12.0.0/Data-Int.html#t:Int" title="Data.Int">Int</a> <a href="src/Ch06.Ex05.html#length" class="link">Source</a> <a href="#v:length" class="selflink">#</a></p><div class="doc"><p>&#12522;&#12473;&#12488;&#12398;&#38263;&#12373;
+<code>
+  length :: [a] -&gt; Int
+  length []     = 0              -- (1)
+  length (_:xs) = 1 + length xs  -- (2)
+</code></p><pre>    length [1,2,3]
+  = { (2) }
+    1 + (length [2,3])
+  = { (2) }
+    1 + (1 + (length [3]))
+  = { (2) }
+    1 + (1 + (1 + lenght []))
+  = { (1) }
+    1 + (1 + (1 + 0))
+  = { (+) }
+    1 + (1 + 1)
+  = { (+) }
+    1 + 2
+  = { (+) }
+    3
+</pre><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>length [1,2,3]
+</code></strong>3
+</pre></div></div><div class="top"><p class="src"><a id="v:drop" class="def">drop</a> :: <a href="../base-4.12.0.0/Data-Int.html#t:Int" title="Data.Int">Int</a> -&gt; [a] -&gt; [a] <a href="src/Ch06.Ex05.html#drop" class="link">Source</a> <a href="#v:drop" class="selflink">#</a></p><div class="doc"><p>&#12522;&#12473;&#12488;&#12398;&#20808;&#38957;&#12363;&#12425;&#25351;&#23450;&#12375;&#12383;&#25968;&#12398;&#35201;&#32032;&#12434;&#33853;&#12377;</p><pre>  drop :: Int -&gt; [a] -&gt; [a]
+  drop 0 xs     = xs            -- (1)
+  drop _ []     = []            -- (2)
+  drop n (_:xs) = drop (n-1) xs -- (3)
+</pre><pre>    drop 3 [1,2,3,4,5]
+  = { (3) }
+    drop 2 [2,3,4,5]
+  = { (3) }
+    drop 1 [3,4,5]
+  = { (3) }
+    drop 0 [4,5]
+  = { (1) }
+    [4,5]
+</pre><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>drop 3 [1,2,3,4,5]
+</code></strong>[4,5]
+</pre></div></div><div class="top"><p class="src"><a id="v:init" class="def">init</a> :: [a] -&gt; [a] <a href="src/Ch06.Ex05.html#init" class="link">Source</a> <a href="#v:init" class="selflink">#</a></p><div class="doc"><p>&#12522;&#12473;&#12488;&#12398;&#20808;&#38957;&#37096;&#20998;</p><pre>  init :: [a] -&gt; [a]
+  init [_]    = []          -- (1)
+  init (x:xs) = x : init xs -- (2)
+</pre><pre>    init [1,2,3]
+  = { (2) }
+    1 : init [2,3]
+  = { (2) }
+    1 : (2 : init [3])
+  = { (1) }
+    1 : (2 : [])
+</pre><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>init [1,2,3]
+</code></strong>[1,2]
+</pre></div></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.22.0</p></div></body></html>
