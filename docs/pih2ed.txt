@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.5.9.0
+@version 0.5.10.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -744,6 +744,69 @@ module Ch05Ex09
 --   32
 --   </pre>
 scalarproduct :: [Int] -> [Int] -> Int
+
+
+-- | シーザー暗号のプログラムを変更して大文字も扱えるようにしてください．
+module Ch05Ex10
+
+-- | 文字を整数に変換 'a' -&gt; 0，'b' -&gt; 1，... ，'A' -&gt; 26，'B' -&gt; 27
+--   
+--   <pre>
+--   &gt;&gt;&gt; let2int 'a'
+--   0
+--   
+--   &gt;&gt;&gt; let2int 'B'
+--   27
+--   </pre>
+let2int :: Char -> Int
+
+-- | 整数を文字に変換 0 -&gt; 'a'，1 -&gt; 'b'，...，26 -&gt; 'A'，27 -&gt; 'B'
+--   
+--   <pre>
+--   &gt;&gt;&gt; int2let 1
+--   'b'
+--   
+--   &gt;&gt;&gt; int2let 26
+--   'A'
+--   </pre>
+int2let :: Int -> Char
+
+-- | アルファベット文字シフト
+--   
+--   <pre>
+--   &gt;&gt;&gt; shift 3 'a'
+--   'd'
+--   
+--   &gt;&gt;&gt; shift 3 'z'
+--   'c'
+--   
+--   &gt;&gt;&gt; shift (-3) 'c'
+--   'z'
+--   
+--   &gt;&gt;&gt; shift 3 ' '
+--   ' '
+--   
+--   &gt;&gt;&gt; shift 3 'A'
+--   'D'
+--   
+--   &gt;&gt;&gt; shift 3 'Z'
+--   'C'
+--   
+--   &gt;&gt;&gt; shift (-3) 'C'
+--   'Z'
+--   </pre>
+shift :: Int -> Char -> Char
+
+-- | 暗号
+--   
+--   <pre>
+--   &gt;&gt;&gt; encode 3 "Haskell is fun"
+--   "Kdvnhoo lv ixq"
+--   
+--   &gt;&gt;&gt; encode (-3) "Kdvnhoo lv ixq"
+--   "Haskell is fun"
+--   </pre>
+encode :: Int -> String -> String
 
 module Lib
 
