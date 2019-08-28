@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.6.9.0
+@version 0.7.1.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1089,6 +1089,15 @@ take :: Int -> [a] -> [a]
 --   </pre></li>
 --   </ol>
 last :: [a] -> a
+
+
+-- | リスト内包表記 <tt>[f x | x &lt;- xs, p x]</tt> は，高階関数 <tt>map</tt> と
+--   <tt>filter</tt> を使ってどう書き直せるでしょうか．
+--   
+--   <pre>
+--   map f (filter p xs)
+--   </pre>
+module Ch07.Ex01
 
 module Lib
 
