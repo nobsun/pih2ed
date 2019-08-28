@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch06.Ex09
+Description : &#32244;&#32722;&#21839;&#38988; 6.9
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#20116;&#27573;&#38542;&#12398;&#24037;&#31243;&#12434;&#20351;&#12387;&#12390;&#65292;&#20197;&#19979;&#12398;&#12503;&#12524;&#12522;&#12517;&#12540;&#12489;&#38306;&#25968;&#12434;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+
+a. &#25968;&#20516;&#12398;&#12522;&#12473;&#12488;&#12395;&#23550;&#12375;&#35201;&#32032;&#12398;&#21644;&#12434;&#35336;&#31639;&#12377;&#12427;&#38306;&#25968; @sum@
+
+b. &#12522;&#12473;&#12488;&#12398;&#20808;&#38957;&#12363;&#12425; @n@ &#20491;&#12398;&#35201;&#32032;&#12434;&#21462;&#12426;&#20986;&#12377;&#38306;&#25968; @take@
+
+c. &#31354;&#12391;&#12394;&#12356;&#12522;&#12473;&#12488;&#12398;&#26411;&#23614;&#12398;&#35201;&#32032;&#12434;&#21462;&#12426;&#20986;&#12377;&#38306;&#25968; @last@
+-}</span><span>
+</span><a name="line-16"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch06.Ex09</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-17"></a><span>
+</span><a name="line-18"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">sum</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">take</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">last</span><span class="hs-special">)</span><span>
+</span><a name="line-19"></a><span>
+</span><a name="line-20"></a><span class="hs-comment">{- |
+  &#25968;&#20516;&#12398;&#12522;&#12473;&#12488;&#12395;&#23550;&#12375;&#35201;&#32032;&#12398;&#21644;&#12434;&#35336;&#31639;&#12377;&#12427;&#38306;&#25968;
+
+  (1)
+  @
+    sum :: [Int] -&gt; Int
+  @
+
+  (2)
+  @
+    sum :: [Int] -&gt; Int
+    sum []     =
+    sum (x:xs) =
+  @
+
+  (3)
+  @
+    sum :: [Int] -&gt; Int
+    sum []     = 0
+    sum (x:xs) =
+  @
+
+  (4)
+  @
+    sum :: [Int] -&gt; Int
+    sum []     = 0
+    sum (x:xs) = x + sum xs
+  @
+
+  (5)
+  @
+    sum :: Num a =&gt; [a] -&gt; a
+    sum []     = 0
+    sum (x:xs) = x + sum xs
+  @
+-}</span><span>
+</span><a name="line-56"></a><span class="hs-identifier">sum</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Num</span><span> </span><a href="#local-6989586621679061914"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061914"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679061914"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-57"></a><a name="sum"><a href="Ch06.Ex09.html#sum"><span class="hs-identifier">sum</span></a></a><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-58"></a><span class="hs-identifier">sum</span><span> </span><span class="hs-special">(</span><a name="local-6989586621679061915"><a href="#local-6989586621679061915"><span class="hs-identifier">x</span></a></a><span class="hs-glyph">:</span><a name="local-6989586621679061916"><a href="#local-6989586621679061916"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061915"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="Ch06.Ex09.html#sum"><span class="hs-identifier hs-var">sum</span></a><span> </span><a href="#local-6989586621679061916"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-59"></a><span>
+</span><a name="line-60"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#12398;&#20808;&#38957;&#12363;&#12425; @n@ &#20491;&#12398;&#35201;&#32032;&#12434;&#21462;&#12426;&#20986;&#12377;&#38306;&#25968;
+
+  (1)
+  @
+    take :: Int -&gt; [a] -&gt; [a]
+  @
+
+  (2)
+  @
+    take :: Int -&gt; [a] -&gt; [a]
+    take 0 []     = 
+    take 0 (x:xs) = 
+    take n []     =
+    take n (x:xs) =
+  @
+
+  (3)
+  @
+    take :: Int -&gt; [a] -&gt; [a]
+    take 0 []     = []
+    take 0 (x:xs) = []
+    take n []     =
+    take n (x:xs) =
+  @
+
+  (4)
+  @
+    take :: Int -&gt; [a] -&gt; [a]
+    take 0 []     = []
+    take 0 (x:xs) = []
+    take n []     = []
+    take n (x:xs) = x : take (n-1) xs
+  @
+
+  (5)
+  @
+    take :: Int -&gt; [a] -&gt; [a]
+    take 0 _      = []
+    take _ []     = []
+    take n (x:xs) = x : take (n-1) xs
+  @
+-}</span><span>
+</span><a name="line-103"></a><span class="hs-identifier">take</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061913"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061913"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-104"></a><a name="take"><a href="Ch06.Ex09.html#take"><span class="hs-identifier">take</span></a></a><span> </span><span class="hs-number">0</span><span> </span><span class="hs-identifier">_</span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-105"></a><span class="hs-identifier">take</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-106"></a><span class="hs-identifier">take</span><span> </span><a name="local-6989586621679061917"><a href="#local-6989586621679061917"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-special">(</span><a name="local-6989586621679061918"><a href="#local-6989586621679061918"><span class="hs-identifier">x</span></a></a><span class="hs-glyph">:</span><a name="local-6989586621679061919"><a href="#local-6989586621679061919"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061918"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-glyph">:</span><span> </span><a href="Ch06.Ex09.html#take"><span class="hs-identifier hs-var">take</span></a><span> </span><span class="hs-special">(</span><a href="#local-6989586621679061917"><span class="hs-identifier hs-var">n</span></a><span class="hs-glyph">-</span><span class="hs-number">1</span><span class="hs-special">)</span><span> </span><a href="#local-6989586621679061919"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-107"></a><span>
+</span><a name="line-108"></a><span class="hs-comment">{- |
+  &#31354;&#12391;&#12394;&#12356;&#12522;&#12473;&#12488;&#12398;&#26411;&#23614;&#12398;&#35201;&#32032;&#12434;&#21462;&#12426;&#20986;&#12377;&#38306;&#25968;
+
+  (1)
+  @
+    last :: [a] -&gt; a
+  @
+
+  (2)
+  @
+    last :: [a] -&gt; a
+    last (x:xs) = 
+  @
+
+  (3)
+  @
+    last :: [a] -&gt; a
+    last (x:xs) | null xs   = x
+                | otherwsie =
+  @
+
+  (4)
+  @
+    last :: [a] -&gt; a
+    last (x:xs) | null xs   = x
+                | otherwsie = last xs
+  @
+
+  (5)
+  @
+    last :: [a] -&gt; a
+    last [x]    = x
+    last (x:xs) = last xs
+  @
+-}</span><span>
+</span><a name="line-143"></a><span class="hs-identifier">last</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679061912"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679061912"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-144"></a><a name="last"><a href="Ch06.Ex09.html#last"><span class="hs-identifier">last</span></a></a><span> </span><span class="hs-special">[</span><a name="local-6989586621679061920"><a href="#local-6989586621679061920"><span class="hs-identifier">x</span></a></a><span class="hs-special">]</span><span>    </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679061920"><span class="hs-identifier hs-var">x</span></a><span>
+</span><a name="line-145"></a><span class="hs-identifier">last</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">_</span><span class="hs-glyph">:</span><a name="local-6989586621679061921"><a href="#local-6989586621679061921"><span class="hs-identifier">xs</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch06.Ex09.html#last"><span class="hs-identifier hs-var">last</span></a><span> </span><a href="#local-6989586621679061921"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-146"></a></pre></body></html>

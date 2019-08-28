@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.6.8.0
+@version 0.6.9.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1037,6 +1037,58 @@ module Ch06.Ex08
 --   </pre>
 msort :: Ord a => [a] -> [a]
 halve :: [a] -> ([a], [a])
+
+
+-- | 五段階の工程を使って，以下のプレリュード関数を定義してください．
+--   
+--   a. 数値のリストに対し要素の和を計算する関数 <tt>sum</tt>
+--   
+--   b. リストの先頭から <tt>n</tt> 個の要素を取り出す関数 <tt>take</tt>
+--   
+--   c. 空でないリストの末尾の要素を取り出す関数 <tt>last</tt>
+module Ch06.Ex09
+
+-- | 数値のリストに対し要素の和を計算する関数
+--   
+--   <ol>
+--   <li><pre> sum :: [Int] -&gt; Int </pre></li>
+--   <li><pre> sum :: [Int] -&gt; Int sum [] = sum (x:xs) = </pre></li>
+--   <li><pre> sum :: [Int] -&gt; Int sum [] = 0 sum (x:xs) = </pre></li>
+--   <li><pre> sum :: [Int] -&gt; Int sum [] = 0 sum (x:xs) = x + sum xs
+--   </pre></li>
+--   <li><pre> sum :: Num a =&gt; [a] -&gt; a sum [] = 0 sum (x:xs) = x +
+--   sum xs </pre></li>
+--   </ol>
+sum :: Num a => [a] -> a
+
+-- | リストの先頭から <tt>n</tt> 個の要素を取り出す関数
+--   
+--   <ol>
+--   <li><pre> take :: Int -&gt; [a] -&gt; [a] </pre></li>
+--   <li><pre> take :: Int -&gt; [a] -&gt; [a] take 0 [] = take 0 (x:xs) =
+--   take n [] = take n (x:xs) = </pre></li>
+--   <li><pre> take :: Int -&gt; [a] -&gt; [a] take 0 [] = [] take 0 (x:xs)
+--   = [] take n [] = take n (x:xs) = </pre></li>
+--   <li><pre> take :: Int -&gt; [a] -&gt; [a] take 0 [] = [] take 0 (x:xs)
+--   = [] take n [] = [] take n (x:xs) = x : take (n-1) xs </pre></li>
+--   <li><pre> take :: Int -&gt; [a] -&gt; [a] take 0 _ = [] take _ [] = []
+--   take n (x:xs) = x : take (n-1) xs </pre></li>
+--   </ol>
+take :: Int -> [a] -> [a]
+
+-- | 空でないリストの末尾の要素を取り出す関数
+--   
+--   <ol>
+--   <li><pre> last :: [a] -&gt; a </pre></li>
+--   <li><pre> last :: [a] -&gt; a last (x:xs) = </pre></li>
+--   <li><pre> last :: [a] -&gt; a last (x:xs) | null xs = x | otherwsie =
+--   </pre></li>
+--   <li><pre> last :: [a] -&gt; a last (x:xs) | null xs = x | otherwsie =
+--   last xs </pre></li>
+--   <li><pre> last :: [a] -&gt; a last [x] = x last (x:xs) = last xs
+--   </pre></li>
+--   </ol>
+last :: [a] -> a
 
 module Lib
 
