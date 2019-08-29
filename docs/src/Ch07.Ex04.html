@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch07.Ex04
+Description : &#32244;&#32722;&#21839;&#38988; 7.4
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+@foldl@ &#12434;&#29992;&#12356;&#12390;&#65292;&#21313;&#36914;&#34920;&#35352;&#12434;&#25972;&#25968;&#12395;&#22793;&#25563;&#12377;&#12427;&#38306;&#25968; @dec2int :: [Int] -&gt; Int@ &#12434;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch07.Ex04</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-comment">{- |
+  &#21313;&#36914;&#34920;&#35352;&#12434;&#25972;&#25968;&#12395;&#22793;&#25563;&#12377;&#12427;&#38306;&#25968;
+
+&gt;&gt;&gt; dec2int [2,3,4,5]
+2345
+-}</span><span>
+</span><a name="line-18"></a><span class="hs-identifier">dec2int</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-identifier hs-type">Int</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-19"></a><a name="dec2int"><a href="Ch07.Ex04.html#dec2int"><span class="hs-identifier">dec2int</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">foldl</span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="hs-operator hs-var">+</span><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-special">(</span><span class="hs-number">10</span><span> </span><span class="hs-operator hs-var">*</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-20"></a></pre></body></html>

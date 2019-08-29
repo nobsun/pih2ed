@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.3.0
+@version 0.7.4.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1157,6 +1157,7 @@ dropWhile :: (a -> Bool) -> [a] -> [a]
 para :: (a -> ([a], b) -> b) -> b -> [a] -> b
 
 
+-- | 関数 <tt>foldr</tt> を用いて、関数 <tt>map f</tt> と <tt>filter p</tt> を定義してください
 module Ch07.Ex03
 
 -- | <tt>foldr</tt> を使った <tt>map f</tt> の定義
@@ -1176,6 +1177,19 @@ map :: (a -> b) -> [a] -> [b]
 --         | otherwise = xs
 --   </pre>
 filter :: (a -> Bool) -> [a] -> [a]
+
+
+-- | <tt>foldl</tt> を用いて，十進表記を整数に変換する関数 <tt>dec2int :: [Int] -&gt; Int</tt>
+--   を定義してください．
+module Ch07.Ex04
+
+-- | 十進表記を整数に変換する関数
+--   
+--   <pre>
+--   &gt;&gt;&gt; dec2int [2,3,4,5]
+--   2345
+--   </pre>
+dec2int :: [Int] -> Int
 
 module Lib
 

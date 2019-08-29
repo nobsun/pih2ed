@@ -5,6 +5,7 @@ Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
 
+関数 @foldr@ を用いて、関数 @map f@ と @filter p@ を定義してください
 -}
 module Ch07.Ex03 where
 
