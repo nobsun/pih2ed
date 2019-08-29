@@ -79,6 +79,7 @@ send = concatMap addCB . chop 8 . encode
 
 {- |
   @send@が生成したビット列をチェックビットをチェックした上で，文字列に復号
+
 >>> recv (send "吾輩は猫である")
 "吾輩は猫である"
 -}
