@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.4.0
+@version 0.7.5.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1190,6 +1190,29 @@ module Ch07.Ex04
 --   2345
 --   </pre>
 dec2int :: [Int] -> Int
+
+
+-- | プレリュードの定義を見ないで以下の二つの高階関数を定義してください．
+--   
+--   a. 「引数に組を取る関数」を「カリー化された関数」へ変換する関数 <tt>curry</tt> b.
+--   「引数が二つのカリー化された関数」を「引数に組を取る関数」へ変換する関数 <tt>uncurry</tt>
+module Ch07.Ex05
+
+-- | 「引数に組を取る関数」を「カリー化された関数」へ変換する関数
+--   
+--   <pre>
+--   curry :: ((a, b) -&gt; c) -&gt; a -&gt; b -&gt; c
+--   curry f x y = f (x, y)
+--   </pre>
+curry :: ((a, b) -> c) -> a -> b -> c
+
+-- | 「引数が二つのカリー化された関数」を「引数に組を取る関数」へ変換する関数
+--   
+--   <pre>
+--   uncurry :: (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
+--   uncurry f = f . fst <a>*</a> snd
+--   </pre>
+uncurry :: (a -> b -> c) -> (a, b) -> c
 
 module Lib
 
