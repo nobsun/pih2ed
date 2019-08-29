@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch07.Ex03
+Description : &#32244;&#32722;&#21839;&#38988; 7.3
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+-}</span><span>
+</span><a name="line-9"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch07.Ex03</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-10"></a><span>
+</span><a name="line-11"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">map</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">filter</span><span class="hs-special">)</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-comment">{- |
+  @foldr@ &#12434;&#20351;&#12387;&#12383; @map f@ &#12398;&#23450;&#32681;
+
+@
+  map f = foldr ((:) . f) []
+@
+
+-}</span><span>
+</span><a name="line-21"></a><span class="hs-identifier">map</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062230"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062231"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062230"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062231"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">]</span><span>
+</span><a name="line-22"></a><a name="map"><a href="Ch07.Ex03.html#map"><span class="hs-identifier">map</span></a></a><span> </span><a name="local-6989586621679062232"><a href="#local-6989586621679062232"><span class="hs-identifier">f</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">foldr</span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="hs-glyph">:</span><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><a href="#local-6989586621679062232"><span class="hs-identifier hs-var">f</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-23"></a><span>
+</span><a name="line-24"></a><span class="hs-comment">{- |
+  @foldr@ &#12434;&#20351;&#12387;&#12383; @filter p@ &#12398;&#23450;&#32681;
+
+@
+  filter p = foldr &#966; []
+    where
+      &#966; x xs
+        | p x       = x:xs
+        | otherwise = xs
+@
+
+-}</span><span>
+</span><a name="line-36"></a><span class="hs-identifier">filter</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062229"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062229"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062229"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-37"></a><a name="filter"><a href="Ch07.Ex03.html#filter"><span class="hs-identifier">filter</span></a></a><span> </span><a name="local-6989586621679062233"><a href="#local-6989586621679062233"><span class="hs-identifier">p</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">foldr</span><span> </span><a href="#local-6989586621679062234"><span class="hs-identifier hs-var">&#966;</span></a><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-38"></a><span>  </span><span class="hs-keyword">where</span><span>
+</span><a name="line-39"></a><span>    </span><a name="local-6989586621679062234"><a href="#local-6989586621679062234"><span class="hs-identifier">&#966;</span></a></a><span> </span><a name="local-6989586621679062235"><a href="#local-6989586621679062235"><span class="hs-identifier">x</span></a></a><span> </span><a name="local-6989586621679062236"><a href="#local-6989586621679062236"><span class="hs-identifier">xs</span></a></a><span>
+</span><a name="line-40"></a><span>      </span><span class="hs-glyph">|</span><span> </span><a href="#local-6989586621679062233"><span class="hs-identifier hs-var">p</span></a><span> </span><a href="#local-6989586621679062235"><span class="hs-identifier hs-var">x</span></a><span>       </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679062235"><span class="hs-identifier hs-var">x</span></a><span class="hs-glyph">:</span><a href="#local-6989586621679062236"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-41"></a><span>      </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">otherwise</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679062236"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-42"></a></pre></body></html>

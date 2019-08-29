@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.2.0
+@version 0.7.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1155,6 +1155,27 @@ takeWhile :: (a -> Bool) -> [a] -> [a]
 --   </pre>
 dropWhile :: (a -> Bool) -> [a] -> [a]
 para :: (a -> ([a], b) -> b) -> b -> [a] -> b
+
+
+module Ch07.Ex03
+
+-- | <tt>foldr</tt> を使った <tt>map f</tt> の定義
+--   
+--   <pre>
+--   map f = foldr ((:) . f) []
+--   </pre>
+map :: (a -> b) -> [a] -> [b]
+
+-- | <tt>foldr</tt> を使った <tt>filter p</tt> の定義
+--   
+--   <pre>
+--   filter p = foldr φ []
+--     where
+--       φ x xs
+--         | p x       = x:xs
+--         | otherwise = xs
+--   </pre>
+filter :: (a -> Bool) -> [a] -> [a]
 
 module Lib
 
