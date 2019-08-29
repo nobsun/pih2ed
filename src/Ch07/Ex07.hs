@@ -80,8 +80,8 @@ send = concatMap addCB . chop 8 . encode
 {- |
   ビット列をチェックビットをチェックした上で，文字列に復号
 
->>> recv (send "吾輩は猫である")
-"吾輩は猫である"
+>>> recv (send "吾輩は猫である") == "吾輩は猫である"
+True
 -}
 recv :: [Bit] -> String
 recv = decode . concatMap chkCB . chop 9

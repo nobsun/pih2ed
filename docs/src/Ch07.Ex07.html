@@ -80,8 +80,8 @@ Maintainer  : nobsun@gmail.com
 </span><a name="line-80"></a><span class="hs-comment">{- |
   &#12499;&#12483;&#12488;&#21015;&#12434;&#12481;&#12455;&#12483;&#12463;&#12499;&#12483;&#12488;&#12434;&#12481;&#12455;&#12483;&#12463;&#12375;&#12383;&#19978;&#12391;&#65292;&#25991;&#23383;&#21015;&#12395;&#24489;&#21495;
 
-&gt;&gt;&gt; recv (send &quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;)
-&quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;
+&gt;&gt;&gt; recv (send &quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;) == &quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;
+True
 -}</span><span>
 </span><a name="line-86"></a><span class="hs-identifier">recv</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier hs-type">Bit</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">String</span><span>
 </span><a name="line-87"></a><a name="recv"><a href="Ch07.Ex07.html#recv"><span class="hs-identifier">recv</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch07.Ex07.html#decode"><span class="hs-identifier hs-var">decode</span></a><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-identifier hs-var">concatMap</span><span> </span><a href="Ch07.Ex07.html#chkCB"><span class="hs-identifier hs-var">chkCB</span></a><span> </span><span class="hs-operator hs-var">.</span><span> </span><a href="Ch07.Ex07.html#chop"><span class="hs-identifier hs-var">chop</span></a><span> </span><span class="hs-number">9</span><span>

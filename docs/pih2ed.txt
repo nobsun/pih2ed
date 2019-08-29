@@ -1292,8 +1292,8 @@ send :: String -> [Bit]
 -- | ビット列をチェックビットをチェックした上で，文字列に復号
 --   
 --   <pre>
---   &gt;&gt;&gt; recv (send "吾輩は猫である")
---   "吾輩は猫である"
+--   &gt;&gt;&gt; recv (send "吾輩は猫である") == "吾輩は猫である"
+--   True
 --   </pre>
 recv :: [Bit] -> String
 
