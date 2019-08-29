@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.1.0
+@version 0.7.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1098,6 +1098,63 @@ last :: [a] -> a
 --   map f (filter p xs)
 --   </pre>
 module Ch07.Ex01
+
+
+-- | プレリュードでの定義を見ないで以下の高階関数を定義してください．
+--   
+--   a. リストの要素のすべてが述語を満たすか検査する関数 <tt> all :: (a -&gt; Bool) -&gt; [a] -&gt;
+--   Bool </tt>
+--   
+--   b. リストの要素のどれかが述語を満たすか検査する関数 <tt> any :: (a -&gt; Bool) -&gt; [a] -&gt;
+--   Bool </tt>
+--   
+--   c. リストの先頭から述語を満たす連続した要素を取り出す関数 <tt> takeWhile :: (a -&gt; Bool) -&gt;
+--   [a] -&gt; [a] </tt>
+--   
+--   d. リストの先頭から述語を満たす連続した要素を取り除く関数 <tt> dropWhile :: (a -&gt; Bool) -&gt;
+--   [a] -&gt; [a] </tt>
+module Ch07.Ex02
+
+-- | リストの要素のすべてが述語を満たすか検査する関数
+--   
+--   <pre>
+--   all :: (a -&gt; Bool) -&gt; [a] -&gt; Bool
+--   all p = foldr ((&amp;&amp;) . p) True
+--   </pre>
+all :: (a -> Bool) -> [a] -> Bool
+
+-- | リストの要素のどれかが述語を満たすか検査する関数
+--   
+--   <pre>
+--   any p = foldr ((||) . p) False
+--   </pre>
+any :: (a -> Bool) -> [a] -> Bool
+
+-- | リストの先頭から述語を満たす連続した要素を取り出す関数
+--   
+--   <pre>
+--   takeWhile p = foldr φ []
+--     where
+--       φ x xs | p x       = x : xs
+--               | otherwise = []
+--   </pre>
+takeWhile :: (a -> Bool) -> [a] -> [a]
+
+-- | リストの先頭から述語を満たす連続した要素を取り除く関数
+--   
+--   <pre>
+--   dropWhile p = para φ []
+--     where
+--       φ x (xs, ys)
+--         | p x       = ys
+--         | otherwise = x:xs
+--   
+--   para :: (a -&gt; ([a], b) -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--   para _  z []     = z
+--   para φ z (x:xs) = φ x (xs, para φ z xs)
+--   </pre>
+dropWhile :: (a -> Bool) -> [a] -> [a]
+para :: (a -> ([a], b) -> b) -> b -> [a] -> b
 
 module Lib
 
