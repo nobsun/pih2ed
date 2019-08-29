@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.5.0
+@version 0.7.6.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1213,6 +1213,42 @@ curry :: ((a, b) -> c) -> a -> b -> c
 --   uncurry f = f . fst <a>*</a> snd
 --   </pre>
 uncurry :: (a -> b -> c) -> (a, b) -> c
+
+
+-- | 関数 <tt>unfold :: (a -&gt; Bool) -&gt; (a -&gt; b) -&gt; (a -&gt; a)
+--   -&gt; a -&gt; [b]</tt> を用いて関数 <tt>chop8</tt>，<tt>map
+--   f</tt>，<tt>iterate f</tt> を再定義してください．
+module Ch07.Ex06
+
+-- | リスト上の unfold
+--   
+--   <pre>
+--   &gt;&gt;&gt; unfold (== 0) (`mod` 2) (`div` 2) 13
+--   [1,0,1,1]
+--   </pre>
+unfold :: (a -> Bool) -> (a -> b) -> (a -> a) -> a -> [b]
+type Bit = Int
+
+-- | ビットリストを8ビットの二進表記に分割する
+--   
+--   <pre>
+--   chop8 = unfold null (take 8) (drop 8)
+--   </pre>
+chop8 :: [Bit] -> [[Bit]]
+
+-- | <tt>unfold</tt>を用いた<tt>map f</tt>の定義
+--   
+--   <pre>
+--   map f = unfold null (f . head) tail
+--   </pre>
+map :: (a -> b) -> [a] -> [b]
+
+-- | <tt>unfold</tt>を用いた<tt>iterate f</tt>の定義
+--   
+--   <pre>
+--   iterate f = unfold (const False) id f
+--   </pre>
+iterate :: (a -> a) -> a -> [a]
 
 module Lib
 

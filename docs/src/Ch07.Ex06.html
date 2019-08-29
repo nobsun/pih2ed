@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch07.Ex06
+Description : &#32244;&#32722;&#21839;&#38988; 7.6
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#38306;&#25968; @unfold :: (a -&gt; Bool) -&gt; (a -&gt; b) -&gt; (a -&gt; a) -&gt; a -&gt; [b]@
+&#12434;&#29992;&#12356;&#12390;&#38306;&#25968; @chop8@&#65292;@map f@&#65292;@iterate f@ &#12434;&#20877;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-11"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch07.Ex06</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">map</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">iterate</span><span class="hs-special">)</span><span>
+</span><a name="line-14"></a><span>
+</span><a name="line-15"></a><span class="hs-comment">{- |
+  &#12522;&#12473;&#12488;&#19978;&#12398; unfold
+
+&gt;&gt;&gt; unfold (== 0) (`mod` 2) (`div` 2) 13
+[1,0,1,1]
+-}</span><span>
+</span><a name="line-21"></a><span class="hs-identifier">unfold</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062484"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062484"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062485"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062484"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062484"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062484"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062485"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">]</span><span>
+</span><a name="line-22"></a><a name="unfold"><a href="Ch07.Ex06.html#unfold"><span class="hs-identifier">unfold</span></a></a><span> </span><a name="local-6989586621679062486"><a href="#local-6989586621679062486"><span class="hs-identifier">p</span></a></a><span> </span><a name="local-6989586621679062487"><a href="#local-6989586621679062487"><span class="hs-identifier">h</span></a></a><span> </span><a name="local-6989586621679062488"><a href="#local-6989586621679062488"><span class="hs-identifier">t</span></a></a><span> </span><a name="local-6989586621679062489"><a href="#local-6989586621679062489"><span class="hs-identifier">x</span></a></a><span>
+</span><a name="line-23"></a><span>  </span><span class="hs-glyph">|</span><span> </span><a href="#local-6989586621679062486"><span class="hs-identifier hs-var">p</span></a><span> </span><a href="#local-6989586621679062489"><span class="hs-identifier hs-var">x</span></a><span>       </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><a name="line-24"></a><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier hs-var">otherwise</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679062487"><span class="hs-identifier hs-var">h</span></a><span> </span><a href="#local-6989586621679062489"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-glyph">:</span><span> </span><a href="Ch07.Ex06.html#unfold"><span class="hs-identifier hs-var">unfold</span></a><span> </span><a href="#local-6989586621679062486"><span class="hs-identifier hs-var">p</span></a><span> </span><a href="#local-6989586621679062487"><span class="hs-identifier hs-var">h</span></a><span> </span><a href="#local-6989586621679062488"><span class="hs-identifier hs-var">t</span></a><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062488"><span class="hs-identifier hs-var">t</span></a><span> </span><a href="#local-6989586621679062489"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">)</span><span>
+</span><a name="line-25"></a><span>
+</span><a name="line-26"></a><span>
+</span><a name="line-27"></a><span class="hs-keyword">type</span><span> </span><a name="Bit"><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier">Bit</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-28"></a><span>
+</span><a name="line-29"></a><span class="hs-comment">{- |
+  &#12499;&#12483;&#12488;&#12522;&#12473;&#12488;&#12434;8&#12499;&#12483;&#12488;&#12398;&#20108;&#36914;&#34920;&#35352;&#12395;&#20998;&#21106;&#12377;&#12427;
+
+@
+  chop8 = unfold null (take 8) (drop 8)
+@
+-}</span><span>
+</span><a name="line-36"></a><span class="hs-identifier">chop8</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier hs-type">Bit</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier hs-type">Bit</span></a><span class="hs-special">]</span><span class="hs-special">]</span><span>
+</span><a name="line-37"></a><a name="chop8"><a href="Ch07.Ex06.html#chop8"><span class="hs-identifier">chop8</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch07.Ex06.html#unfold"><span class="hs-identifier hs-var">unfold</span></a><span> </span><span class="hs-identifier hs-var">null</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">take</span><span> </span><span class="hs-number">8</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">drop</span><span> </span><span class="hs-number">8</span><span class="hs-special">)</span><span>
+</span><a name="line-38"></a><span>
+</span><a name="line-39"></a><span class="hs-comment">{- |
+  @unfold@&#12434;&#29992;&#12356;&#12383;@map f@&#12398;&#23450;&#32681;
+
+@
+  map f = unfold null (f . head) tail
+@
+-}</span><span>
+</span><a name="line-46"></a><span class="hs-identifier">map</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062482"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062483"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062482"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062483"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">]</span><span>
+</span><a name="line-47"></a><a name="map"><a href="Ch07.Ex06.html#map"><span class="hs-identifier">map</span></a></a><span> </span><a name="local-6989586621679062490"><a href="#local-6989586621679062490"><span class="hs-identifier">f</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch07.Ex06.html#unfold"><span class="hs-identifier hs-var">unfold</span></a><span> </span><span class="hs-identifier hs-var">null</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062490"><span class="hs-identifier hs-var">f</span></a><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-identifier hs-var">head</span><span class="hs-special">)</span><span> </span><span class="hs-identifier hs-var">tail</span><span>
+</span><a name="line-48"></a><span>
+</span><a name="line-49"></a><span class="hs-comment">{- |
+  @unfold@&#12434;&#29992;&#12356;&#12383;@iterate f@&#12398;&#23450;&#32681;
+
+@
+  iterate f = unfold (const False) id f
+@
+-}</span><span>
+</span><a name="line-56"></a><span class="hs-identifier">iterate</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679062481"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062481"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679062481"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679062481"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span>
+</span><a name="line-57"></a><a name="iterate"><a href="Ch07.Ex06.html#iterate"><span class="hs-identifier">iterate</span></a></a><span> </span><a name="local-6989586621679062491"><a href="#local-6989586621679062491"><span class="hs-identifier">f</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch07.Ex06.html#unfold"><span class="hs-identifier hs-var">unfold</span></a><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">const</span><span> </span><span class="hs-identifier hs-var">False</span><span class="hs-special">)</span><span> </span><span class="hs-identifier hs-var">id</span><span> </span><a href="#local-6989586621679062491"><span class="hs-identifier hs-var">f</span></a><span>
+</span><a name="line-58"></a></pre></body></html>
