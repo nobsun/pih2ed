@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch08.Ex03
+Description : &#32244;&#32722;&#21839;&#38988; 8.3
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#20197;&#19979;&#12398;&#20108;&#20998;&#26408;&#12434;&#32771;&#12360;&#12414;&#12375;&#12423;&#12358;&#65294;
+
+@
+  data Tree a = Leaf a | Node (Tree a) (Tree a)
+@
+
+&#12377;&#12409;&#12390;&#12398;&#31680;&#12395;&#23550;&#12375;&#12390;&#65292;&#21491;&#12392;&#24038;&#12398;&#37096;&#20998;&#26408;&#12395;&#12354;&#12427;&#33865;&#12398;&#25968;&#12364;&#39640;&#12293;&#19968;&#12388;&#12384;&#12369;&#30064;&#12394;&#12427;&#12392;&#12365;&#65292;&#26408;&#12399;&#24179;&#34913;&#12375;&#12390;&#12356;&#12427;&#12392;&#21628;&#12403;&#12414;&#12377;&#65294;
+&#33865;&#12399;&#24179;&#34913;&#12375;&#12390;&#12356;&#12427;&#12392;&#32771;&#12360;&#12414;&#12377;&#65294;&#20108;&#20998;&#26408;&#12364;&#24179;&#34913;&#12375;&#12390;&#12356;&#12427;&#12363;&#35519;&#12409;&#12427;&#38306;&#25968; @balanced :: Tree a -&gt; Bool@ &#12434;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;
+-}</span><span>
+</span><a name="line-17"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch08.Ex03</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-18"></a><span>
+</span><a name="line-19"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data.Bool</span><span>
+</span><a name="line-20"></a><span>
+</span><a name="line-21"></a><span class="hs-keyword">data</span><span> </span><a name="Tree"><a href="Ch08.Ex03.html#Tree"><span class="hs-identifier">Tree</span></a></a><span> </span><a name="local-6989586621679064349"><a href="#local-6989586621679064349"><span class="hs-identifier">a</span></a></a><span>
+</span><a name="line-22"></a><span>  </span><span class="hs-glyph">=</span><span> </span><a name="Leaf"><a href="Ch08.Ex03.html#Leaf"><span class="hs-identifier">Leaf</span></a></a><span> </span><a href="#local-6989586621679064349"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-23"></a><span>  </span><span class="hs-glyph">|</span><span> </span><a name="Node"><a href="Ch08.Ex03.html#Node"><span class="hs-identifier">Node</span></a></a><span> </span><span class="hs-special">(</span><a href="Ch08.Ex03.html#Tree"><span class="hs-identifier hs-type">Tree</span></a><span> </span><a href="#local-6989586621679064349"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><a href="Ch08.Ex03.html#Tree"><span class="hs-identifier hs-type">Tree</span></a><span> </span><a href="#local-6989586621679064349"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">)</span><span>
+</span><a name="line-24"></a><span>
+</span><a name="line-25"></a><span class="hs-comment">{- |
+  &#33865;&#12398;&#25968;
+
+@
+  leaves (Leaf _) = 1
+  leaves (Node l r) = leaves l + leaves r
+@
+-}</span><span>
+</span><a name="line-33"></a><span class="hs-identifier">leaves</span><span> </span><span class="hs-glyph">::</span><span> </span><a href="Ch08.Ex03.html#Tree"><span class="hs-identifier hs-type">Tree</span></a><span> </span><a href="#local-6989586621679064351"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-34"></a><a name="leaves"><a href="Ch08.Ex03.html#leaves"><span class="hs-identifier">leaves</span></a></a><span> </span><span class="hs-special">(</span><a href="Ch08.Ex03.html#Leaf"><span class="hs-identifier hs-var">Leaf</span></a><span> </span><span class="hs-identifier">_</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">1</span><span>
+</span><a name="line-35"></a><span class="hs-identifier">leaves</span><span> </span><span class="hs-special">(</span><a href="Ch08.Ex03.html#Node"><span class="hs-identifier hs-var">Node</span></a><span> </span><a name="local-6989586621679064352"><a href="#local-6989586621679064352"><span class="hs-identifier">l</span></a></a><span> </span><a name="local-6989586621679064353"><a href="#local-6989586621679064353"><span class="hs-identifier">r</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch08.Ex03.html#leaves"><span class="hs-identifier hs-var">leaves</span></a><span> </span><a href="#local-6989586621679064352"><span class="hs-identifier hs-var">l</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="Ch08.Ex03.html#leaves"><span class="hs-identifier hs-var">leaves</span></a><span> </span><a href="#local-6989586621679064353"><span class="hs-identifier hs-var">r</span></a><span>
+</span><a name="line-36"></a><span>
+</span><a name="line-37"></a><span class="hs-comment">{- |
+  &#33865;&#12398;&#25968;(&#24179;&#34913;&#12391;&#12394;&#12356;&#37096;&#20998;&#26408;&#12391;&#12399;0)
+
+@
+  leaves' (Leaf _) = 1
+  leaves' (Node l r)
+    = case leaves' l of
+        0 -&gt; 0
+        m -&gt; case leaves' r of
+          0 -&gt; 0
+          n -&gt; bool 0 (m + n) (abs (m - n) &lt;= 1)
+@
+-}</span><span>
+</span><a name="line-50"></a><a name="leaves%27"><a href="Ch08.Ex03.html#leaves%27"><span class="hs-identifier">leaves'</span></a></a><span> </span><span class="hs-special">(</span><a href="Ch08.Ex03.html#Leaf"><span class="hs-identifier hs-var">Leaf</span></a><span> </span><span class="hs-identifier">_</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">1</span><span>
+</span><a name="line-51"></a><span class="hs-identifier">leaves'</span><span> </span><span class="hs-special">(</span><a href="Ch08.Ex03.html#Node"><span class="hs-identifier hs-var">Node</span></a><span> </span><a name="local-6989586621679064354"><a href="#local-6989586621679064354"><span class="hs-identifier">l</span></a></a><span> </span><a name="local-6989586621679064355"><a href="#local-6989586621679064355"><span class="hs-identifier">r</span></a></a><span class="hs-special">)</span><span>
+</span><a name="line-52"></a><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><a href="Ch08.Ex03.html#leaves%27"><span class="hs-identifier hs-var">leaves'</span></a><span> </span><a href="#local-6989586621679064354"><span class="hs-identifier hs-var">l</span></a><span> </span><span class="hs-keyword">of</span><span>
+</span><a name="line-53"></a><span>      </span><span class="hs-number">0</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-54"></a><span>      </span><a name="local-6989586621679064356"><a href="#local-6989586621679064356"><span class="hs-identifier">m</span></a></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><a href="Ch08.Ex03.html#leaves%27"><span class="hs-identifier hs-var">leaves'</span></a><span> </span><a href="#local-6989586621679064355"><span class="hs-identifier hs-var">r</span></a><span> </span><span class="hs-keyword">of</span><span>
+</span><a name="line-55"></a><span>        </span><span class="hs-number">0</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-number">0</span><span>
+</span><a name="line-56"></a><span>        </span><a name="local-6989586621679064357"><a href="#local-6989586621679064357"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-var">bool</span><span> </span><span class="hs-number">0</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679064356"><span class="hs-identifier hs-var">m</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><a href="#local-6989586621679064357"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">abs</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679064356"><span class="hs-identifier hs-var">m</span></a><span> </span><span class="hs-glyph">-</span><span> </span><a href="#local-6989586621679064357"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">&lt;=</span><span> </span><span class="hs-number">1</span><span class="hs-special">)</span><span>
+</span><a name="line-57"></a><span>
+</span><a name="line-58"></a><span class="hs-comment">{- |
+  &#24179;&#34913;&#21028;&#23450;
+
+@
+  balanced = (/= 0) . leaves' 
+@
+-}</span><span>
+</span><a name="line-65"></a><span class="hs-identifier">balanced</span><span> </span><span class="hs-glyph">::</span><span> </span><a href="Ch08.Ex03.html#Tree"><span class="hs-identifier hs-type">Tree</span></a><span> </span><a href="#local-6989586621679064350"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span>
+</span><a name="line-66"></a><a name="balanced"><a href="Ch08.Ex03.html#balanced"><span class="hs-identifier">balanced</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="hs-operator hs-var">/=</span><span> </span><span class="hs-number">0</span><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><a href="Ch08.Ex03.html#leaves%27"><span class="hs-identifier hs-var">leaves'</span></a><span>
+</span><a name="line-67"></a></pre></body></html>
