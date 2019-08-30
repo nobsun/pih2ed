@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.3.0
+@version 0.8.4.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1395,6 +1395,8 @@ mult :: Nat -> Nat -> Nat
 -- | <tt>compare</tt>メソッドを用いて，探索木用の関数 <tt>occurs :: Ord a =&gt; a -&gt;
 --   Tree a -&gt; Bool</tt> を再定義してください
 module Ch08.Ex02
+
+-- | 二分探索木
 data Tree a
 Leaf :: a -> Tree a
 Node :: Tree a -> a -> Tree a -> Tree a
@@ -1423,6 +1425,8 @@ occurs :: Ord a => a -> Tree a -> Bool
 --   葉は平衡していると考えます．二分木が平衡しているか調べる関数 <tt>balanced :: Tree a -&gt; Bool</tt>
 --   を定義してください
 module Ch08.Ex03
+
+-- | 二分木
 data Tree a
 Leaf :: a -> Tree a
 Node :: Tree a -> Tree a -> Tree a
@@ -1454,6 +1458,31 @@ leaves' :: (Num p, Ord p) => Tree a -> p
 --   balanced = (/= 0) . leaves' 
 --   </pre>
 balanced :: Tree a -> Bool
+
+
+-- | 空でない整数のリストを平衡木に変換する関数 <tt>balance :: [a] -&gt; Tree a</tt> を定義してください
+module Ch08.Ex04
+
+-- | リストを2分割
+--   
+--   <pre>
+--   &gt;&gt;&gt; halve [1,2,3,4,5]
+--   ([1,2,3],[4,5])
+--   </pre>
+halve :: [a] -> ([a], [a])
+
+-- | 平衡木の生成
+--   
+--   <pre>
+--   &gt;&gt;&gt; balance [1,2,3,4,5]
+--   Node (Node (Node (Leaf 1) (Leaf 2)) (Leaf 3)) (Node (Leaf 4) (Leaf 5))
+--   
+--   &gt;&gt;&gt; balanced (balance [1,2,3,4,5,6,7])
+--   True
+--   </pre>
+balance :: [a] -> Tree a
+(***) :: (a -> c) -> (b -> d) -> (a, b) -> (c, d)
+instance GHC.Show.Show a => GHC.Show.Show (Ch08.Ex03.Tree a)
 
 module Lib
 

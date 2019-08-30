@@ -9,9 +9,13 @@ Maintainer  : nobsun@gmail.com
 -}
 module Ch08.Ex02 where
 
+{- |
+  二分探索木
+-}
 data Tree a
   = Leaf a
   | Node (Tree a) a (Tree a)
+
 {- |
   出現判定
 

@@ -18,6 +18,9 @@ module Ch08.Ex03 where
 
 import Data.Bool
 
+{- |
+  二分木
+-}
 data Tree a
   = Leaf a
   | Node (Tree a) (Tree a)
