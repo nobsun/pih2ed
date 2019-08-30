@@ -6,7 +6,7 @@ License     : BSD-3
 Maintainer  : nobsun@gmail.com
 
 第4章の練習問題に出てきた Luhn アルゴリズムを実装する関数を任意の長さのカード番号を取り扱えるように改良してください．
-そのために，@altMap@ を用いて関数 @luhn :: [Int] -> Bool@ を定義してください。
+そのために，@altMap@ を用いて関数 @luhn :: [Int] -> Bool@ を定義してください．
 -}
 module Ch07.Ex10 where
 
