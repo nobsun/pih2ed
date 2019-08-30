@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.7.0
+@version 0.7.8.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1311,6 +1311,38 @@ check :: [Bit] -> Bool
 
 -- | ビット列のチェック
 chkCB :: [Bit] -> [Bit]
+
+
+-- | 通信エラーの生じる通信路を用いて，直前の問題で定義した文字列を通信するプログラムを試してください．
+--   この通信路は最初のビットを落とすものとします．
+module Ch07.Ex08
+
+-- | エラーのない伝送路での実験
+--   
+--   <pre>
+--   experiment0 = putStrLn (recv (transmit (send "吾輩は猫である")))
+--   transmit = id
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; catch experiment0 (\ e -&gt; hPutStrLn stderr (show (e :: SomeException)))
+--   吾輩は猫である
+--   </pre>
+experiment0 :: IO ()
+
+-- | 最初のビットが落ちる伝送路での実験
+--   
+--   <pre>
+--   experiment1 = putStrLn (recv (transmit' (send "吾輩は猫である")))
+--   transmit' = tail
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; catch experiment1 (\ e -&gt; const (putStrLn "エラーが起きました") (e :: SomeException))
+--   エラーが起きました
+--   </pre>
+experiment1 :: IO ()
+transmit' :: [Bit] -> [Bit]
 
 module Lib
 

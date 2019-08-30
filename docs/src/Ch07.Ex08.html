@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch07.Ex08
+Description : &#32244;&#32722;&#21839;&#38988; 7.8
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#36890;&#20449;&#12456;&#12521;&#12540;&#12398;&#29983;&#12376;&#12427;&#36890;&#20449;&#36335;&#12434;&#29992;&#12356;&#12390;&#65292;&#30452;&#21069;&#12398;&#21839;&#38988;&#12391;&#23450;&#32681;&#12375;&#12383;&#25991;&#23383;&#21015;&#12434;&#36890;&#20449;&#12377;&#12427;&#12503;&#12525;&#12464;&#12521;&#12512;&#12434;&#35430;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+&#12371;&#12398;&#36890;&#20449;&#36335;&#12399;&#26368;&#21021;&#12398;&#12499;&#12483;&#12488;&#12434;&#33853;&#12392;&#12377;&#12418;&#12398;&#12392;&#12375;&#12414;&#12377;&#65294;
+-}</span><span>
+</span><a name="line-11"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch07.Ex08</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Control.Exception</span><span>
+</span><a name="line-14"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">System.IO</span><span>
+</span><a name="line-15"></a><span class="hs-keyword">import</span><span> </span><a href="Ch07.Ex06.html"><span class="hs-identifier">Ch07.Ex06</span></a><span> </span><span class="hs-special">(</span><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier hs-type">Bit</span></a><span class="hs-special">)</span><span>
+</span><a name="line-16"></a><span class="hs-keyword">import</span><span> </span><a href="Ch07.Ex07.html"><span class="hs-identifier">Ch07.Ex07</span></a><span>
+</span><a name="line-17"></a><span>
+</span><a name="line-18"></a><span class="hs-comment">{- |
+  &#12456;&#12521;&#12540;&#12398;&#12394;&#12356;&#20253;&#36865;&#36335;&#12391;&#12398;&#23455;&#39443;
+
+@
+  experiment0 = putStrLn (recv (transmit (send &quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;)))
+  transmit = id
+@
+
+&gt;&gt;&gt; catch experiment0 (\ e -&gt; hPutStrLn stderr (show (e :: SomeException)))
+&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;
+-}</span><span>
+</span><a name="line-29"></a><span class="hs-identifier">experiment0</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-30"></a><a name="experiment0"><a href="Ch07.Ex08.html#experiment0"><span class="hs-identifier">experiment0</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">putStrLn</span><span> </span><span class="hs-special">(</span><a href="Ch07.Ex07.html#recv"><span class="hs-identifier hs-var">recv</span></a><span> </span><span class="hs-special">(</span><a href="Ch07.Ex07.html#transmit"><span class="hs-identifier hs-var">transmit</span></a><span> </span><span class="hs-special">(</span><a href="Ch07.Ex07.html#send"><span class="hs-identifier hs-var">send</span></a><span> </span><span class="hs-string">&quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-31"></a><span>
+</span><a name="line-32"></a><span class="hs-comment">{- |
+  &#26368;&#21021;&#12398;&#12499;&#12483;&#12488;&#12364;&#33853;&#12385;&#12427;&#20253;&#36865;&#36335;&#12391;&#12398;&#23455;&#39443;
+
+@
+  experiment1 = putStrLn (recv (transmit' (send &quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;)))
+  transmit' = tail
+@
+
+&gt;&gt;&gt; catch experiment1 (\ e -&gt; const (putStrLn &quot;&#12456;&#12521;&#12540;&#12364;&#36215;&#12365;&#12414;&#12375;&#12383;&quot;) (e :: SomeException))
+&#12456;&#12521;&#12540;&#12364;&#36215;&#12365;&#12414;&#12375;&#12383;
+-}</span><span>
+</span><a name="line-43"></a><span class="hs-identifier">experiment1</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-44"></a><a name="experiment1"><a href="Ch07.Ex08.html#experiment1"><span class="hs-identifier">experiment1</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">putStrLn</span><span> </span><span class="hs-special">(</span><a href="Ch07.Ex07.html#recv"><span class="hs-identifier hs-var">recv</span></a><span> </span><span class="hs-special">(</span><a href="Ch07.Ex08.html#transmit%27"><span class="hs-identifier hs-var">transmit'</span></a><span> </span><span class="hs-special">(</span><a href="Ch07.Ex07.html#send"><span class="hs-identifier hs-var">send</span></a><span> </span><span class="hs-string">&quot;&#21566;&#36649;&#12399;&#29483;&#12391;&#12354;&#12427;&quot;</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-45"></a><span>
+</span><a name="line-46"></a><span class="hs-identifier">transmit'</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier hs-type">Bit</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="Ch07.Ex06.html#Bit"><span class="hs-identifier hs-type">Bit</span></a><span class="hs-special">]</span><span>
+</span><a name="line-47"></a><a name="transmit%27"><a href="Ch07.Ex08.html#transmit%27"><span class="hs-identifier">transmit'</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">tail</span><span>
+</span><a name="line-48"></a></pre></body></html>
