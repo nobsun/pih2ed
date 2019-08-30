@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.1.0
+@version 0.8.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1390,6 +1390,27 @@ add :: Nat -> Nat -> Nat
 --   mult (Succ m) n = add n (mult m n)
 --   </pre>
 mult :: Nat -> Nat -> Nat
+
+
+-- | <tt>compare</tt>メソッドを用いて，探索木用の関数 <tt>occurs :: Ord a =&gt; a -&gt;
+--   Tree a -&gt; Bool</tt> を再定義してください
+module Ch08.Ex02
+data Tree a
+Leaf :: a -> Tree a
+Node :: Tree a -> a -> Tree a -> Tree a
+
+-- | 出現判定
+--   
+--   <pre>
+--   occurs x (Leaf y) = x == y
+--   occurs x (Node l y r) = case compare x y of
+--     LT -&gt; occurs x l
+--     EQ -&gt; True
+--     GT -&gt; occurs x r
+--   </pre>
+--   
+--   元の実装は1つのノードで x と y の比較が 2 回になる場合があるが， 新しい実装では 1 回ですむ．
+occurs :: Ord a => a -> Tree a -> Bool
 
 module Lib
 
