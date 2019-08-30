@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch07.Ex09
+Description : &#32244;&#32722;&#21839;&#38988; 7.9
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#38306;&#25968; @altMap :: (a -&gt; b) -&gt; (a -&gt; b) -&gt; [a] -&gt; [b]@ &#12434;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+&#12371;&#12398;&#38306;&#25968;&#12399;&#65292;&#24341;&#25968;&#12391;&#25351;&#23450;&#12373;&#12428;&#12383;&#20108;&#12388;&#12398;&#38306;&#25968;&#12434;&#12522;&#12473;&#12488;&#12398;&#35201;&#32032;&#12395;&#20132;&#20114;&#12395;&#36969;&#29992;&#12375;&#12414;&#12377;&#65294;
+-}</span><span>
+</span><a name="line-11"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch07.Ex09</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-comment">{- |
+  &#24341;&#25968;&#12391;&#25351;&#23450;&#12373;&#12428;&#12383;&#20108;&#12388;&#12398;&#38306;&#25968;&#12434;&#12522;&#12473;&#12488;&#12398;&#35201;&#32032;&#12395;&#20132;&#20114;&#12395;&#36969;&#29992;
+
+&gt;&gt;&gt; altMap (+10) (+100) [0,1,2,3,4]
+[10,101,12,103,14]
+-}</span><span>
+</span><a name="line-19"></a><span class="hs-identifier">altMap</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679064034"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064035"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679064034"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064035"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679064034"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679064035"><span class="hs-identifier hs-type">b</span></a><span class="hs-special">]</span><span>
+</span><a name="line-20"></a><a name="altMap"><a href="Ch07.Ex09.html#altMap"><span class="hs-identifier">altMap</span></a></a><span> </span><a name="local-6989586621679064036"><a href="#local-6989586621679064036"><span class="hs-identifier">f</span></a></a><span> </span><a name="local-6989586621679064037"><a href="#local-6989586621679064037"><span class="hs-identifier">g</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">zipWith</span><span> </span><span class="hs-identifier hs-var">id</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">cycle</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679064036"><span class="hs-identifier hs-var">f</span></a><span class="hs-special">,</span><span> </span><a href="#local-6989586621679064037"><span class="hs-identifier hs-var">g</span></a><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><a name="line-21"></a></pre></body></html>
