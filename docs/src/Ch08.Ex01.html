@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch08.Ex01
+Description : &#32244;&#32722;&#21839;&#38988; 8.1
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#38306;&#25968; @add@ &#12392;&#21516;&#27096;&#12395;&#33258;&#28982;&#25968;&#12398;&#20055;&#31639;&#38306;&#25968; @mult :: Nat -&gt; Nat -&gt; Nat@ &#12434;&#20877;&#24112;&#30340;&#12395;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch08.Ex01</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">data</span><span> </span><a name="Nat"><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier">Nat</span></a></a><span>
+</span><a name="line-13"></a><span>  </span><span class="hs-glyph">=</span><span> </span><a name="Zero"><a href="Ch08.Ex01.html#Zero"><span class="hs-identifier">Zero</span></a></a><span>
+</span><a name="line-14"></a><span>  </span><span class="hs-glyph">|</span><span> </span><a name="Succ"><a href="Ch08.Ex01.html#Succ"><span class="hs-identifier">Succ</span></a></a><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span>
+</span><a name="line-15"></a><span>
+</span><a name="line-16"></a><span class="hs-identifier">add</span><span> </span><span class="hs-glyph">::</span><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span>
+</span><a name="line-17"></a><a name="add"><a href="Ch08.Ex01.html#add"><span class="hs-identifier">add</span></a></a><span> </span><a href="Ch08.Ex01.html#Zero"><span class="hs-identifier hs-var">Zero</span></a><span> </span><a name="local-6989586621679064182"><a href="#local-6989586621679064182"><span class="hs-identifier">n</span></a></a><span>     </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679064182"><span class="hs-identifier hs-var">n</span></a><span>
+</span><a name="line-18"></a><span class="hs-identifier">add</span><span> </span><span class="hs-special">(</span><a href="Ch08.Ex01.html#Succ"><span class="hs-identifier hs-var">Succ</span></a><span> </span><a name="local-6989586621679064183"><a href="#local-6989586621679064183"><span class="hs-identifier">m</span></a></a><span class="hs-special">)</span><span> </span><a name="local-6989586621679064184"><a href="#local-6989586621679064184"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch08.Ex01.html#Succ"><span class="hs-identifier hs-var">Succ</span></a><span> </span><span class="hs-special">(</span><a href="Ch08.Ex01.html#add"><span class="hs-identifier hs-var">add</span></a><span> </span><a href="#local-6989586621679064183"><span class="hs-identifier hs-var">m</span></a><span> </span><a href="#local-6989586621679064184"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span>
+</span><a name="line-19"></a><span>
+</span><a name="line-20"></a><span class="hs-comment">{- |
+  Nat &#19978;&#12398;&#20055;&#31639;
+
+@
+mult Zero n     = Zero
+mult (Succ m) n = add n (mult m n)
+@
+-}</span><span>
+</span><a name="line-28"></a><span class="hs-identifier">mult</span><span> </span><span class="hs-glyph">::</span><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="Ch08.Ex01.html#Nat"><span class="hs-identifier hs-type">Nat</span></a><span>
+</span><a name="line-29"></a><a name="mult"><a href="Ch08.Ex01.html#mult"><span class="hs-identifier">mult</span></a></a><span> </span><a href="Ch08.Ex01.html#Zero"><span class="hs-identifier hs-var">Zero</span></a><span> </span><a name="local-6989586621679064185"><a href="#local-6989586621679064185"><span class="hs-identifier">n</span></a></a><span>     </span><span class="hs-glyph">=</span><span> </span><a href="Ch08.Ex01.html#Zero"><span class="hs-identifier hs-var">Zero</span></a><span>
+</span><a name="line-30"></a><span class="hs-identifier">mult</span><span> </span><span class="hs-special">(</span><a href="Ch08.Ex01.html#Succ"><span class="hs-identifier hs-var">Succ</span></a><span> </span><a name="local-6989586621679064186"><a href="#local-6989586621679064186"><span class="hs-identifier">m</span></a></a><span class="hs-special">)</span><span> </span><a name="local-6989586621679064187"><a href="#local-6989586621679064187"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="Ch08.Ex01.html#add"><span class="hs-identifier hs-var">add</span></a><span> </span><a href="#local-6989586621679064187"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-special">(</span><a href="Ch08.Ex01.html#mult"><span class="hs-identifier hs-var">mult</span></a><span> </span><a href="#local-6989586621679064186"><span class="hs-identifier hs-var">m</span></a><span> </span><a href="#local-6989586621679064187"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span>
+</span><a name="line-31"></a></pre></body></html>

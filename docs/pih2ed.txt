@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.7.10.0
+@version 0.8.1.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1373,6 +1373,23 @@ module Ch07.Ex10
 --   True
 --   </pre>
 luhn :: [Int] -> Bool
+
+
+-- | 関数 <tt>add</tt> と同様に自然数の乗算関数 <tt>mult :: Nat -&gt; Nat -&gt; Nat</tt>
+--   を再帰的に定義してください．
+module Ch08.Ex01
+data Nat
+Zero :: Nat
+Succ :: Nat -> Nat
+add :: Nat -> Nat -> Nat
+
+-- | Nat 上の乗算
+--   
+--   <pre>
+--   mult Zero n     = Zero
+--   mult (Succ m) n = add n (mult m n)
+--   </pre>
+mult :: Nat -> Nat -> Nat
 
 module Lib
 
