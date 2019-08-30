@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.4.0
+@version 0.8.5.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1483,6 +1483,24 @@ halve :: [a] -> ([a], [a])
 balance :: [a] -> Tree a
 (***) :: (a -> c) -> (b -> d) -> (a, b) -> (c, d)
 instance GHC.Show.Show a => GHC.Show.Show (Ch08.Ex03.Tree a)
+
+
+module Ch08.Ex05
+
+-- | 式
+data Expr
+Val :: Int -> Expr
+Add :: Expr -> Expr -> Expr
+
+-- | 式の畳み込み
+--   
+--   <pre>
+--   folde f g e = case e of
+--     Val x     -&gt; f x
+--     Add e1 e2 -&gt; g (folde f g e1) (folde f g e2)
+--   </pre>
+folde :: (Int -> a) -> (a -> a -> a) -> Expr -> a
+instance GHC.Show.Show Ch08.Ex05.Expr
 
 module Lib
 

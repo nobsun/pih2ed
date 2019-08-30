@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch08.Ex05
+Description : &#32244;&#32722;&#21839;&#38988; 8.5
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+-}</span><span>
+</span><a name="line-9"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch08.Ex05</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-10"></a><span>
+</span><a name="line-11"></a><span class="hs-comment">{- |
+  &#24335;
+-}</span><span>
+</span><a name="line-14"></a><span class="hs-keyword">data</span><span> </span><a name="Expr"><a href="Ch08.Ex05.html#Expr"><span class="hs-identifier">Expr</span></a></a><span>
+</span><a name="line-15"></a><span>  </span><span class="hs-glyph">=</span><span> </span><a name="Val"><a href="Ch08.Ex05.html#Val"><span class="hs-identifier">Val</span></a></a><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-16"></a><span>  </span><span class="hs-glyph">|</span><span> </span><a name="Add"><a href="Ch08.Ex05.html#Add"><span class="hs-identifier">Add</span></a></a><span> </span><a href="Ch08.Ex05.html#Expr"><span class="hs-identifier hs-type">Expr</span></a><span> </span><a href="Ch08.Ex05.html#Expr"><span class="hs-identifier hs-type">Expr</span></a><span>
+</span><a name="line-17"></a><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-identifier hs-type">Show</span><span>
+</span><a name="line-18"></a><span>
+</span><a name="line-19"></a><span class="hs-comment">{- |
+  &#24335;&#12398;&#30067;&#12415;&#36796;&#12415;
+
+@
+  folde f g e = case e of
+    Val x     -&gt; f x
+    Add e1 e2 -&gt; g (folde f g e1) (folde f g e2)
+@
+-}</span><span>
+</span><a name="line-28"></a><span class="hs-identifier">folde</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064948"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679064948"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064948"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064948"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="Ch08.Ex05.html#Expr"><span class="hs-identifier hs-type">Expr</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064948"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-29"></a><a name="folde"><a href="Ch08.Ex05.html#folde"><span class="hs-identifier">folde</span></a></a><span> </span><a name="local-6989586621679064949"><a href="#local-6989586621679064949"><span class="hs-identifier">f</span></a></a><span> </span><a name="local-6989586621679064950"><a href="#local-6989586621679064950"><span class="hs-identifier">g</span></a></a><span> </span><a name="local-6989586621679064951"><a href="#local-6989586621679064951"><span class="hs-identifier">e</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><a href="#local-6989586621679064951"><span class="hs-identifier hs-var">e</span></a><span> </span><span class="hs-keyword">of</span><span>
+</span><a name="line-30"></a><span>  </span><a href="Ch08.Ex05.html#Val"><span class="hs-identifier hs-var">Val</span></a><span> </span><a name="local-6989586621679064952"><a href="#local-6989586621679064952"><span class="hs-identifier">x</span></a></a><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064949"><span class="hs-identifier hs-var">f</span></a><span> </span><a href="#local-6989586621679064952"><span class="hs-identifier hs-var">x</span></a><span>
+</span><a name="line-31"></a><span>  </span><a href="Ch08.Ex05.html#Add"><span class="hs-identifier hs-var">Add</span></a><span> </span><a name="local-6989586621679064953"><a href="#local-6989586621679064953"><span class="hs-identifier">e1</span></a></a><span> </span><a name="local-6989586621679064954"><a href="#local-6989586621679064954"><span class="hs-identifier">e2</span></a></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679064950"><span class="hs-identifier hs-var">g</span></a><span> </span><span class="hs-special">(</span><a href="Ch08.Ex05.html#folde"><span class="hs-identifier hs-var">folde</span></a><span> </span><a href="#local-6989586621679064949"><span class="hs-identifier hs-var">f</span></a><span> </span><a href="#local-6989586621679064950"><span class="hs-identifier hs-var">g</span></a><span> </span><a href="#local-6989586621679064953"><span class="hs-identifier hs-var">e1</span></a><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><a href="Ch08.Ex05.html#folde"><span class="hs-identifier hs-var">folde</span></a><span> </span><a href="#local-6989586621679064949"><span class="hs-identifier hs-var">f</span></a><span> </span><a href="#local-6989586621679064950"><span class="hs-identifier hs-var">g</span></a><span> </span><a href="#local-6989586621679064954"><span class="hs-identifier hs-var">e2</span></a><span class="hs-special">)</span><span>
+</span><a name="line-32"></a></pre></body></html>
