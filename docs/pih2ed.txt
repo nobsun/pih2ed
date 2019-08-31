@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.6.0
+@version 0.8.7.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1518,6 +1518,22 @@ eval :: Expr -> Int
 --   size = folde (const 1) (+)
 --   </pre>
 size :: Expr -> Int
+
+
+-- | <pre>
+--   instance Eq a =&gt; Eq (Maybe a) where
+--     Nothing == Nothing = True
+--     Just x  == Just y  = x == y
+--     _       == _       = False
+--   </pre>
+--   
+--   <pre>
+--   instance Eq a =&gt; Eq [a] where
+--     []     == []     = True
+--     (x:xs) == (y:ys) = x == y &amp;&amp; xs == ys
+--     _      == _      = False
+--   </pre>
+module Ch08.Ex07
 
 module Lib
 
