@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.7.0
+@version 0.8.8.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1534,6 +1534,111 @@ size :: Expr -> Int
 --     _      == _      = False
 --   </pre>
 module Ch08.Ex07
+
+
+module Ch08.Ex08
+
+-- | 命題
+data Prop
+Const :: Bool -> Prop
+Var :: Char -> Prop
+Not :: Prop -> Prop
+And :: Prop -> Prop -> Prop
+Or :: Prop -> Prop -> Prop
+Imply :: Prop -> Prop -> Prop
+Equiv :: Prop -> Prop -> Prop
+
+-- | 命題1
+--   
+--   <pre>
+--   &gt;&gt;&gt; p1
+--   And (Var 'A') (Not (Var 'A'))
+--   </pre>
+p1 :: Prop
+
+-- | 命題2
+--   
+--   <pre>
+--   &gt;&gt;&gt; p2
+--   Imply (And (Var 'A') (Var 'B')) (Var 'A')
+--   </pre>
+p2 :: Prop
+
+-- | 命題3
+--   
+--   <pre>
+--   &gt;&gt;&gt; p3
+--   Imply (Var 'A') (And (Var 'A') (Var 'B'))
+--   </pre>
+p3 :: Prop
+
+-- | 命題4
+--   
+--   <pre>
+--   &gt;&gt;&gt; p4
+--   Imply (And (Var 'A') (Imply (Var 'A') (Var 'B'))) (Var 'B')
+--   </pre>
+p4 :: Prop
+
+-- | 置換表
+type Assoc a b = [(a, b)]
+find :: Eq k => k -> Assoc k v -> v
+type Subst = Assoc Char Bool
+eval :: Subst -> Prop -> Bool
+
+-- | 変数の出現リスト
+--   
+--   <pre>
+--   &gt;&gt;&gt; vars p2 == ['A','B','A']
+--   True
+--   </pre>
+vars :: Prop -> [Char]
+
+-- | 指定した長さの真理値リスト
+--   
+--   <pre>
+--   &gt;&gt;&gt; bools 3
+--   [[False,False,False],[False,False,True],[False,True,False],[False,True,True],[True,False,False],[True,False,True],[True,True,False],[True,True,True]]
+--   </pre>
+bools :: Int -> [[Bool]]
+
+-- | 置換リスト
+--   
+--   <pre>
+--   &gt;&gt;&gt; substs p2
+--   [[('A',False),('B',False)],[('A',False),('B',True)],[('A',True),('B',False)],[('A',True),('B',True)]]
+--   </pre>
+substs :: Prop -> [Subst]
+rmdups :: Eq a => [a] -> [a]
+
+-- | 恒真検査器
+--   
+--   <pre>
+--   &gt;&gt;&gt; isTaut p1
+--   False
+--   
+--   &gt;&gt;&gt; isTaut p2
+--   True
+--   
+--   &gt;&gt;&gt; isTaut p3
+--   False
+--   
+--   &gt;&gt;&gt; isTaut p4
+--   True
+--   
+--   &gt;&gt;&gt; p5 = Or p1 (Not p1)
+--   
+--   &gt;&gt;&gt; isTaut p5
+--   True
+--   
+--   &gt;&gt;&gt; p6 = Equiv p1 p3
+--   
+--   &gt;&gt;&gt; isTaut p6
+--   False
+--   </pre>
+isTaut :: Prop -> Bool
+instance GHC.Show.Show Ch08.Ex08.Prop
+instance GHC.Classes.Eq Ch08.Ex08.Prop
 
 module Lib
 
