@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.5.0
+@version 0.8.6.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1501,6 +1501,23 @@ Add :: Expr -> Expr -> Expr
 --   </pre>
 folde :: (Int -> a) -> (a -> a -> a) -> Expr -> a
 instance GHC.Show.Show Ch08.Ex05.Expr
+
+
+module Ch08.Ex06
+
+-- | 評価器
+--   
+--   <pre>
+--   eval = folde id (+)
+--   </pre>
+eval :: Expr -> Int
+
+-- | 式のサイズ
+--   
+--   <pre>
+--   size = folde (const 1) (+)
+--   </pre>
+size :: Expr -> Int
 
 module Lib
 
