@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.8.0
+@version 0.8.9.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1639,6 +1639,41 @@ rmdups :: Eq a => [a] -> [a]
 isTaut :: Prop -> Bool
 instance GHC.Show.Show Ch08.Ex08.Prop
 instance GHC.Classes.Eq Ch08.Ex08.Prop
+
+
+module Ch08.Ex09
+
+-- | 式
+data Expr
+Val :: Int -> Expr
+Add :: Expr -> Expr -> Expr
+Mul :: Expr -> Expr -> Expr
+type Cont = [Op]
+
+-- | 命令
+data Op
+EVAL :: Expr -> Op
+ADD :: Int -> Op
+MUL :: Int -> Op
+
+-- | 評価器
+eval :: Expr -> Cont -> Int
+
+-- | 実行器
+exec :: Cont -> Int -> Int
+
+-- | 式の値
+--   
+--   <pre>
+--   &gt;&gt;&gt; value (Add (Add (Val 2) (Val 3)) (Val 4))
+--   9
+--   
+--   &gt;&gt;&gt; value (Mul (Add (Val 2) (Val 3)) (Val 4))
+--   20
+--   </pre>
+value :: Expr -> Int
+instance GHC.Show.Show Ch08.Ex09.Expr
+instance GHC.Classes.Eq Ch08.Ex09.Expr
 
 module Lib
 
