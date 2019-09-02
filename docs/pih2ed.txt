@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.9.2.0
+@version 0.9.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1833,6 +1833,25 @@ removeone :: Eq a => a -> [a] -> [a]
 
 -- | 一方が他方のリストから選択さたものかをチェックする
 isChoice :: Eq a => [a] -> [a] -> Bool
+
+
+-- | 関数 <tt>split</tt> を拡張して，組の中に空リストも許すようにすると，関数 <tt>solutions</tt>
+--   の挙動にどのような影響を与えるか説明してください．
+--   
+--   <pre>
+--   exprs :: [Int] -&gt; [Expr]
+--   exprs []  = []
+--   exprs [n] = [Val n]
+--   exprs ns  = [ e | (ls, rs) &lt;- split ns
+--                   , l        &lt;- exprs ls     -- *
+--                   , r        &lt;- exprs rs     -- *
+--                   , e        &lt;- combine l r
+--              ]
+--   </pre>
+--   
+--   expr が停止するためには * のところの再帰で，リストが短くなることが保証されなければならないが， split
+--   で空リストを許すとその対は元のリストと同じリストになるために，再帰でリストが短くならない． 実際 expr は停止しなくなる．
+module Ch09.Ex03
 
 module Lib
 
