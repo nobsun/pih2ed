@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.9.3.0
+@version 0.9.4.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1852,6 +1852,11 @@ isChoice :: Eq a => [a] -> [a] -> Bool
 --   expr が停止するためには * のところの再帰で，リストが短くなることが保証されなければならないが， split
 --   で空リストを許すとその対は元のリストと同じリストになるために，再帰でリストが短くならない． 実際 expr は停止しなくなる．
 module Ch09.Ex03
+
+
+-- | 関数 <tt>choices</tt>，<tt>exprs</tt>，<tt>eval</tt> を用いて，1，3，7，1，25，50
+--   に対する可能な式は 33,665,406 個あり，そのうち 4,672,540 個のみが有効であることを確 かめてください
+module Ch09.Ex04
 
 module Lib
 

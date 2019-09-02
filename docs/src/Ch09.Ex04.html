@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch09.Ex04
+Description : &#32244;&#32722;&#21839;&#38988; 9.4
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#38306;&#25968; @choices@&#65292;@exprs@&#65292;@eval@ &#12434;&#29992;&#12356;&#12390;&#65292;1&#65292;3&#65292;7&#65292;1&#65292;25&#65292;50 &#12395;&#23550;&#12377;&#12427;&#21487;&#33021;&#12394;&#24335;&#12399; 33,665,406 &#20491;&#12354;&#12426;&#65292;&#12381;&#12398;&#12358;&#12385; 4,672,540 &#20491;&#12398;&#12415;&#12364;&#26377;&#21177;&#12391;&#12354;&#12427;&#12371;&#12392;&#12434;&#30906;
+&#12363;&#12417;&#12390;&#12367;&#12384;&#12373;&#12356;
+-}</span><span>
+</span><a name="line-11"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch09.Ex04</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-keyword">import</span><span> </span><a href="Ch09.CountDown.html"><span class="hs-identifier">Ch09.CountDown</span></a><span>
+</span><a name="line-14"></a><span>
+</span><a name="line-15"></a><span class="hs-comment">{- $setup
+
+&gt;&gt;&gt; ns = [1,3,7,10,25,50]
+&gt;&gt;&gt; length [ e | ns' &lt;- choices ns, e &lt;- exprs ns' ]
+33665406
+&gt;&gt;&gt; length [ v | ns' &lt;- choices ns, e &lt;- exprs ns', v &lt;- eval e ]
+4672540
+-}</span><span>
+</span><a name="line-23"></a></pre></body></html>
