@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch09.Ex01
+Description : &#32244;&#32722;&#21839;&#38988; 9.1
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#38306;&#25968; @add@ &#12392;&#21516;&#27096;&#12395;&#33258;&#28982;&#25968;&#12398;&#20055;&#31639;&#38306;&#25968; @mult :: Nat -&gt; Nat -&gt; Nat@ &#12434;&#20877;&#24112;&#30340;&#12395;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch09.Ex01</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">import</span><span> </span><a href="Ch09.CountDown.html"><span class="hs-identifier">Ch09.CountDown</span></a><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><a href="Ch09.CountDown.html#choices"><span class="hs-identifier hs-var">choices</span></a><span class="hs-special">)</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+  &#36984;&#25246;&#32930;&#12398;&#29983;&#25104;
+
+@
+  choices xs = [ zs | ys &lt;- subs xs, zs &lt;- perms ys ]
+@
+
+&gt;&gt;&gt; choices [1,2,3]
+[[],[3],[2],[2,3],[3,2],[1],[1,3],[3,1],[1,2],[2,1],[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+-}</span><span>
+</span><a name="line-24"></a><span class="hs-identifier">choices</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="#local-6989586621679066906"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><a href="#local-6989586621679066906"><span class="hs-identifier hs-type">a</span></a><span class="hs-special">]</span><span class="hs-special">]</span><span>
+</span><a name="line-25"></a><a name="choices"><a href="Ch09.Ex01.html#choices"><span class="hs-identifier">choices</span></a></a><span> </span><a name="local-6989586621679066907"><a href="#local-6989586621679066907"><span class="hs-identifier">xs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><a href="#local-6989586621679066909"><span class="hs-identifier hs-var">zs</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679066908"><a href="#local-6989586621679066908"><span class="hs-identifier">ys</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="Ch09.CountDown.html#subs"><span class="hs-identifier hs-var">subs</span></a><span> </span><a href="#local-6989586621679066907"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">,</span><span> </span><a name="local-6989586621679066909"><a href="#local-6989586621679066909"><span class="hs-identifier">zs</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="Ch09.CountDown.html#perms"><span class="hs-identifier hs-var">perms</span></a><span> </span><a href="#local-6989586621679066908"><span class="hs-identifier hs-var">ys</span></a><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-26"></a></pre></body></html>

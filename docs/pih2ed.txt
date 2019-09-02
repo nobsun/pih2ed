@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.8.9.0
+@version 0.9.1.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1674,6 +1674,153 @@ exec :: Cont -> Int -> Int
 value :: Expr -> Int
 instance GHC.Show.Show Ch08.Ex09.Expr
 instance GHC.Classes.Eq Ch08.Ex09.Expr
+
+module Ch09.CountDown
+
+-- | 算術演算子
+data Op
+Add :: Op
+Sub :: Op
+Mul :: Op
+Div :: Op
+
+-- | 適正な算術演算か
+valid :: Op -> Int -> Int -> Bool
+
+-- | 適正な算術演算の適用
+apply :: Op -> Int -> Int -> Int
+
+-- | 数式
+data Expr
+Val :: Int -> Expr
+App :: Op -> Expr -> Expr -> Expr
+
+-- | 式に含まれる数値のリスト
+values :: Expr -> [Int]
+
+-- | 評価器
+--   
+--   <pre>
+--   &gt;&gt;&gt; eval (App Add (Val 2) (Val 3))
+--   [5]
+--   
+--   &gt;&gt;&gt; eval (App Sub (Val 2) (Val 3))
+--   []
+--   </pre>
+eval :: Expr -> [Int]
+
+-- | 部分リスト
+--   
+--   <pre>
+--   &gt;&gt;&gt; subs [1,2,3]
+--   [[],[3],[2],[2,3],[1],[1,3],[1,2],[1,2,3]]
+--   </pre>
+subs :: [a] -> [[a]]
+
+-- | 要素の挿入
+--   
+--   <pre>
+--   &gt;&gt;&gt; interleave 1 [2,3,4]
+--   [[1,2,3,4],[2,1,3,4],[2,3,1,4],[2,3,4,1]]
+--   </pre>
+interleave :: a -> [a] -> [[a]]
+
+-- | 要素の順列
+--   
+--   <pre>
+--   &gt;&gt;&gt; perms [1,2,3]
+--   [[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+--   </pre>
+perms :: [a] -> [[a]]
+
+-- | 選択肢の生成
+--   
+--   <pre>
+--   &gt;&gt;&gt; choices [1,2,3]
+--   [[],[3],[2],[2,3],[3,2],[1],[1,3],[3,1],[1,2],[2,1],[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+--   </pre>
+choices :: [a] -> [[a]]
+
+-- | 解判定
+--   
+--   <pre>
+--   &gt;&gt;&gt; e = App Mul (App Add (Val 1) (Val 50)) (App Sub (Val 25) (Val 10))
+--   
+--   &gt;&gt;&gt; e
+--   (1+50)*(25-10)
+--   
+--   &gt;&gt;&gt; solution e [1,3,7,10,25,50] 765
+--   True
+--   </pre>
+solution :: Expr -> [Int] -> Int -> Bool
+
+-- | 空でないリストの空でない分割
+--   
+--   <pre>
+--   &gt;&gt;&gt; split [1,2,3,4]
+--   [([1],[2,3,4]),([1,2],[3,4]),([1,2,3],[4])]
+--   </pre>
+split :: [a] -> [([a], [a])]
+
+-- | 与えられた数が一回だけ使われている式の生成
+exprs :: [Int] -> [Expr]
+
+-- | 演算子による組み合わせ
+combine :: Expr -> Expr -> [Expr]
+
+-- | 算術演算子のリスト
+ops :: [Op]
+
+-- | 解となる式の選択
+--   
+--   <pre>
+--   &gt;&gt;&gt; length (solutions [1,3,7,10,25,50] 765)
+--   780
+--   </pre>
+solutions :: [Int] -> Int -> [Expr]
+
+-- | 結果の型
+type Result = (Expr, Int)
+
+-- | 与えられた数がそれぞれ一回だけ使われていうる式をすべて返す関数
+results :: [Int] -> [Result]
+
+-- | 結果の組み合わせ
+combine' :: Result -> Result -> [Result]
+
+-- | 解の選択
+solutions' :: [Int] -> Int -> [Expr]
+
+-- | 新しい valid
+valid' :: Integral a => Op -> a -> a -> Bool
+
+-- | 新しい valid を使った combine
+combine'' :: Result -> Result -> [Result]
+
+-- | 新しい combine を使った results
+results' :: [Int] -> [Result]
+
+-- | 速い solutions
+solutions'' :: [Int] -> Int -> [Expr]
+instance GHC.Show.Show Ch09.CountDown.Expr
+instance GHC.Show.Show Ch09.CountDown.Op
+
+
+-- | 関数 <tt>add</tt> と同様に自然数の乗算関数 <tt>mult :: Nat -&gt; Nat -&gt; Nat</tt>
+--   を再帰的に定義してください．
+module Ch09.Ex01
+
+-- | 選択肢の生成
+--   
+--   <pre>
+--   choices xs = [ zs | ys &lt;- subs xs, zs &lt;- perms ys ]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; choices [1,2,3]
+--   [[],[3],[2],[2,3],[3,2],[1],[1,3],[3,1],[1,2],[2,1],[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+--   </pre>
+choices :: [a] -> [[a]]
 
 module Lib
 

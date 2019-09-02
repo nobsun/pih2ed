@@ -1,5 +1,5 @@
 name:                pih2ed
-version:             0.8.9.0
+version:             0.9.1.0
 github:              "nobsun/pih2ed"
 license:             BSD3
 author:              "Nobuo Yamashita"
@@ -32,10 +32,33 @@ library:
   source-dirs: src
 
 executables:
-  pih2ed-exe:
-    main:                Main.hs
+  countdown:
+    main:                countdown.hs
     source-dirs:         app
-    # ghc-options:
+    ghc-options:
+    - -O2
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - pih2ed
+
+  countdown2:
+    main:                countdown2.hs
+    source-dirs:         app
+    ghc-options:
+    - -O2
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - pih2ed
+
+  countdown3:
+    main:                countdown3.hs
+    source-dirs:         app
+    ghc-options:
+    - -O2
     # - -threaded
     # - -rtsopts
     # - -with-rtsopts=-N
