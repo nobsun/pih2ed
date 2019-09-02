@@ -1823,21 +1823,16 @@ module Ch09.Ex01
 choices :: [a] -> [[a]]
 
 
--- | 関数 <tt>add</tt> と同様に自然数の乗算関数 <tt>mult :: Nat -&gt; Nat -&gt; Nat</tt>
---   を再帰的に定義してください．
+-- | 再帰的な関数 <tt>isChoice :: Eq a =&gt; [a] -&gt; [a] -&gt; Bool</tt>
+--   を定義してください． この関数は <tt>perms</tt> や <tt>subs</tt>
+--   を使わずに，一方のリストが他方のリストから選択されたものかを検査します．
 module Ch09.Ex02
 
--- | 選択肢の生成
---   
---   <pre>
---   choices xs = [ zs | ys &lt;- subs xs, zs &lt;- perms ys ]
---   </pre>
---   
---   <pre>
---   &gt;&gt;&gt; choices [1,2,3]
---   [[],[3],[2],[2,3],[3,2],[1],[1,3],[3,1],[1,2],[2,1],[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
---   </pre>
-choices :: [a] -> [[a]]
+-- | 最初に見つけた特定の要素をリストから取り除く
+removeone :: Eq a => a -> [a] -> [a]
+
+-- | 一方が他方のリストから選択さたものかをチェックする
+isChoice :: Eq a => [a] -> [a] -> Bool
 
 module Lib
 
