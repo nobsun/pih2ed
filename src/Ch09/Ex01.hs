@@ -5,7 +5,7 @@ Copyright   : (c) Nobuo Yamashita, 2019
 License     : BSD-3
 Maintainer  : nobsun@gmail.com
 
-関数 @add@ と同様に自然数の乗算関数 @mult :: Nat -> Nat -> Nat@ を再帰的に定義してください．
+関数合成 @concat@ および @map@ の代わりにリスト内包表記を使って，組み合わせの関数 @choices@ を再定義してください．
 -}
 module Ch09.Ex01 where
 
