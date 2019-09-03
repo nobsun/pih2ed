@@ -1881,6 +1881,23 @@ eval :: Expr -> [Int]
 --   </pre>
 valid :: Op -> Int -> Int -> Bool
 
+
+-- | リスト内包表記とプレリュード関数 <tt>sequence_ :: [IO a] -&gt; IO ()</tt>
+--   を用いて，<tt>putStr :: String -&gt; IO ()</tt> を再定義してください．
+module Ch10.Ex01
+
+-- | 再定義した <tt>putStr</tt>
+--   
+--   <pre>
+--   putStr cs = sequence_ [ putChar c | c &lt;- cs ]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; putStr "Hello, world!\n"
+--   Hello, world!
+--   </pre>
+putStr :: String -> IO ()
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数

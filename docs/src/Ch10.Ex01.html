@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch10.Ex01
+Description : &#32244;&#32722;&#21839;&#38988; 10.1
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12522;&#12473;&#12488;&#20869;&#21253;&#34920;&#35352;&#12392;&#12503;&#12524;&#12522;&#12517;&#12540;&#12489;&#38306;&#25968; @sequence_ :: [IO a] -&gt; IO ()@ &#12434;&#29992;&#12356;&#12390;&#65292;@putStr :: String -&gt; IO ()@ &#12434;&#20877;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch10.Ex01</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">putStr</span><span class="hs-special">)</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+  &#20877;&#23450;&#32681;&#12375;&#12383; @putStr@
+
+@
+putStr cs = sequence_ [ putChar c | c &lt;- cs ]
+@
+
+&gt;&gt;&gt; putStr &quot;Hello, world!\n&quot;
+Hello, world!
+-}</span><span>
+</span><a name="line-24"></a><span class="hs-identifier">putStr</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">String</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-25"></a><a name="putStr"><a href="Ch10.Ex01.html#putStr"><span class="hs-identifier">putStr</span></a></a><span> </span><a name="local-6989586621679067102"><a href="#local-6989586621679067102"><span class="hs-identifier">cs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">sequence_</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-identifier hs-var">putChar</span><span> </span><a href="#local-6989586621679067103"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-glyph">|</span><span> </span><a name="local-6989586621679067103"><a href="#local-6989586621679067103"><span class="hs-identifier">c</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="#local-6989586621679067102"><span class="hs-identifier hs-var">cs</span></a><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-26"></a></pre></body></html>
