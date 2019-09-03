@@ -17,7 +17,7 @@ Maintainer  : nobsun@gmail.com
 &gt;&gt;&gt; ns = [1,3,7,10,25,50]
 &gt;&gt;&gt; length [ e | ns' &lt;- choices ns, e &lt;- exprs ns' ]
 33665406
-&gt;&gt;&gt; length [ v | ns' &lt;- choices ns, e &lt;- exprs ns', v &lt;- eval e ]
+&gt;&gt;&gt; length [ e | ns' &lt;- choices ns, e &lt;- exprs ns', _ &lt;- eval e ]
 4672540
 -}</span><span>
 </span><a name="line-23"></a></pre></body></html>

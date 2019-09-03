@@ -2,6 +2,6 @@
 &#12363;&#12417;&#12390;&#12367;&#12384;&#12373;&#12356;</p></div></div><div id="synopsis"><details id="syn"><summary>Synopsis</summary><ul class="details-toggle" data-details-id="syn"></ul></details></div><div id="interface"><h1>Documentation</h1><div class="doc"><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>ns = [1,3,7,10,25,50]
 </code></strong><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>length [ e | ns' &lt;- choices ns, e &lt;- exprs ns' ]
 </code></strong>33665406
-<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>length [ v | ns' &lt;- choices ns, e &lt;- exprs ns', v &lt;- eval e ]
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>length [ e | ns' &lt;- choices ns, e &lt;- exprs ns', _ &lt;- eval e ]
 </code></strong>4672540
 </pre></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.22.0</p></div></body></html>

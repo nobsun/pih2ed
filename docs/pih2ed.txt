@@ -1858,6 +1858,29 @@ module Ch09.Ex03
 --   に対する可能な式は 33,665,406 個あり，そのうち 4,672,540 個のみが有効であることを確 かめてください
 module Ch09.Ex04
 
+
+-- | 関数 <tt>choices</tt>，<tt>exprs</tt>，<tt>eval</tt> を用いて，1，3，7，1，25，50
+--   に対する可能な式は 33,665,406 個あり，そのうち 4,672,540 個のみが有効であることを確 かめてください
+module Ch09.Ex05
+
+-- | 評価器
+--   
+--   <pre>
+--   &gt;&gt;&gt; length [ e | ns' &lt;- choices ns, e &lt;- exprs ns', _ &lt;- eval e ]
+--   10839369
+--   </pre>
+eval :: Expr -> [Int]
+
+-- | Validator
+--   
+--   <pre>
+--   valid Add x y = True
+--   valid Sub x y = True
+--   valid Mul x y = True
+--   valid Div x y = y /= 0 &amp;&amp; x <a>mod</a> y == 0
+--   </pre>
+valid :: Op -> Int -> Int -> Bool
+
 module Lib
 
 -- | 「なんか関数」を標準出力に印字する &gt;&gt;&gt; someFunc なんか関数

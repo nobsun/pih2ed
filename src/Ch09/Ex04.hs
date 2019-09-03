@@ -17,6 +17,6 @@ import Ch09.CountDown
 >>> ns = [1,3,7,10,25,50]
 >>> length [ e | ns' <- choices ns, e <- exprs ns' ]
 33665406
->>> length [ v | ns' <- choices ns, e <- exprs ns', v <- eval e ]
+>>> length [ e | ns' <- choices ns, e <- exprs ns', _ <- eval e ]
 4672540
 -}
