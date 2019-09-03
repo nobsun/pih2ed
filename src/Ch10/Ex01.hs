@@ -15,7 +15,7 @@ import Prelude hiding (putStr)
   再定義した @putStr@
 
 @
-putStr cs = sequence_ [ putChar c | c <- cs ]
+  putStr cs = sequence_ [ putChar c | c <- cs ]
 @
 
 >>> putStr "Hello, world!\n"
