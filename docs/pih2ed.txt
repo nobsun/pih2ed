@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.10.1.0
+@version 0.10.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1897,6 +1897,67 @@ module Ch10.Ex01
 --   Hello, world!
 --   </pre>
 putStr :: String -> IO ()
+
+module Ch10.Hangman
+hangman :: IO ()
+sgetLine :: IO String
+getCh :: IO Char
+play :: String -> IO ()
+match :: String -> String -> String
+
+module Ch10.Nim
+
+-- | 次のプレイヤー
+next :: Int -> Int
+
+-- | ボード
+type Board = [Int]
+
+-- | 初期ボード
+initial :: Board
+
+-- | 終了判定
+finished :: Board -> Bool
+
+-- | 有効性判定
+valid :: Board -> Int -> Int -> Bool
+
+-- | 打ち手
+move :: Board -> Int -> Int -> Board
+
+-- | 行の表示
+putRow :: Int -> Int -> IO ()
+
+-- | ボードの表示
+putBoard :: Board -> IO ()
+
+-- | 数字の取得
+getDigit :: String -> IO Int
+
+-- | 改行
+newline :: IO ()
+
+-- | ニムプレイ
+play :: Board -> Int -> IO ()
+
+-- | ニム
+nim :: IO ()
+
+
+module Ch10.Ex02
+
+-- | 任意の大きさのボードの表示
+--   
+--   <pre>
+--   &gt;&gt;&gt; putBoard initial
+--   1: * * * * * 
+--   2: * * * * 
+--   3: * * * 
+--   4: * * 
+--   5: * 
+--   </pre>
+putBoard :: Board -> IO ()
+putBoard' :: Int -> Board -> IO ()
 
 module Lib
 
