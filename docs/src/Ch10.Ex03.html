@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch10.Ex03
+Description : &#32244;&#32722;&#21839;&#38988; 10.3
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+&#12522;&#12473;&#12488;&#20869;&#21253;&#34920;&#35352;&#12392; @sequence_@ &#12434;&#20351;&#12387;&#12390;&#65292;@putBoard@ &#12398;&#25313;&#24373;&#29256;&#12434;&#20877;&#23455;&#35013;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch10.Ex03</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">import</span><span> </span><a href="Ch10.Nim.html"><span class="hs-identifier">Ch10.Nim</span></a><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><a href="Ch10.Nim.html#putBoard"><span class="hs-identifier hs-var">putBoard</span></a><span class="hs-special">)</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-comment">{- |
+  &#12508;&#12540;&#12489;&#12398;&#34920;&#31034;
+
+&gt;&gt;&gt; putBoard initial
+1: * * * * * 
+2: * * * * 
+3: * * * 
+4: * * 
+5: * 
+-}</span><span>
+</span><a name="line-24"></a><span class="hs-identifier">putBoard</span><span> </span><span class="hs-glyph">::</span><span> </span><a href="Ch10.Nim.html#Board"><span class="hs-identifier hs-type">Board</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-25"></a><a name="putBoard"><a href="Ch10.Ex03.html#putBoard"><span class="hs-identifier">putBoard</span></a></a><span> </span><a name="local-6989586621679068521"><a href="#local-6989586621679068521"><span class="hs-identifier">board</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">sequence_</span><span> </span><span class="hs-special">[</span><span> </span><a href="Ch10.Nim.html#putRow"><span class="hs-identifier hs-var">putRow</span></a><span> </span><a href="#local-6989586621679068522"><span class="hs-identifier hs-var">r</span></a><span> </span><a href="#local-6989586621679068523"><span class="hs-identifier hs-var">n</span></a><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><a name="local-6989586621679068522"><a href="#local-6989586621679068522"><span class="hs-identifier">r</span></a></a><span class="hs-special">,</span><span> </span><a name="local-6989586621679068523"><a href="#local-6989586621679068523"><span class="hs-identifier">n</span></a></a><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">zip</span><span> </span><span class="hs-special">[</span><span class="hs-number">1</span><span class="hs-glyph">..</span><span class="hs-special">]</span><span> </span><a href="#local-6989586621679068521"><span class="hs-identifier hs-var">board</span></a><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-26"></a></pre></body></html>

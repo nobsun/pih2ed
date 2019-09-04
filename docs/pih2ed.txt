@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.10.2.0
+@version 0.10.3.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1942,6 +1942,22 @@ play :: Board -> Int -> IO ()
 
 -- | ニム
 nim :: IO ()
+
+
+-- | リスト内包表記と <tt>sequence_</tt> を使って，<tt>putBoard</tt> の拡張版を再実装してください．
+module Ch10.Ex03
+
+-- | ボードの表示
+--   
+--   <pre>
+--   &gt;&gt;&gt; putBoard initial
+--   1: * * * * * 
+--   2: * * * * 
+--   3: * * * 
+--   4: * * 
+--   5: * 
+--   </pre>
+putBoard :: Board -> IO ()
 
 
 module Ch10.Ex02
