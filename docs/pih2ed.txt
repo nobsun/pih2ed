@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.10.3.0
+@version 0.10.4.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1897,6 +1897,27 @@ module Ch10.Ex01
 --   Hello, world!
 --   </pre>
 putStr :: String -> IO ()
+
+
+-- | 指定した数だけキーボードから数字を読み取り，それらの和を表示する <tt>adder :: IO ()</tt> を定義してください．
+module Ch10.Ex04
+
+-- | 加算器
+--   
+--   <pre>
+--   &gt;&gt;&gt; adder
+--   How many numbers? 5
+--   1
+--   3
+--   5
+--   7
+--   9
+--   The total is 25
+--   </pre>
+adder :: IO ()
+
+-- | 補助関数
+adder' :: Int -> Int -> IO ()
 
 module Ch10.Hangman
 hangman :: IO ()
