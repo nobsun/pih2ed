@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">{- |
+Module      : Ch10.Ex05
+Description : &#32244;&#32722;&#21839;&#38988; 10.5
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+
+-}</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch10.Ex05</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data.Char</span><span>
+</span><a name="line-13"></a><span class="hs-comment">{- |
+  &#21152;&#31639;&#22120;&#65288;&#20877;&#23455;&#35013;&#65289;
+
+&gt; adder
+How many numbers? 5
+1
+3
+5
+7
+9
+The total is 25
+-}</span><span>
+</span><a name="line-25"></a><span class="hs-identifier">adder</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-26"></a><a name="adder"><a href="Ch10.Ex05.html#adder"><span class="hs-identifier">adder</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a name="line-27"></a><span>  </span><span class="hs-identifier hs-var">putStr</span><span> </span><span class="hs-string">&quot;How many numbers? &quot;</span><span>
+</span><a name="line-28"></a><span>  </span><a name="local-6989586621679068257"><a href="#local-6989586621679068257"><span class="hs-identifier">n</span></a></a><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">getLine</span><span>
+</span><a name="line-29"></a><span>  </span><a name="local-6989586621679068690"><a href="#local-6989586621679068690"><span class="hs-identifier">ns</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">sequence</span><span> </span><span class="hs-special">[</span><span> </span><a href="Ch10.Ex05.html#getInt"><span class="hs-identifier hs-var">getInt</span></a><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="hs-number">1</span><span class="hs-glyph">..</span><span class="hs-identifier hs-var">read</span><span> </span><a href="#local-6989586621679068257"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">]</span><span> </span><span class="hs-special">]</span><span>
+</span><a name="line-30"></a><span>  </span><span class="hs-identifier hs-var">putStrLn</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">show</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">sum</span><span> </span><a href="#local-6989586621679068690"><span class="hs-identifier hs-var">ns</span></a><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-31"></a><span>
+</span><a name="line-32"></a><span class="hs-identifier">getInt</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-33"></a><a name="getInt"><a href="Ch10.Ex05.html#getInt"><span class="hs-identifier">getInt</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a name="line-34"></a><span>  </span><a name="local-6989586621679068691"><a href="#local-6989586621679068691"><span class="hs-identifier">n</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">getLine</span><span>
+</span><a name="line-35"></a><span>  </span><span class="hs-identifier hs-var">return</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">read</span><span> </span><a href="#local-6989586621679068691"><span class="hs-identifier hs-var">n</span></a><span class="hs-special">)</span><span>
+</span><a name="line-36"></a></pre></body></html>

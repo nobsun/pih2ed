@@ -13,7 +13,7 @@ import Data.Char
 {- |
   加算器
 
->>> adder
+> adder
 How many numbers? 5
 1
 3
@@ -24,6 +24,7 @@ The total is 25
 -}
 adder :: IO ()
 adder = do
+  putStr "How many numbers? "
   s <- getLine
   adder' 0 (read s)
 
@@ -33,6 +34,6 @@ adder = do
 adder' :: Int -> Int -> IO ()
 adder' a 0 = putStrLn (show a)
 adder' a n = do
-  c <- getChar
-  adder' (a + digitToInt c) (n - 1)
+  s <- getLine
+  adder' (a + read s) (n - 1)
 
