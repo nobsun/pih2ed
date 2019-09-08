@@ -1973,6 +1973,66 @@ readLine :: IO String
 --   </pre>
 loop :: String -> IO String
 
+module Ch10.LifeGame
+
+-- | 画面クリア
+cls :: IO ()
+
+-- | 文字の位置
+type Pos = (Int, Int)
+
+-- | 位置指定書き込み
+writeat :: Pos -> String -> IO ()
+goto :: Pos -> IO ()
+
+-- | ボードの幅
+width :: Int
+
+-- | ボードの高さ
+height :: Int
+
+-- | ボード
+type Board = [Pos]
+
+-- | グライダ
+glider :: Board
+
+-- | ボードの表示
+showcells :: Board -> IO ()
+
+-- | 生きているセルか
+isAlive :: Board -> Pos -> Bool
+
+-- | 空のセルか
+isEmpty :: Board -> Pos -> Bool
+
+-- | 近傍
+neighbs :: Pos -> [Pos]
+
+-- | ボードの端を連結（トーラスに）する
+wrap :: Pos -> Pos
+
+-- | 生きた近傍セルの数
+liveneighbs :: Board -> Pos -> Int
+
+-- | 次世代に生き残るセル
+survivors :: Board -> [Pos]
+
+-- | 新たに誕生するセル
+births :: Board -> [Pos]
+
+-- | 重複の除去
+rmdups :: Eq a => [a] -> [a]
+
+-- | 次の世代
+nextgen :: Board -> Board
+
+-- | ライフゲームの駆動
+life :: Board -> IO ()
+
+-- | 待機
+wait :: Int -> IO ()
+
 module Ch10.Nim
 
 -- | 次のプレイヤー
