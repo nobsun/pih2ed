@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.10.5.0
+@version 0.10.6.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -1933,6 +1933,45 @@ sgetLine :: IO String
 getCh :: IO Char
 play :: String -> IO ()
 match :: String -> String -> String
+
+
+-- | getCh を用いて，アクション <tt>readLine :: IO String</tt> を定義してください．
+--   このアクションは，<tt>getLine</tt> に似ていますが，文字を消すために消去キーが利用できます．
+module Ch10.Ex06
+
+-- | 消去キーが使える readLine
+--   
+--   <pre>
+--   readLine = do
+--     ibuf &lt;- hGetBuffering stdin
+--     obuf &lt;- hGetBuffering stdout
+--     hSetBuffering stdin NoBuffering
+--     hSetBuffering stdout NoBuffering
+--     str &lt;- loop ""
+--     hSetBuffering stdin ibuf
+--     hSetBuffering stdout obuf
+--     return str
+--   </pre>
+readLine :: IO String
+
+-- | readLine の下請け
+--   
+--   <pre>
+--   loop xs = do
+--     c &lt;- getCh
+--     case c of
+--       '\n'   -&gt; do putChar c
+--                    return (reverse xs)
+--       '\DEL' -&gt; case xs of
+--          ""    -&gt; loop xs
+--          _     -&gt; do putChar '\b'
+--                      putChar ' '
+--                      putChar '\b'
+--                      loop (tail xs)
+--       _      -&gt; do putChar c
+--                    loop (c:xs)
+--   </pre>
+loop :: String -> IO String
 
 module Ch10.Nim
 

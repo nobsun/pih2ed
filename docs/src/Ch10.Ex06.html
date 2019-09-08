@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE BangPatterns #-}</span><span>
+</span><a name="line-2"></a><span class="hs-comment">{- |
+Module      : Ch10.Ex06
+Description : &#32244;&#32722;&#21839;&#38988; 10.6
+Copyright   : (c) Nobuo Yamashita, 2019
+License     : BSD-3
+Maintainer  : nobsun@gmail.com
+
+getCh &#12434;&#29992;&#12356;&#12390;&#65292;&#12450;&#12463;&#12471;&#12519;&#12531; @readLine :: IO String@ &#12434;&#23450;&#32681;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65294;
+&#12371;&#12398;&#12450;&#12463;&#12471;&#12519;&#12531;&#12399;&#65292;@getLine@ &#12395;&#20284;&#12390;&#12356;&#12414;&#12377;&#12364;&#65292;&#25991;&#23383;&#12434;&#28040;&#12377;&#12383;&#12417;&#12395;&#28040;&#21435;&#12461;&#12540;&#12364;&#21033;&#29992;&#12391;&#12365;&#12414;&#12377;&#65294;
+-}</span><span>
+</span><a name="line-12"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Ch10.Ex06</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">System.IO</span><span>
+</span><a name="line-15"></a><span class="hs-keyword">import</span><span> </span><a href="Ch10.Hangman.html"><span class="hs-identifier">Ch10.Hangman</span></a><span> </span><span class="hs-special">(</span><a href="Ch10.Hangman.html#getCh"><span class="hs-identifier hs-var">getCh</span></a><span class="hs-special">)</span><span>
+</span><a name="line-16"></a><span>
+</span><a name="line-17"></a><span class="hs-comment">{- |
+  &#28040;&#21435;&#12461;&#12540;&#12364;&#20351;&#12360;&#12427; readLine
+
+@
+readLine = do
+  ibuf &lt;- hGetBuffering stdin
+  obuf &lt;- hGetBuffering stdout
+  hSetBuffering stdin NoBuffering
+  hSetBuffering stdout NoBuffering
+  str &lt;- loop &quot;&quot;
+  hSetBuffering stdin ibuf
+  hSetBuffering stdout obuf
+  return str
+@
+-}</span><span>
+</span><a name="line-32"></a><span class="hs-identifier">readLine</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-identifier hs-type">String</span><span>
+</span><a name="line-33"></a><a name="readLine"><a href="Ch10.Ex06.html#readLine"><span class="hs-identifier">readLine</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a name="line-34"></a><span>  </span><a name="local-6989586621679070703"><a href="#local-6989586621679070703"><span class="hs-identifier">ibuf</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">hGetBuffering</span><span> </span><span class="hs-identifier hs-var">stdin</span><span>
+</span><a name="line-35"></a><span>  </span><a name="local-6989586621679070704"><a href="#local-6989586621679070704"><span class="hs-identifier">obuf</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">hGetBuffering</span><span> </span><span class="hs-identifier hs-var">stdout</span><span>
+</span><a name="line-36"></a><span>  </span><span class="hs-identifier hs-var">hSetBuffering</span><span> </span><span class="hs-identifier hs-var">stdin</span><span> </span><span class="hs-identifier hs-var">NoBuffering</span><span>
+</span><a name="line-37"></a><span>  </span><span class="hs-identifier hs-var">hSetBuffering</span><span> </span><span class="hs-identifier hs-var">stdout</span><span> </span><span class="hs-identifier hs-var">NoBuffering</span><span>
+</span><a name="line-38"></a><span>  </span><a name="local-6989586621679070705"><a href="#local-6989586621679070705"><span class="hs-identifier">str</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="Ch10.Ex06.html#loop"><span class="hs-identifier hs-var">loop</span></a><span> </span><span class="hs-string">&quot;&quot;</span><span>
+</span><a name="line-39"></a><span>  </span><span class="hs-identifier hs-var">hSetBuffering</span><span> </span><span class="hs-identifier hs-var">stdin</span><span> </span><a href="#local-6989586621679070703"><span class="hs-identifier hs-var">ibuf</span></a><span>
+</span><a name="line-40"></a><span>  </span><span class="hs-identifier hs-var">hSetBuffering</span><span> </span><span class="hs-identifier hs-var">stdout</span><span> </span><a href="#local-6989586621679070704"><span class="hs-identifier hs-var">obuf</span></a><span>
+</span><a name="line-41"></a><span>  </span><span class="hs-identifier hs-var">return</span><span> </span><a href="#local-6989586621679070705"><span class="hs-identifier hs-var">str</span></a><span>
+</span><a name="line-42"></a><span>
+</span><a name="line-43"></a><span class="hs-comment">{- |
+  readLine &#12398;&#19979;&#35531;&#12369;
+
+@
+loop xs = do
+  c &lt;- getCh
+  case c of
+    '\n'   -&gt; do putChar c
+                 return (reverse xs)
+    '\DEL' -&gt; case xs of
+       &quot;&quot;    -&gt; loop xs
+       _     -&gt; do putChar '\b'
+                   putChar ' '
+                   putChar '\b'
+                   loop (tail xs)
+    _      -&gt; do putChar c
+                 loop (c:xs)
+@
+-}</span><span>
+</span><a name="line-62"></a><span class="hs-identifier">loop</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">String</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-identifier hs-type">String</span><span>
+</span><a name="line-63"></a><a name="loop"><a href="Ch10.Ex06.html#loop"><span class="hs-identifier">loop</span></a></a><span> </span><a name="local-6989586621679070706"><a href="#local-6989586621679070706"><span class="hs-identifier">xs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a name="line-64"></a><span>  </span><a name="local-6989586621679070707"><a href="#local-6989586621679070707"><span class="hs-identifier">c</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><a href="Ch10.Hangman.html#getCh"><span class="hs-identifier hs-var">getCh</span></a><span>
+</span><a name="line-65"></a><span>  </span><span class="hs-keyword">case</span><span> </span><a href="#local-6989586621679070707"><span class="hs-identifier hs-var">c</span></a><span> </span><span class="hs-keyword">of</span><span>
+</span><a name="line-66"></a><span>    </span><span class="hs-char">'\n'</span><span>   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-identifier hs-var">putChar</span><span> </span><a href="#local-6989586621679070707"><span class="hs-identifier hs-var">c</span></a><span>
+</span><a name="line-67"></a><span>                 </span><span class="hs-identifier hs-var">return</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">reverse</span><span> </span><a href="#local-6989586621679070706"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">)</span><span>
+</span><a name="line-68"></a><span>    </span><span class="hs-char">'\DEL'</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><a href="#local-6989586621679070706"><span class="hs-identifier hs-var">xs</span></a><span> </span><span class="hs-keyword">of</span><span>
+</span><a name="line-69"></a><span>       </span><span class="hs-string">&quot;&quot;</span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><a href="Ch10.Ex06.html#loop"><span class="hs-identifier hs-var">loop</span></a><span> </span><a href="#local-6989586621679070706"><span class="hs-identifier hs-var">xs</span></a><span>
+</span><a name="line-70"></a><span>       </span><span class="hs-identifier">_</span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-identifier hs-var">putChar</span><span> </span><span class="hs-char">'\b'</span><span>
+</span><a name="line-71"></a><span>                   </span><span class="hs-identifier hs-var">putChar</span><span> </span><span class="hs-char">' '</span><span>
+</span><a name="line-72"></a><span>                   </span><span class="hs-identifier hs-var">putChar</span><span> </span><span class="hs-char">'\b'</span><span>
+</span><a name="line-73"></a><span>                   </span><a href="Ch10.Ex06.html#loop"><span class="hs-identifier hs-var">loop</span></a><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">tail</span><span> </span><a href="#local-6989586621679070706"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">)</span><span>
+</span><a name="line-74"></a><span>    </span><span class="hs-identifier">_</span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-identifier hs-var">putChar</span><span> </span><a href="#local-6989586621679070707"><span class="hs-identifier hs-var">c</span></a><span>
+</span><a name="line-75"></a><span>                 </span><a href="Ch10.Ex06.html#loop"><span class="hs-identifier hs-var">loop</span></a><span> </span><span class="hs-special">(</span><a href="#local-6989586621679070707"><span class="hs-identifier hs-var">c</span></a><span class="hs-glyph">:</span><a href="#local-6989586621679070706"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">)</span><span>
+</span><a name="line-76"></a></pre></body></html>
