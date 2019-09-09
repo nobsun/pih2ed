@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.10.6.0
+@version 0.11.1.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -2102,6 +2102,127 @@ module Ch10.Ex02
 --   </pre>
 putBoard :: Board -> IO ()
 putBoard' :: Int -> Board -> IO ()
+
+module Ch11.TicTacToe
+
+-- | 格子サイズ
+size :: Int
+
+-- | 格子
+type Grid = [[Player]]
+
+-- | プレイヤ
+data Player
+O :: Player
+B :: Player
+X :: Player
+
+-- | 次のプレイヤ
+next :: Player -> Player
+
+-- | 空の格子
+empty :: Grid
+
+-- | 充蜜の判定
+full :: Grid -> Bool
+
+-- | 次のターン
+--   
+--   <pre>
+--   &gt;&gt;&gt; turn empty
+--   O
+--   </pre>
+turn :: Grid -> Player
+
+-- | 勝利判定
+wins :: Player -> Grid -> Bool
+
+-- | 対角線上のプレイヤ
+diag :: Grid -> [Player]
+
+-- | 勝者の存在判定
+won :: Grid -> Bool
+putGrid :: Grid -> IO ()
+
+-- | 行の表示文字列リスト
+showRow :: [Player] -> [String]
+
+-- | プレイヤの値を文字列のリストに変換する
+showPlayer :: Player -> [String]
+
+-- | リストの要素の間に指定の要素を挟みこむ
+interleave :: a -> [a] -> [a]
+
+-- | 手の有効性判定
+valid :: Grid -> Int -> Bool
+
+-- | 指し手
+move :: Grid -> Int -> Player -> [Grid]
+
+-- | リストの断片化
+chop :: Int -> [a] -> [[a]]
+
+-- | プレイヤの指し手を読み込む
+getNat :: String -> IO Int
+
+-- | 三目並べ
+tictactoe :: IO ()
+
+-- | 起動
+run :: Grid -> Player -> IO ()
+
+-- | 駆動
+run' :: Grid -> Player -> IO ()
+prompt :: Player -> String
+
+-- | 木
+data Tree a
+Node :: a -> [Tree a] -> Tree a
+
+-- | ゲーム木
+gametree :: Grid -> Player -> Tree Grid
+moves :: Grid -> Player -> [Grid]
+
+-- | 枝刈り
+prune :: Int -> Tree a -> Tree a
+
+-- | ゲーム木の深さ上限
+depth :: Int
+
+-- | minimax木
+minimax :: Tree Grid -> Tree (Grid, Player)
+
+-- | 最善手の選択
+bestmove :: Grid -> Player -> Grid
+
+-- | 人間対コンピュータ
+main :: IO ()
+
+-- | 起動
+play :: Grid -> Player -> IO ()
+
+-- | 駆動
+play' :: Grid -> Player -> IO ()
+instance GHC.Show.Show a => GHC.Show.Show (Ch11.TicTacToe.Tree a)
+instance GHC.Show.Show Ch11.TicTacToe.Player
+instance GHC.Classes.Ord Ch11.TicTacToe.Player
+instance GHC.Classes.Eq Ch11.TicTacToe.Player
+
+
+-- | 3 x 3 の三目並べを空の格子から始めると，完全なゲームの木の節の数が 549,946 になることを 関数
+--   <tt>gametree</tt> を使って確かめましょう．また，木の最大の深さが 9 であることを確認してください．
+module Ch11.Ex01
+
+-- | 節の数
+--   
+--   <pre>
+--   &gt;&gt;&gt; nodes (gametree empty O)
+--   549946
+--   </pre>
+nodes :: Tree a -> Int
+
+-- | 木の深さ &gt;&gt;&gt; depth (gametree empty O) 9
+depth :: Tree a -> Int
 
 module Lib
 

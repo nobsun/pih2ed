@@ -146,5 +146,3 @@ wait :: Int -> IO ()
 wait n = sequence_ [ return () | _ <- gen ] -- busy wait
   where
     gen = [1 .. n]
-
-
