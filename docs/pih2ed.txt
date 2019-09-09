@@ -5,7 +5,7 @@
 -- | Please see the README on GitHub at
 --   <a>https://github.com/nobsun/pih2ed#readme</a>
 @package pih2ed
-@version 0.11.1.0
+@version 0.11.2.0
 
 
 -- | <tt>double (double)</tt> の結果を算出する別の計算方法を考えましょう．
@@ -2207,6 +2207,16 @@ instance GHC.Show.Show a => GHC.Show.Show (Ch11.TicTacToe.Tree a)
 instance GHC.Show.Show Ch11.TicTacToe.Player
 instance GHC.Classes.Ord Ch11.TicTacToe.Player
 instance GHC.Classes.Eq Ch11.TicTacToe.Player
+
+
+-- | 最終的なプログラムでは，必ず最善手のリストから初手を選択していました． <tt>System.Random</tt>
+--   モジュールが提供する関数 <tt>randomRIO :: (Int,Int) -&gt; IO Int</tt>
+--   を用いて，最善手をランダムに選ぶように変更してください． 関数 <tt>randomRIO</tt>
+--   は与えられた範囲の中でランダムな整数を生成します．
+module Ch11.Ex02
+
+-- | 駆動
+bestmove' :: Grid -> Player -> IO Grid
 
 
 -- | 3 x 3 の三目並べを空の格子から始めると，完全なゲームの木の節の数が 549,946 になることを 関数

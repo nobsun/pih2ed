@@ -3,7 +3,7 @@ pih2ed.cabal
 stack.yaml.lock
 error.log
 core
-# tmp/
+tmp/
 *.hi
 *.o
 *~

@@ -1,5 +1,5 @@
 name:                pih2ed
-version:             0.11.1.0
+version:             0.11.2.0
 github:              "nobsun/pih2ed"
 license:             BSD3
 author:              "Nobuo Yamashita"
@@ -27,6 +27,7 @@ dependencies:
 - utf8-string
 - hspec
 - main-tester
+- random
 
 library:
   source-dirs: src
