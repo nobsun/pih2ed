@@ -2213,6 +2213,26 @@ instance GHC.Classes.Eq Ch11.TicTacToe.Player
 --   モジュールが提供する関数 <tt>randomRIO :: (Int,Int) -&gt; IO Int</tt>
 --   を用いて，最善手をランダムに選ぶように変更してください． 関数 <tt>randomRIO</tt>
 --   は与えられた範囲の中でランダムな整数を生成します．
+module Ch11.Ex03
+
+-- | 最善手
+bestmove :: Grid -> Player -> Grid
+
+-- | 木の深さ
+treedepth :: Tree a -> Int
+
+-- | 起動
+play :: Grid -> Player -> IO ()
+
+-- | 駆動
+play' :: Grid -> Player -> IO ()
+main :: IO ()
+
+
+-- | 最終的なプログラムでは，必ず最善手のリストから初手を選択していました． <tt>System.Random</tt>
+--   モジュールが提供する関数 <tt>randomRIO :: (Int,Int) -&gt; IO Int</tt>
+--   を用いて，最善手をランダムに選ぶように変更してください． 関数 <tt>randomRIO</tt>
+--   は与えられた範囲の中でランダムな整数を生成します．
 module Ch11.Ex02
 
 -- | 駆動
